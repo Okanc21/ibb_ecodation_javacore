@@ -9,16 +9,13 @@ package com.okancelik._1_part_javatypes;
 çoklu yorumalamalar burda yapılır. kısa yolu  ( ctrl / )
 
  */
+
+
 public class _01_JavaPsvm {
-
+    //psvm=> tab
     public static void main(String[] args) {
-
-        System.out.println("okan celik");
-
-
-    }
-
-
-
-
-}
+        //çıktı
+        //sout => tab
+        System.out.println("Okan Celik");
+    } // end psvm
+}// end class
