@@ -1,0 +1,19 @@
+- Maven Nedir ?
+- pom.xml nedir ?
+- JDK nedir ?
+- JRE nedir?
+- compiler nedir ?
+- JVM nedir ?
+- Interpreter nedir ?
+- java nedir ?
+- Java Özellikleri nelerdir ?
+- Data types nedir ?
+- primitive types nedir ?
+- wrapper types nedir ?
+
+CamelCase yazım nnedir ?
+benEvdeyim // ilk kelimenin baş harfi küçük ikinci kelimenin baş harfi büyük
+Pascalcase yazım nedir ?
+BenEvdeyim // her iki kelimenin de baş harfleri büyük
+kebap-case  yazım nedir ?
+ben-evdeyim // örnekteki gibi yazılır
