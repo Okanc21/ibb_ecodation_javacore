@@ -36,7 +36,7 @@ Javada her biten kelime ; ile bitirmek zorundayız.
 ---
 ## Java Core Information
 ```sh
-java case sentive bir dildir (kucuk buyuk harflere duyarlidir)
+java case sensitive bir dildir (kucuk buyuk harflere yuksek seviyeli bir dildir)
 ```
 ---
 
