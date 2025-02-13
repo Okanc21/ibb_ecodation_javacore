@@ -32,7 +32,7 @@ public class _04_1_JavaWrappertypes {
         Double wrapperTypeDouble=14.23;
 
         Boolean wrapperTypeBoolean=true;
-        Char wrapperTypeChar ='a';
+        Character wrapperTypeChar ='a';
 
 
 
