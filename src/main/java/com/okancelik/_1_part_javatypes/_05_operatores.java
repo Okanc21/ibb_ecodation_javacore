@@ -1,6 +1,6 @@
 package com.okancelik._1_part_javatypes;
 
-public class _04_operatores {
+public class _05_operatores {
 
     public static void main(String[] args) {
 
