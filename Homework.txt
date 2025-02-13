@@ -25,3 +25,6 @@ System.out.println(number2);
 
 Stack Memory - Heap Memory
 
+escape character nedir ?
+scanner class nedir?
+
