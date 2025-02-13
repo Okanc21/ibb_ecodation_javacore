@@ -1,6 +1,6 @@
 package com.okancelik._1_week;
 
-public class _04_JavaWrappertypes {
+public class _04_2_JavaWrappertypes {
 
     public static void main(String[] args) {
         // PRİMİTİVE TYPE
