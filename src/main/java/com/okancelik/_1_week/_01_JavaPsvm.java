@@ -1,4 +1,4 @@
-package com.okancelik._1_part_javatypes;
+package com.okancelik._1_week;
 
 
 // single comment tek satırlık yorumlama.
