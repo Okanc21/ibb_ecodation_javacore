@@ -41,14 +41,22 @@ java case sensitive bir dildir (kucuk buyuk harflere yuksek seviyeli bir dildir)
 ---
 
 ---
-## Java
+## Java Core (common Rules)
+```sh
+
+```
+---
+
+
+---
+## Java Core (Primitive Types)
 ```sh
 
 ```
 ---
 
 ---
-## Java
+## Java core (Data Types)
 ```sh
 
 ```

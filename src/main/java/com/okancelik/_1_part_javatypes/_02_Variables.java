@@ -11,11 +11,12 @@ public class _02_Variables {
         4-) sayı ile başlanmaz
         5-)_veya$ dışşında özel  simgelerler başlanmaz.
         6-) değişken isimlerimizi cameCase yapısına göre yazıyoruz.
+        7-)anlamlı ve açıklayıcı isimler seçiniz
+        8-)değişkenlerde boşluk kullanılamaz.
         */
 
 
         // veri isimlerndirmeleri;
-        //1-) isim, sıfat veya zamir kullanmamız lazım.
         int schoolNumber = 25;
         System.out.println(schoolNumber);
 

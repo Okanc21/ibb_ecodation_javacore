@@ -3,3 +3,4 @@ Multiple comment => Shift+Ctrl+/
 Beautify : Ctrl+Alt+l
 psvm => tab public static void main getirir.
 sout => tab sistemin çıktı kodunu veriri (System.out.println getirir)
+shitf+f6 hepsini değiştirir
