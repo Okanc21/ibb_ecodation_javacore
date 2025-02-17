@@ -16,6 +16,14 @@ public class _10_3_Loop_DoWhile {
         // while döngüsünde sonsuzluk
         // while (;true){}
 
+        int number = 1;
+        for(;;){
+            System.out.println(number);
+            number++;
+            if(number>=50)
+                break;
+        }
+
 
     }
 
