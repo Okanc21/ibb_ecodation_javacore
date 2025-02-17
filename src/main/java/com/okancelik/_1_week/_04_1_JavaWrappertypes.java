@@ -20,7 +20,7 @@ public class _04_1_JavaWrappertypes {
 
 
         /// ////////////////////////////////////////////////
-        // WRAPPER TYPE
+        // WRAPPER TYPE (new yoksa )
         byte wrapperTypeByte=127;
         // wrapperTypeByte=null;// null değer verebilirsiniz.
         System.out.println(wrapperTypeByte);
