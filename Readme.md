@@ -4298,499 +4298,6 @@ System.out.println(araba2.model); // Tesla
 
 ✅ **Java, bellek adresleme işlemlerini otomatik olarak yönetir, ancak referans mantığını anlamak performans açısından önemlidir.** 🚀
 
-## Dizi(Array)
-```sh 
-
-```
----
-# **Java'da Dizi (Array) Nedir? (Detaylı Açıklama)**
-
-## **📌 1. Dizi (Array) Nedir?**
-Java'da **dizi (array)**, **aynı veri tipindeki** birden fazla elemanı **tek bir değişken içinde saklamak** için kullanılır.  
-Diziler:
-- **Sabit bir boyuta sahiptirler** (Oluşturulduktan sonra boyutu değiştirilemez).
-- **Aynı türden elemanları saklarlar** (`int`, `double`, `String`, vb.).
-- **Dizi indisleri (index) 0'dan başlar**.
-- **Diziler bellek üzerinde bitişik (contiguous) olarak saklanır**.
-
----
-
-## **📌 2. Java’da Dizi Tanımlama ve Kullanımı**
-### **✅ 2.1 Dizi Tanımlama**
-Dizi tanımlamanın iki temel yolu vardır:
-
-**1️⃣ İlk Yöntem: Dizi Tanımlama ve Bellekte Yer Ayırma**
-```java
-int[] sayilar = new int[5]; // 5 elemanlı bir int dizisi
-```
-- **Dizinin boyutu `5` olarak belirlendi ve varsayılan değerlerle (0) dolduruldu.**
-
----
-
-**2️⃣ İkinci Yöntem: Tanımlama ve Değer Atama**
-```java
-int[] sayilar = {10, 20, 30, 40, 50};
-```
-- **Dizi doğrudan tanımlandı ve elemanları atandı**.
-
-📌 **Önemli:**
-- Java’da dizinin boyutu **sonradan değiştirilemez**.
-- Bir dizi `null` olabilir ama **başlangıçta boyutu belirtilmeden oluşturulamaz**.
-
-🚫 **Hatalı Tanımlama**
-```java
-int[] dizi; 
-dizi = {1, 2, 3, 4}; // HATA! Doğrudan böyle atama yapılamaz.
-```
-
-✅ **Doğru Kullanım**
-```java
-int[] dizi;
-dizi = new int[]{1, 2, 3, 4};
-```
-
----
-
-## **📌 3. Dizi Elemanlarına Erişim ve Değiştirme**
-Dizi elemanlarına **indeks (index) numarası** kullanılarak erişilir.
-
-```java
-public class DiziErisim {
-    public static void main(String[] args) {
-        int[] sayilar = {10, 20, 30, 40, 50};
-
-        // Dizinin 0. elemanını yazdırma
-        System.out.println("İlk eleman: " + sayilar[0]); // 10
-        
-        // Dizinin 2. elemanını değiştirme
-        sayilar[2] = 100;
-        
-        System.out.println("Yeni 2. eleman: " + sayilar[2]); // 100
-    }
-}
-```
-📌 **Dizi indisleri 0'dan başlar ve `dizi.length - 1` kadar gider.**
-
----
-
-## **📌 4. Dizinin Boyutunu Öğrenme**
-Java'da **bir dizinin boyutu**, **`.length`** özelliği ile öğrenilir.
-
-```java
-public class DiziBoyutu {
-    public static void main(String[] args) {
-        int[] dizi = {10, 20, 30, 40};
-        System.out.println("Dizi uzunluğu: " + dizi.length); // 4
-    }
-}
-```
-📌 **Dikkat:**
-- `dizi.length` bir metot değil, **bir özelliktir** (`()` parantezleri kullanılmaz).
-
----
-
-## **📌 5. Dizi Üzerinde Döngüler Kullanımı**
-### **✅ 5.1 `for` Döngüsü ile Dizi Kullanımı**
-```java
-public class DiziDongu {
-    public static void main(String[] args) {
-        int[] sayilar = {5, 10, 15, 20, 25};
-
-        for (int i = 0; i < sayilar.length; i++) {
-            System.out.println("Eleman " + i + ": " + sayilar[i]);
-        }
-    }
-}
-```
-**Çıktı:**
-```
-Eleman 0: 5
-Eleman 1: 10
-Eleman 2: 15
-Eleman 3: 20
-Eleman 4: 25
-```
-
----
-
-### **✅ 5.2 `for-each` Döngüsü ile Dizi Kullanımı**
-```java
-public class ForEachOrnek {
-    public static void main(String[] args) {
-        String[] diller = {"Java", "Python", "C++", "JavaScript"};
-
-        for (String dil : diller) {
-            System.out.println("Programlama Dili: " + dil);
-        }
-    }
-}
-```
-**Çıktı:**
-```
-Programlama Dili: Java
-Programlama Dili: Python
-Programlama Dili: C++
-Programlama Dili: JavaScript
-```
-📌 **`for-each` dizileri gezmek için kullanışlıdır ama dizinin indeksine erişemez.**
-
----
-
-## **📌 6. Çok Boyutlu Diziler (Multidimensional Arrays)**
-### **✅ 6.1 İki Boyutlu (2D) Dizi Tanımlama**
-```java
-int[][] matris = new int[3][3]; // 3x3'lük bir matris
-```
-
-📌 **Başlangıç değerleri `0` olur.**
-
----
-
-### **✅ 6.2 Değer Atama ve Erişim**
-```java
-public class IkiBoyutluDizi {
-    public static void main(String[] args) {
-        int[][] matris = {
-            {1, 2, 3},
-            {4, 5, 6},
-            {7, 8, 9}
-        };
-
-        System.out.println("Orta Eleman: " + matris[1][1]); // 5
-    }
-}
-```
-📌 **İlk indeks satır, ikinci indeks sütunu temsil eder**.
-
----
-
-### **✅ 6.3 `for` Döngüsü ile Çok Boyutlu Diziyi Yazdırma**
-```java
-public class MatrisYazdirma {
-    public static void main(String[] args) {
-        int[][] matris = {
-            {1, 2, 3},
-            {4, 5, 6},
-            {7, 8, 9}
-        };
-
-        for (int i = 0; i < matris.length; i++) {
-            for (int j = 0; j < matris[i].length; j++) {
-                System.out.print(matris[i][j] + " ");
-            }
-            System.out.println();
-        }
-    }
-}
-```
-**Çıktı:**
-```
-1 2 3
-4 5 6
-7 8 9
-```
-📌 **`matris.length` satır sayısını, `matris[i].length` sütun sayısını verir.**
-
----
-
-## **📌 7. Java’da Dizi Kopyalama**
-### **✅ 7.1 `System.arraycopy()` Kullanımı**
-```java
-public class DiziKopyalama {
-    public static void main(String[] args) {
-        int[] orijinal = {1, 2, 3, 4, 5};
-        int[] kopya = new int[5];
-
-        System.arraycopy(orijinal, 0, kopya, 0, 5);
-
-        for (int eleman : kopya) {
-            System.out.print(eleman + " ");
-        }
-    }
-}
-```
-**Çıktı:**
-```
-1 2 3 4 5
-```
-📌 **Diziyi manuel kopyalamaya göre daha verimlidir.**
-
----
-
-## **📌 8. `Arrays` Sınıfı ile Dizi İşlemleri**
-Java’nın **`java.util.Arrays`** sınıfı, diziler için **yardımcı metotlar** içerir.
-
-### **✅ 8.1 `Arrays.toString()` - Diziyi String'e Çevirme**
-```java
-import java.util.Arrays;
-
-public class ArraysExample {
-    public static void main(String[] args) {
-        int[] sayilar = {3, 1, 4, 1, 5};
-        System.out.println(Arrays.toString(sayilar));
-    }
-}
-```
-**Çıktı:**
-```
-[3, 1, 4, 1, 5]
-```
-
----
-
-## **📌 9. Özet**
-| **Özellik** | **Açıklama** |
-|-------------|-------------|
-| **Dizi Tanımlama** | `int[] dizi = new int[5];` |
-| **Diziye Değer Atama** | `dizi[0] = 10;` |
-| **Dizi Boyutu** | `dizi.length` |
-| **Tek Boyutlu Dizi** | `{10, 20, 30}` |
-| **Çok Boyutlu Dizi** | `int[][] matris = new int[3][3];` |
-| **Dizi Kopyalama** | `System.arraycopy()` |
-| **Dizi Sıralama** | `Arrays.sort(dizi);` |
-
-📌 **Java’da diziler, veri saklama ve yönetme açısından oldukça önemli yapılardır! 🚀**
-
-
-## Erişim Belirleyiciler
-```sh 
-
-```
----
-# **📌 Java'da Paketler (Packages) ve Erişim Belirleyiciler (Access Modifiers) Nedir? (Detaylı Açıklama)**
-
-Java'da **paketler (packages)** ve **erişim belirleyiciler (access modifiers)**, programların düzenlenmesi, modüler hale getirilmesi ve **erişim kontrolü** sağlanması için kullanılan iki temel yapıdır.
-
----
-
-# **🔹 1. Java'da Paketler (Packages) Nedir?**
-**📌 Paket (Package)**, **benzer sınıfları (class), arayüzleri (interface) ve diğer bileşenleri bir arada tutan** bir dizin yapısıdır.  
-Paketler sayesinde:
-- **Kod daha düzenli hale gelir.**
-- **Ad çakışmaları (name conflict) önlenir.**
-- **Erişim belirleyicilerle güvenlik sağlanır.**
-- **Yeniden kullanılabilir bileşenler oluşturulabilir.**
-
----
-
-## **🔸 1.1 Paket Tanımlama ve Kullanımı**
-Bir Java dosyasında paketi belirlemek için **`package`** anahtar kelimesi kullanılır. **Dosyanın en üstüne yazılmalıdır.**
-
-```java
-package com.ornek.paket; // Paketin tanımlanması
-
-public class Selam {
-    public void mesaj() {
-        System.out.println("Merhaba, paket kullanımı!");
-    }
-}
-```
-📌 **Paket ismi, genellikle ters domain adı şeklinde belirlenir.**  
-Örneğin:
-- **`package com.google.search;`**
-- **`package org.apache.commons;`**
-
----
-
-## **🔸 1.2 Paket İçindeki Sınıfı Kullanma (`import`)**
-Başka bir paketten bir sınıf kullanmak için **`import`** ifadesi kullanılır.
-
-```java
-import com.ornek.paket.Selam; // Paket içindeki sınıfı dahil ettik
-
-public class Main {
-    public static void main(String[] args) {
-        Selam nesne = new Selam();
-        nesne.mesaj();
-    }
-}
-```
-📌 **Eğer aynı paketteysek, `import` kullanmadan doğrudan sınıfı çağırabiliriz.**
-
----
-
-## **🔸 1.3 Tüm Paket İçeriğini Dahil Etme**
-Eğer bir paketin **tüm sınıflarını** kullanmak istiyorsak, `*` karakterini kullanabiliriz.
-
-```java
-import com.ornek.paket.*;
-
-public class Main {
-    public static void main(String[] args) {
-        Selam nesne = new Selam();
-        nesne.mesaj();
-    }
-}
-```
-📌 **Ancak, `import` ile sadece kullanılacak sınıfları dahil etmek daha performanslıdır.**
-
----
-
-## **🔸 1.4 `static import` ile Metotları ve Değişkenleri Dahil Etme**
-Bazı durumlarda, **sınıf adını yazmadan doğrudan bir metot veya değişkene erişmek için `static import` kullanılabilir**.
-
-```java
-import static java.lang.Math.*;
-
-public class MathExample {
-    public static void main(String[] args) {
-        System.out.println(sqrt(25)); // 5.0
-        System.out.println(pow(2, 3)); // 8.0
-    }
-}
-```
-📌 **Normalde `Math.sqrt(25)` şeklinde çağırılır. Ancak `static import` sayesinde `sqrt(25)` olarak doğrudan çağrılabilir.**
-
----
-
-## **🔸 1.5 Varsayılan Paket (Default Package)**
-Eğer **`package` ifadesi kullanılmazsa**, sınıf **varsayılan pakette (default package)** olur.  
-Ancak **varsayılan paket kullanımı büyük projelerde önerilmez**.
-
-```java
-public class Varsayilan {
-    public void mesaj() {
-        System.out.println("Varsayılan paket içindeyim.");
-    }
-}
-```
-
-Bu sınıf, **herhangi bir pakete ait olmadığı için diğer paketler tarafından doğrudan kullanılamaz**.
-
----
-
-# **🔹 2. Java’da Erişim Belirleyiciler (Access Modifiers)**
-Erişim belirleyiciler, **sınıf, metot ve değişkenlerin erişim seviyelerini belirler**.
-
-## **🔸 2.1 Java'daki Erişim Belirleyiciler**
-| **Erişim Belirleyici** | **Açıklama** | **Aynı Sınıf** | **Aynı Paket** | **Alt Sınıflar (Inheritance)** | **Diğer Paketler** |
-|----------------|----------------------------------------|:------------:|:------------:|:------------------:|:--------------:|
-| **`public`**  | **Her yerden erişilebilir.** | ✅ | ✅ | ✅ | ✅ |
-| **`private`** | **Sadece tanımlandığı sınıfta erişilebilir.** | ✅ | ❌ | ❌ | ❌ |
-| **`protected`** | **Aynı paket ve alt sınıflardan erişilebilir.** | ✅ | ✅ | ✅ | ❌ |
-| **Varsayılan (default)** | **Sadece aynı paket içindeki sınıflar erişebilir.** | ✅ | ✅ | ❌ | ❌ |
-
----
-
-## **🔸 2.2 `public` Erişim Belirleyici**
-- **Tüm sınıflardan erişilebilir**.
-- **Global kullanılacak metotlar ve sınıflar genellikle `public` olarak tanımlanır.**
-
-```java
-package com.ornek;
-
-public class PublicOrnek {
-    public String mesaj = "Bu bir public değişkendir.";
-
-    public void goster() {
-        System.out.println(mesaj);
-    }
-}
-```
-Başka bir sınıfta:
-```java
-import com.ornek.PublicOrnek;
-
-public class Main {
-    public static void main(String[] args) {
-        PublicOrnek nesne = new PublicOrnek();
-        nesne.goster();
-    }
-}
-```
-📌 **Başka paketlerden bile erişilebilir.**
-
----
-
-## **🔸 2.3 `private` Erişim Belirleyici**
-- **Sadece tanımlandığı sınıf içinde erişilebilir**.
-- **Dışarıdan çağrılamaz**.
-
-```java
-class PrivateOrnek {
-    private String gizliMesaj = "Bu bir private değişkendir.";
-
-    private void goster() {
-        System.out.println(gizliMesaj);
-    }
-}
-```
-📌 **Başka sınıflardan `gizliMesaj` veya `goster()` metoduna erişilemez.**
-
-🚫 **Yanlış Kullanım:**
-```java
-PrivateOrnek nesne = new PrivateOrnek();
-nesne.goster(); // HATA! Erişim engellendi.
-```
-
-📌 **Ancak `getter` ve `setter` metotları ile erişim sağlanabilir.**
-```java
-class PrivateOrnek {
-    private String gizliMesaj = "Bu bir private değişkendir.";
-
-    public String getMesaj() {
-        return gizliMesaj;
-    }
-}
-```
-
----
-
-## **🔸 2.4 `protected` Erişim Belirleyici**
-- **Aynı paketteki sınıflar ve alt sınıflar (subclass) erişebilir**.
-- **Farklı paketlerden sadece `extends` ile türetilen sınıflar erişebilir.**
-
-```java
-package com.ornek;
-
-public class ProtectedOrnek {
-    protected String mesaj = "Bu bir protected değişkendir.";
-}
-```
-Başka bir paket içindeki **alt sınıfta (subclass) kullanılabilir**:
-```java
-import com.ornek.ProtectedOrnek;
-
-public class AltSinif extends ProtectedOrnek {
-    public void yazdir() {
-        System.out.println(mesaj);
-    }
-}
-```
-
-📌 **Ancak `new` ile nesne oluşturulursa erişilemez!**
-```java
-ProtectedOrnek nesne = new ProtectedOrnek();
-System.out.println(nesne.mesaj); // HATA! Çünkü başka paketteyiz.
-```
-
----
-
-## **🔸 2.5 Varsayılan (Default) Erişim**
-- **Eğer erişim belirleyici yazılmazsa, sadece aynı paketteki sınıflar erişebilir.**
-
-```java
-class DefaultOrnek {
-    String mesaj = "Bu bir varsayılan (default) değişkendir.";
-}
-```
-Başka bir pakette:
-```java
-DefaultOrnek nesne = new DefaultOrnek(); // HATA! Çünkü başka paketteyiz.
-```
-
----
-
-# **📌 Sonuç ve Karşılaştırma**
-| **Erişim Belirleyici** | **Sınıf İçinden** | **Aynı Paketten** | **Alt Sınıflardan (Inheritance)** | **Diğer Paketlerden** |
-|----------------|--------------|------------|----------------------|--------------|
-| **`public`** | ✅ | ✅ | ✅ | ✅ |
-| **`private`** | ✅ | ❌ | ❌ | ❌ |
-| **`protected`** | ✅ | ✅ | ✅ | ❌ |
-| **Varsayılan (default)** | ✅ | ✅ | ❌ | ❌ |
-
-**📌 Paketler ve erişim belirleyiciler, Java’da kodun organize edilmesi ve güvenliği açısından büyük önem taşır! 🚀**
-
 
 ## Tarih
 ```sh 
@@ -5365,6 +4872,1212 @@ String mesaj = ""; // NullPointerException riski yok
 ---
 
 ✅ **Sonuç:** `null` dikkatli kullanılmalıdır. **Gereksiz `null` kullanımı yerine `Optional<T>`, varsayılan değerler veya boş nesneler kullanılabilir.** 🚀
+
+
+
+
+## Dizi(Array)
+```sh 
+
+```
+---
+# **Java'da Dizi (Array) Nedir? **
+
+## **📌 1. Dizi (Array) Nedir?**
+Java'da **dizi (array)**, **aynı veri tipindeki** birden fazla elemanı **tek bir değişken içinde saklamak** için kullanılır.  
+Diziler:
+- **Sabit bir boyuta sahiptirler** (Oluşturulduktan sonra boyutu değiştirilemez).
+- **Aynı türden elemanları saklarlar** (`int`, `double`, `String`, vb.).
+- **Dizi indisleri (index) 0'dan başlar**.
+- **Diziler bellek üzerinde bitişik (contiguous) olarak saklanır**.
+
+---
+
+## **📌 2. Java’da Dizi Tanımlama ve Kullanımı**
+### **✅ 2.1 Dizi Tanımlama**
+Dizi tanımlamanın iki temel yolu vardır:
+
+**1️⃣ İlk Yöntem: Dizi Tanımlama ve Bellekte Yer Ayırma**
+```java
+int[] sayilar = new int[5]; // 5 elemanlı bir int dizisi
+```
+- **Dizinin boyutu `5` olarak belirlendi ve varsayılan değerlerle (0) dolduruldu.**
+
+---
+
+**2️⃣ İkinci Yöntem: Tanımlama ve Değer Atama**
+```java
+int[] sayilar = {10, 20, 30, 40, 50};
+```
+- **Dizi doğrudan tanımlandı ve elemanları atandı**.
+
+📌 **Önemli:**
+- Java’da dizinin boyutu **sonradan değiştirilemez**.
+- Bir dizi `null` olabilir ama **başlangıçta boyutu belirtilmeden oluşturulamaz**.
+
+🚫 **Hatalı Tanımlama**
+```java
+int[] dizi; 
+dizi = {1, 2, 3, 4}; // HATA! Doğrudan böyle atama yapılamaz.
+```
+
+✅ **Doğru Kullanım**
+```java
+int[] dizi;
+dizi = new int[]{1, 2, 3, 4};
+```
+
+---
+
+## **📌 3. Dizi Elemanlarına Erişim ve Değiştirme**
+Dizi elemanlarına **indeks (index) numarası** kullanılarak erişilir.
+
+```java
+public class DiziErisim {
+    public static void main(String[] args) {
+        int[] sayilar = {10, 20, 30, 40, 50};
+
+        // Dizinin 0. elemanını yazdırma
+        System.out.println("İlk eleman: " + sayilar[0]); // 10
+        
+        // Dizinin 2. elemanını değiştirme
+        sayilar[2] = 100;
+        
+        System.out.println("Yeni 2. eleman: " + sayilar[2]); // 100
+    }
+}
+```
+📌 **Dizi indisleri 0'dan başlar ve `dizi.length - 1` kadar gider.**
+
+---
+
+## **📌 4. Dizinin Boyutunu Öğrenme**
+Java'da **bir dizinin boyutu**, **`.length`** özelliği ile öğrenilir.
+
+```java
+public class DiziBoyutu {
+    public static void main(String[] args) {
+        int[] dizi = {10, 20, 30, 40};
+        System.out.println("Dizi uzunluğu: " + dizi.length); // 4
+    }
+}
+```
+📌 **Dikkat:**
+- `dizi.length` bir metot değil, **bir özelliktir** (`()` parantezleri kullanılmaz).
+
+---
+
+## **📌 5. Dizi Üzerinde Döngüler Kullanımı**
+### **✅ 5.1 `for` Döngüsü ile Dizi Kullanımı**
+```java
+public class DiziDongu {
+    public static void main(String[] args) {
+        int[] sayilar = {5, 10, 15, 20, 25};
+
+        for (int i = 0; i < sayilar.length; i++) {
+            System.out.println("Eleman " + i + ": " + sayilar[i]);
+        }
+    }
+}
+```
+**Çıktı:**
+```
+Eleman 0: 5
+Eleman 1: 10
+Eleman 2: 15
+Eleman 3: 20
+Eleman 4: 25
+```
+
+---
+
+### **✅ 5.2 `for-each` Döngüsü ile Dizi Kullanımı**
+```java
+public class ForEachOrnek {
+    public static void main(String[] args) {
+        String[] diller = {"Java", "Python", "C++", "JavaScript"};
+
+        for (String dil : diller) {
+            System.out.println("Programlama Dili: " + dil);
+        }
+    }
+}
+```
+**Çıktı:**
+```
+Programlama Dili: Java
+Programlama Dili: Python
+Programlama Dili: C++
+Programlama Dili: JavaScript
+```
+📌 **`for-each` dizileri gezmek için kullanışlıdır ama dizinin indeksine erişemez.**
+
+---
+
+## **📌 6. Çok Boyutlu Diziler (Multidimensional Arrays)**
+### **✅ 6.1 İki Boyutlu (2D) Dizi Tanımlama**
+```java
+int[][] matris = new int[3][3]; // 3x3'lük bir matris
+```
+
+📌 **Başlangıç değerleri `0` olur.**
+
+---
+
+### **✅ 6.2 Değer Atama ve Erişim**
+```java
+public class IkiBoyutluDizi {
+    public static void main(String[] args) {
+        int[][] matris = {
+            {1, 2, 3},
+            {4, 5, 6},
+            {7, 8, 9}
+        };
+
+        System.out.println("Orta Eleman: " + matris[1][1]); // 5
+    }
+}
+```
+📌 **İlk indeks satır, ikinci indeks sütunu temsil eder**.
+
+---
+
+### **✅ 6.3 `for` Döngüsü ile Çok Boyutlu Diziyi Yazdırma**
+```java
+public class MatrisYazdirma {
+    public static void main(String[] args) {
+        int[][] matris = {
+            {1, 2, 3},
+            {4, 5, 6},
+            {7, 8, 9}
+        };
+
+        for (int i = 0; i < matris.length; i++) {
+            for (int j = 0; j < matris[i].length; j++) {
+                System.out.print(matris[i][j] + " ");
+            }
+            System.out.println();
+        }
+    }
+}
+```
+**Çıktı:**
+```
+1 2 3
+4 5 6
+7 8 9
+```
+📌 **`matris.length` satır sayısını, `matris[i].length` sütun sayısını verir.**
+
+---
+
+## **📌 7. Java’da Dizi Kopyalama**
+### **✅ 7.1 `System.arraycopy()` Kullanımı**
+```java
+public class DiziKopyalama {
+    public static void main(String[] args) {
+        int[] orijinal = {1, 2, 3, 4, 5};
+        int[] kopya = new int[5];
+
+        System.arraycopy(orijinal, 0, kopya, 0, 5);
+
+        for (int eleman : kopya) {
+            System.out.print(eleman + " ");
+        }
+    }
+}
+```
+**Çıktı:**
+```
+1 2 3 4 5
+```
+📌 **Diziyi manuel kopyalamaya göre daha verimlidir.**
+
+---
+
+## **📌 8. `Arrays` Sınıfı ile Dizi İşlemleri**
+Java’nın **`java.util.Arrays`** sınıfı, diziler için **yardımcı metotlar** içerir.
+
+### **✅ 8.1 `Arrays.toString()` - Diziyi String'e Çevirme**
+```java
+import java.util.Arrays;
+
+public class ArraysExample {
+    public static void main(String[] args) {
+        int[] sayilar = {3, 1, 4, 1, 5};
+        System.out.println(Arrays.toString(sayilar));
+    }
+}
+```
+**Çıktı:**
+```
+[3, 1, 4, 1, 5]
+```
+
+---
+
+## **📌 9. Özet**
+| **Özellik** | **Açıklama** |
+|-------------|-------------|
+| **Dizi Tanımlama** | `int[] dizi = new int[5];` |
+| **Diziye Değer Atama** | `dizi[0] = 10;` |
+| **Dizi Boyutu** | `dizi.length` |
+| **Tek Boyutlu Dizi** | `{10, 20, 30}` |
+| **Çok Boyutlu Dizi** | `int[][] matris = new int[3][3];` |
+| **Dizi Kopyalama** | `System.arraycopy()` |
+| **Dizi Sıralama** | `Arrays.sort(dizi);` |
+
+📌 **Java’da diziler, veri saklama ve yönetme açısından oldukça önemli yapılardır! 🚀**
+
+
+## Erişim Belirleyiciler
+```sh 
+
+```
+---
+# **📌 Java'da Paketler (Packages) ve Erişim Belirleyiciler (Access Modifiers) Nedir? (Detaylı Açıklama)**
+
+Java'da **paketler (packages)** ve **erişim belirleyiciler (access modifiers)**, programların düzenlenmesi, modüler hale getirilmesi ve **erişim kontrolü** sağlanması için kullanılan iki temel yapıdır.
+
+---
+
+# **🔹 1. Java'da Paketler (Packages) Nedir?**
+**📌 Paket (Package)**, **benzer sınıfları (class), arayüzleri (interface) ve diğer bileşenleri bir arada tutan** bir dizin yapısıdır.  
+Paketler sayesinde:
+- **Kod daha düzenli hale gelir.**
+- **Ad çakışmaları (name conflict) önlenir.**
+- **Erişim belirleyicilerle güvenlik sağlanır.**
+- **Yeniden kullanılabilir bileşenler oluşturulabilir.**
+
+---
+
+## **🔸 1.1 Paket Tanımlama ve Kullanımı**
+Bir Java dosyasında paketi belirlemek için **`package`** anahtar kelimesi kullanılır. **Dosyanın en üstüne yazılmalıdır.**
+
+```java
+package com.ornek.paket; // Paketin tanımlanması
+
+public class Selam {
+    public void mesaj() {
+        System.out.println("Merhaba, paket kullanımı!");
+    }
+}
+```
+📌 **Paket ismi, genellikle ters domain adı şeklinde belirlenir.**  
+Örneğin:
+- **`package com.google.search;`**
+- **`package org.apache.commons;`**
+
+---
+
+## **🔸 1.2 Paket İçindeki Sınıfı Kullanma (`import`)**
+Başka bir paketten bir sınıf kullanmak için **`import`** ifadesi kullanılır.
+
+```java
+import com.ornek.paket.Selam; // Paket içindeki sınıfı dahil ettik
+
+public class Main {
+    public static void main(String[] args) {
+        Selam nesne = new Selam();
+        nesne.mesaj();
+    }
+}
+```
+📌 **Eğer aynı paketteysek, `import` kullanmadan doğrudan sınıfı çağırabiliriz.**
+
+---
+
+## **🔸 1.3 Tüm Paket İçeriğini Dahil Etme**
+Eğer bir paketin **tüm sınıflarını** kullanmak istiyorsak, `*` karakterini kullanabiliriz.
+
+```java
+import com.ornek.paket.*;
+
+public class Main {
+    public static void main(String[] args) {
+        Selam nesne = new Selam();
+        nesne.mesaj();
+    }
+}
+```
+📌 **Ancak, `import` ile sadece kullanılacak sınıfları dahil etmek daha performanslıdır.**
+
+---
+
+## **🔸 1.4 `static import` ile Metotları ve Değişkenleri Dahil Etme**
+Bazı durumlarda, **sınıf adını yazmadan doğrudan bir metot veya değişkene erişmek için `static import` kullanılabilir**.
+
+```java
+import static java.lang.Math.*;
+
+public class MathExample {
+    public static void main(String[] args) {
+        System.out.println(sqrt(25)); // 5.0
+        System.out.println(pow(2, 3)); // 8.0
+    }
+}
+```
+📌 **Normalde `Math.sqrt(25)` şeklinde çağırılır. Ancak `static import` sayesinde `sqrt(25)` olarak doğrudan çağrılabilir.**
+
+---
+
+## **🔸 1.5 Varsayılan Paket (Default Package)**
+Eğer **`package` ifadesi kullanılmazsa**, sınıf **varsayılan pakette (default package)** olur.  
+Ancak **varsayılan paket kullanımı büyük projelerde önerilmez**.
+
+```java
+public class Varsayilan {
+    public void mesaj() {
+        System.out.println("Varsayılan paket içindeyim.");
+    }
+}
+```
+
+Bu sınıf, **herhangi bir pakete ait olmadığı için diğer paketler tarafından doğrudan kullanılamaz**.
+
+---
+
+# **🔹 2. Java’da Erişim Belirleyiciler (Access Modifiers)**
+Erişim belirleyiciler, **sınıf, metot ve değişkenlerin erişim seviyelerini belirler**.
+
+## **🔸 2.1 Java'daki Erişim Belirleyiciler**
+| **Erişim Belirleyici** | **Açıklama** | **Aynı Sınıf** | **Aynı Paket** | **Alt Sınıflar (Inheritance)** | **Diğer Paketler** |
+|----------------|----------------------------------------|:------------:|:------------:|:------------------:|:--------------:|
+| **`public`**  | **Her yerden erişilebilir.** | ✅ | ✅ | ✅ | ✅ |
+| **`private`** | **Sadece tanımlandığı sınıfta erişilebilir.** | ✅ | ❌ | ❌ | ❌ |
+| **`protected`** | **Aynı paket ve alt sınıflardan erişilebilir.** | ✅ | ✅ | ✅ | ❌ |
+| **Varsayılan (default)** | **Sadece aynı paket içindeki sınıflar erişebilir.** | ✅ | ✅ | ❌ | ❌ |
+
+---
+
+## **🔸 2.2 `public` Erişim Belirleyici**
+- **Tüm sınıflardan erişilebilir**.
+- **Global kullanılacak metotlar ve sınıflar genellikle `public` olarak tanımlanır.**
+
+```java
+package com.ornek;
+
+public class PublicOrnek {
+    public String mesaj = "Bu bir public değişkendir.";
+
+    public void goster() {
+        System.out.println(mesaj);
+    }
+}
+```
+Başka bir sınıfta:
+```java
+import com.ornek.PublicOrnek;
+
+public class Main {
+    public static void main(String[] args) {
+        PublicOrnek nesne = new PublicOrnek();
+        nesne.goster();
+    }
+}
+```
+📌 **Başka paketlerden bile erişilebilir.**
+
+---
+
+## **🔸 2.3 `private` Erişim Belirleyici**
+- **Sadece tanımlandığı sınıf içinde erişilebilir**.
+- **Dışarıdan çağrılamaz**.
+
+```java
+class PrivateOrnek {
+    private String gizliMesaj = "Bu bir private değişkendir.";
+
+    private void goster() {
+        System.out.println(gizliMesaj);
+    }
+}
+```
+📌 **Başka sınıflardan `gizliMesaj` veya `goster()` metoduna erişilemez.**
+
+🚫 **Yanlış Kullanım:**
+```java
+PrivateOrnek nesne = new PrivateOrnek();
+nesne.goster(); // HATA! Erişim engellendi.
+```
+
+📌 **Ancak `getter` ve `setter` metotları ile erişim sağlanabilir.**
+```java
+class PrivateOrnek {
+    private String gizliMesaj = "Bu bir private değişkendir.";
+
+    public String getMesaj() {
+        return gizliMesaj;
+    }
+}
+```
+
+---
+
+## **🔸 2.4 `protected` Erişim Belirleyici**
+- **Aynı paketteki sınıflar ve alt sınıflar (subclass) erişebilir**.
+- **Farklı paketlerden sadece `extends` ile türetilen sınıflar erişebilir.**
+
+```java
+package com.ornek;
+
+public class ProtectedOrnek {
+    protected String mesaj = "Bu bir protected değişkendir.";
+}
+```
+Başka bir paket içindeki **alt sınıfta (subclass) kullanılabilir**:
+```java
+import com.ornek.ProtectedOrnek;
+
+public class AltSinif extends ProtectedOrnek {
+    public void yazdir() {
+        System.out.println(mesaj);
+    }
+}
+```
+
+📌 **Ancak `new` ile nesne oluşturulursa erişilemez!**
+```java
+ProtectedOrnek nesne = new ProtectedOrnek();
+System.out.println(nesne.mesaj); // HATA! Çünkü başka paketteyiz.
+```
+
+---
+
+## **🔸 2.5 Varsayılan (Default) Erişim**
+- **Eğer erişim belirleyici yazılmazsa, sadece aynı paketteki sınıflar erişebilir.**
+
+```java
+class DefaultOrnek {
+    String mesaj = "Bu bir varsayılan (default) değişkendir.";
+}
+```
+Başka bir pakette:
+```java
+DefaultOrnek nesne = new DefaultOrnek(); // HATA! Çünkü başka paketteyiz.
+```
+
+---
+
+# **📌 Sonuç ve Karşılaştırma**
+| **Erişim Belirleyici** | **Sınıf İçinden** | **Aynı Paketten** | **Alt Sınıflardan (Inheritance)** | **Diğer Paketlerden** |
+|----------------|--------------|------------|----------------------|--------------|
+| **`public`** | ✅ | ✅ | ✅ | ✅ |
+| **`private`** | ✅ | ❌ | ❌ | ❌ |
+| **`protected`** | ✅ | ✅ | ✅ | ❌ |
+| **Varsayılan (default)** | ✅ | ✅ | ❌ | ❌ |
+
+**📌 Paketler ve erişim belirleyiciler, Java’da kodun organize edilmesi ve güvenliği açısından büyük önem taşır! 🚀**
+
+
+## Formatter
+```sh 
+
+```
+---
+# **📌 Java `Formatter` Nedir? (Detaylı Anlatım)**
+`Formatter` sınıfı, Java'da metinleri **biçimlendirmek (formatlamak)** için kullanılan bir sınıftır. `printf()`, `String.format()` gibi yöntemlerle çalışır ve sayıları, tarihleri, metinleri özel formatlara sokmak için kullanılır.
+
+### **📌 Kullanım Alanları**
+✅ **Metin biçimlendirme** (`String.format()` ve `printf()`)  
+✅ **Sayıları belirli ondalık hassasiyette göstermek**  
+✅ **Tarih ve saat biçimlendirme**  
+✅ **Tablolar, raporlar veya dosya çıktıları için veri düzenleme**
+
+---
+
+# **1️⃣ Formatter Kullanımı**
+`java.util.Formatter` doğrudan kullanılabilir. Ancak genellikle `String.format()` veya `System.out.printf()` ile dolaylı olarak kullanılır.
+
+```java
+import java.util.Formatter;
+
+public class Main {
+    public static void main(String[] args) {
+        Formatter formatter = new Formatter();
+        formatter.format("Merhaba %s, yaşınız %d", "Ahmet", 25);
+        System.out.println(formatter);
+        formatter.close();
+    }
+}
+```
+**🎯 Çıktı:**
+```
+Merhaba Ahmet, yaşınız 25
+```
+
+### **📌 Açıklamalar:**
+- `%s` → **String** türü için yer tutucu.
+- `%d` → **Tam sayı** türü için yer tutucu.
+- `formatter.close();` → Formatter’ı kapatarak belleği serbest bırakır.
+
+---
+
+# **2️⃣ `String.format()` ile Kullanım (Önerilen)**
+`Formatter` kullanmanın en yaygın yolu `String.format()` metodudur. Bu yöntemle **formatlı bir String döndürülür**.
+
+```java
+public class Main {
+    public static void main(String[] args) {
+        String formattedString = String.format("Merhaba %s, yaşınız %d", "Ayşe", 30);
+        System.out.println(formattedString);
+    }
+}
+```
+**🎯 Çıktı:**
+```
+Merhaba Ayşe, yaşınız 30
+```
+**📌 `String.format()` kullanmanın avantajı:**
+✅ Tek satırda formatlama sağlar.  
+✅ `Formatter` nesnesi oluşturmaya gerek kalmaz.  
+✅ Daha az bellek tüketir.
+
+---
+
+# **3️⃣ `printf()` ile Kullanım**
+Eğer doğrudan **ekrana yazdırmak** istiyorsanız `System.out.printf()` kullanabilirsiniz.
+
+```java
+public class Main {
+    public static void main(String[] args) {
+        System.out.printf("Merhaba %s, yaşınız %d\n", "Mehmet", 40);
+    }
+}
+```
+**🎯 Çıktı:**
+```
+Merhaba Mehmet, yaşınız 40
+```
+
+---
+
+# **4️⃣ Biçimlendirme (`Format Specifiers`)**
+Java `Formatter`'da kullanılan temel format belirteçleri şunlardır:
+
+| **Belirteç** | **Açıklama** | **Örnek Kullanım** | **Çıktı** |
+|-------------|-------------|---------------------|-----------|
+| `%d`  | Tam sayı | `System.out.printf("%d", 25);` | `25` |
+| `%f`  | Ondalıklı sayı | `System.out.printf("%.2f", 3.14159);` | `3.14` |
+| `%s`  | String | `System.out.printf("%s", "Merhaba");` | `Merhaba` |
+| `%c`  | Tek karakter | `System.out.printf("%c", 'A');` | `A` |
+| `%b`  | Boolean | `System.out.printf("%b", true);` | `true` |
+| `%n`  | Yeni satır | `System.out.printf("Merhaba%nDünya");` | `Merhaba` (alt satır) `Dünya` |
+
+---
+
+## **5️⃣ Ondalıklı Sayılar için Biçimlendirme**
+```java
+public class Main {
+    public static void main(String[] args) {
+        double pi = 3.14159265359;
+        System.out.printf("Pi sayısı: %.2f\n", pi); // 2 ondalık basamak göster
+    }
+}
+```
+**🎯 Çıktı:**
+```
+Pi sayısı: 3.14
+```
+✔ `%.2f` → **Ondalıklı sayıyı iki basamağa yuvarlar.**  
+✔ `%.3f` → **Üç basamak gösterir.**
+
+---
+
+## **6️⃣ Sayıları Sağdan ve Soldan Hizalama**
+Metinleri hizalamak için **`%10s` veya `%-10s`** gibi formatlar kullanılabilir.
+
+```java
+public class Main {
+    public static void main(String[] args) {
+        System.out.printf("|%10s|%n", "Merhaba");  // Sağdan hizalar
+        System.out.printf("|%-10s|%n", "Merhaba"); // Soldan hizalar
+    }
+}
+```
+**🎯 Çıktı:**
+```
+|   Merhaba|
+|Merhaba   |
+```
+✔ `%10s` → **Sağdan hizalar ve boşluk ekler.**  
+✔ `%-10s` → **Soldan hizalar ve boşluk ekler.**
+
+---
+
+## **7️⃣ Sayıları Sıfır ile Doldurma**
+Sayının önüne sıfır eklemek için `%0Xd` kullanılabilir (`X` karakter sayısıdır).
+
+```java
+public class Main {
+    public static void main(String[] args) {
+        System.out.printf("%05d\n", 42);
+    }
+}
+```
+**🎯 Çıktı:**
+```
+00042
+```
+✔ `%05d` → **5 haneli yapar ve eksik kısımları `0` ile doldurur.**
+
+---
+
+## **8️⃣ Para Birimi Formatlama**
+`Locale` kullanarak farklı ülkelerin para birimini formatlayabiliriz.
+
+```java
+import java.text.NumberFormat;
+import java.util.Locale;
+
+public class Main {
+    public static void main(String[] args) {
+        double amount = 1234567.89;
+        NumberFormat currencyFormatter = NumberFormat.getCurrencyInstance(Locale.US);
+        System.out.println(currencyFormatter.format(amount)); // ABD formatı
+    }
+}
+```
+**🎯 Çıktı:**
+```
+$1,234,567.89
+```
+✔ `Locale.US` → Amerikan dolar formatına göre gösterir.  
+✔ `Locale.FRANCE` → Fransız para formatına çevirir.
+
+---
+
+## **9️⃣ Tarih ve Saat Formatlama**
+```java
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
+public class Main {
+    public static void main(String[] args) {
+        Date now = new Date();
+        SimpleDateFormat sdf = new SimpleDateFormat("dd-MM-yyyy HH:mm:ss");
+        System.out.println(sdf.format(now));
+    }
+}
+```
+**🎯 Çıktı:**
+```
+15-02-2025 14:45:30
+```
+
+---
+
+## **🔍 Formatter mı, String.format() mı?**
+| **Özellik** | **Formatter** | **String.format()** |
+|-------------|--------------|---------------------|
+| Nesne oluşturma | `Formatter formatter = new Formatter();` | `String.format()` ile tek satır |
+| Bellek tüketimi | Daha fazla bellek kullanır | Daha az bellek kullanır |
+| Kullanım kolaylığı | Daha karmaşık | Daha kolay |
+
+📌 **Genellikle `String.format()` önerilir!**
+
+---
+
+## **✅ Özet**
+- **`Formatter`**, Java'da metin, sayı ve tarih biçimlendirmek için kullanılır.
+- **`String.format()` ve `printf()`**, `Formatter` sınıfını kullanmanın en yaygın yollarıdır.
+- **Sayıları ve tarihleri formatlamak**, ondalık hassasiyet eklemek, hizalama yapmak için çok kullanışlıdır.
+
+Java'da **biçimlendirilmiş çıktılar** oluşturmak için `Formatter` sınıfını etkili şekilde kullanabilirsin! 🚀
+
+## Renk Çıktıları
+```sh 
+
+```
+---
+Java'nın standart `System.out.println()` veya `System.out.printf()` çıktıları **renkli desteklemez**, ancak **ANSI kaçış kodları** (`ANSI Escape Codes`) kullanarak terminalde renkli metinler yazdırabilirsiniz. 🚀
+
+---
+
+## **📌 1️⃣ ANSI Kaçış Kodları ile Renkli Çıktılar**
+Java'da terminale renkli metin yazdırmak için aşağıdaki ANSI kodlarını kullanabilirsiniz:
+
+### **🟢 Renk Kodu Tablosu**
+| **Renk** | **Kod** |
+|----------|--------|
+| **🔴 Kırmızı** | `\033[31m` |
+| **🟢 Yeşil** | `\033[32m` |
+| **🟡 Sarı** | `\033[33m` |
+| **🔵 Mavi** | `\033[34m` |
+| **🟣 Mor** | `\033[35m` |
+| **🔵 Açık Mavi** | `\033[36m` |
+| **⚪ Beyaz** | `\033[37m` |
+| **🖤 Siyah** | `\033[30m` |
+| **⚫ Arkaplan Siyah** | `\033[40m` |
+| **🔴 Arkaplan Kırmızı** | `\033[41m` |
+| **🟢 Arkaplan Yeşil** | `\033[42m` |
+| **🔵 Arkaplan Mavi** | `\033[44m` |
+
+**⚠️ Önemli Not:** Bu yöntem **Windows Terminal, macOS, Linux, IntelliJ IDEA ve bazı IDE'lerde** çalışır, ancak **Eclipse gibi IDE'lerde desteklenmeyebilir**.
+
+---
+
+### **🛠 Örnek: Java'da Renkli Çıktı**
+```java
+public class Main {
+    // ANSI Renk Kodları
+    public static final String RESET = "\033[0m";  // Renk sıfırlama
+    public static final String RED = "\033[31m";   // Kırmızı
+    public static final String GREEN = "\033[32m"; // Yeşil
+    public static final String YELLOW = "\033[33m";// Sarı
+    public static final String BLUE = "\033[34m";  // Mavi
+    public static final String PURPLE = "\033[35m";// Mor
+    public static final String CYAN = "\033[36m";  // Açık Mavi
+
+    public static void main(String[] args) {
+        System.out.println(RED + "Bu kırmızı renkte!" + RESET);
+        System.out.println(GREEN + "Bu yeşil renkte!" + RESET);
+        System.out.println(YELLOW + "Bu sarı renkte!" + RESET);
+        System.out.println(BLUE + "Bu mavi renkte!" + RESET);
+        System.out.println(PURPLE + "Bu mor renkte!" + RESET);
+        System.out.println(CYAN + "Bu açık mavi renkte!" + RESET);
+    }
+}
+```
+
+**🎯 Çıktı (Terminalde)**:
+```
+🔴 Bu kırmızı renkte!
+🟢 Bu yeşil renkte!
+🟡 Bu sarı renkte!
+🔵 Bu mavi renkte!
+🟣 Bu mor renkte!
+🔵 Bu açık mavi renkte!
+```
+✔ `RESET` → **Yazdırdıktan sonra rengi sıfırlar**.  
+✔ **Her rengin sonunda `+ RESET` eklenmelidir, yoksa sonraki tüm çıktılar o renkte kalır.**
+
+---
+
+## **📌 2️⃣ String.format() ile Renkli Çıktı**
+`String.format()` ile de renk kodlarını kullanabiliriz:
+
+```java
+public class Main {
+    public static final String GREEN = "\033[32m"; // Yeşil
+    public static final String RESET = "\033[0m";  // Renk sıfırlama
+
+    public static void main(String[] args) {
+        String formattedString = String.format(GREEN + "Merhaba %s, yaşınız %d" + RESET, "Hamit", 30);
+        System.out.println(formattedString);
+    }
+}
+```
+**🎯 Çıktı (Terminalde Yeşil Renkli)**
+```
+Merhaba Hamit, yaşınız 30
+```
+
+---
+
+## **📌 3️⃣ System.out.printf() ile Renkli Çıktı**
+Aynı yöntemi `printf()` ile de uygulayabiliriz:
+
+```java
+public class Main {
+    public static final String RED = "\033[31m";   // Kırmızı
+    public static final String RESET = "\033[0m";  // Sıfırlama
+
+    public static void main(String[] args) {
+        System.out.printf(RED + "Hata: %s dosyası bulunamadı!%n" + RESET, "config.txt");
+    }
+}
+```
+**🎯 Çıktı (Kırmızı Renk)**
+```
+Hata: config.txt dosyası bulunamadı!
+```
+
+---
+
+## **📌 4️⃣ Renkli Metin Formatlama Metodu**
+Tekrar eden renk kodlarından kurtulmak için bir metot yazabiliriz:
+
+```java
+public class Main {
+    public static final String RESET = "\033[0m";
+    public static final String BLUE = "\033[34m";
+    public static final String GREEN = "\033[32m";
+    public static final String RED = "\033[31m";
+
+    public static String colorText(String text, String color) {
+        return color + text + RESET;
+    }
+
+    public static void main(String[] args) {
+        System.out.println(colorText("Bu mavi renkte!", BLUE));
+        System.out.println(colorText("Bu yeşil renkte!", GREEN));
+        System.out.println(colorText("Bu kırmızı renkte!", RED));
+    }
+}
+```
+✔ **`colorText()` metodu ile her seferinde renk kodlarını eklemeye gerek kalmaz.**  
+✔ **Kod daha okunaklı hale gelir.** 🚀
+
+---
+
+## **📌 5️⃣ Renkli Arkaplan Kullanalım!**
+Metin rengi yerine **arkaplan rengini değiştirebiliriz**:
+
+```java
+public class Main {
+    public static final String RESET = "\033[0m";
+    public static final String BLACK_BG = "\033[40m"; // Siyah Arkaplan
+    public static final String RED_BG = "\033[41m";   // Kırmızı Arkaplan
+    public static final String GREEN_BG = "\033[42m"; // Yeşil Arkaplan
+
+    public static void main(String[] args) {
+        System.out.println(RED_BG + "Bu metnin arka planı kırmızı!" + RESET);
+        System.out.println(GREEN_BG + "Bu metnin arka planı yeşil!" + RESET);
+    }
+}
+```
+**🎯 Çıktı (Terminalde Arkaplan Renkli)**
+```
+🟥 Bu metnin arka planı kırmızı!
+🟩 Bu metnin arka planı yeşil!
+```
+
+---
+
+## **⚠️ Önemli Notlar**
+❌ **Eclipse gibi IDE'lerde ANSI renkleri desteklenmez.**  
+✅ **Terminal, IntelliJ IDEA ve VS Code Terminal'de çalışır.**  
+✅ **Windows 10+ veya Linux/macOS’ta desteklenir.**  
+✅ **Windows'ta CMD yerine `PowerShell` veya `Windows Terminal` kullanmalısınız.**
+
+---
+
+## **🎯 Sonuç**
+✔ **Java'da renkli metinler yazdırmak için ANSI kaçış kodlarını kullanabilirsin.**  
+✔ **String.format(), printf() ve System.out.println() ile renkli çıktı alınabilir.**  
+✔ **Renk kodlarını metodlaştırarak daha temiz bir kod yazabilirsin.**  
+✔ **Arkaplan renkleri de desteklenir!**
+
+Bu yöntemle **Java çıktılarınızı daha okunaklı ve şık hale getirebilirsiniz!** 🚀✨
+
+
+## Array (Diziler)
+```sh 
+
+```
+---
+### **Java'da Diziler (Arrays) Detaylı Açıklama**
+Java'da **diziler (arrays)**, aynı türdeki verileri belirli bir sıralamada saklamak için kullanılan veri yapılarıdır. Java'daki diziler, **sabit boyutlu, sıralı ve indeks tabanlı veri yapılarıdır**.
+
+---
+
+## **1. Dizi Tanımlama ve Başlatma**
+Bir dizi, belirli bir veri tipindeki elemanları saklayan nesne olarak oluşturulur.
+
+### **1.1. Dizi Tanımlama (Declaration)**
+Bir dizi değişkeni tanımlamak için aşağıdaki sözdizimi kullanılır:
+
+```java
+veri_tipi[] dizi_adi;  // Tercih edilen kullanım
+veri_tipi dizi_adi[];  // Alternatif kullanım
+```
+
+Örnek:
+```java
+int[] sayilar; // Tercih edilen kullanım
+double ondaliklar[]; // Alternatif kullanım
+```
+
+### **1.2. Dizi Oluşturma (Instantiation)**
+Java'da diziler, `new` anahtar kelimesi kullanılarak oluşturulur. **Dizinin boyutu sabittir ve sonradan değiştirilemez.**
+
+```java
+dizi_adi = new veri_tipi[boyut];
+```
+
+Örnek:
+```java
+sayilar = new int[5]; // 5 elemanlı bir int dizisi oluşturuldu.
+```
+
+Tek satırda tanımlama ve oluşturma:
+```java
+int[] sayilar = new int[5];
+```
+
+---
+
+## **2. Diziye Değer Atama**
+Bir diziye değer atamak için **indeks (index) numarası** kullanılır. Java'da diziler **0'dan başlar**.
+
+Örnek:
+```java
+int[] sayilar = new int[5]; 
+
+sayilar[0] = 10;
+sayilar[1] = 20;
+sayilar[2] = 30;
+sayilar[3] = 40;
+sayilar[4] = 50;
+```
+
+Alternatif olarak, diziyi doğrudan başlatabilirsiniz:
+```java
+int[] sayilar = {10, 20, 30, 40, 50};
+```
+
+---
+
+## **3. Dizinin Uzunluğunu Bulma**
+Dizinin uzunluğu `.length` özelliği ile bulunur:
+```java
+System.out.println("Dizinin uzunluğu: " + sayilar.length);
+```
+
+---
+
+## **4. Dizi Elemanlarını Döngüyle Erişme**
+Dizilerde elemanlara erişmek için **for** ve **foreach** döngüleri kullanılabilir.
+
+### **4.1. For Döngüsü ile Erişim**
+```java
+for (int i = 0; i < sayilar.length; i++) {
+    System.out.println("Eleman " + i + ": " + sayilar[i]);
+}
+```
+
+### **4.2. Foreach Döngüsü ile Erişim**
+```java
+for (int eleman : sayilar) {
+    System.out.println(eleman);
+}
+```
+
+---
+
+## **5. Çok Boyutlu Diziler**
+Java'da **çok boyutlu diziler** (matrisler) oluşturulabilir.
+
+### **5.1. İki Boyutlu Dizi Tanımlama**
+```java
+int[][] matris = new int[3][3]; // 3x3 boyutunda bir matris
+```
+
+### **5.2. Matris İçin Değer Atama**
+```java
+matris[0][0] = 1;
+matris[0][1] = 2;
+matris[0][2] = 3;
+matris[1][0] = 4;
+matris[1][1] = 5;
+matris[1][2] = 6;
+matris[2][0] = 7;
+matris[2][1] = 8;
+matris[2][2] = 9;
+```
+
+### **5.3. Matris İçin Döngü Kullanımı**
+```java
+for (int i = 0; i < matris.length; i++) {
+    for (int j = 0; j < matris[i].length; j++) {
+        System.out.print(matris[i][j] + " ");
+    }
+    System.out.println();
+}
+```
+
+---
+
+## **6. Dizi ile İlgili Önemli Metotlar**
+Java'da diziler için bazı kullanışlı metotlar `Arrays` sınıfı ile sağlanır.
+
+```java
+import java.util.Arrays;
+
+public class DiziMetotlari {
+    public static void main(String[] args) {
+        int[] sayilar = {5, 3, 8, 1, 2};
+
+        // Diziyi sıralama
+        Arrays.sort(sayilar);
+        System.out.println("Sıralanmış dizi: " + Arrays.toString(sayilar));
+
+        // Belirli bir elemanı arama (binary search)
+        int index = Arrays.binarySearch(sayilar, 3);
+        System.out.println("3 sayısının indeksi: " + index);
+
+        // Diziyi belirli bir değerle doldurma
+        Arrays.fill(sayilar, 7);
+        System.out.println("Dizi 7 ile dolduruldu: " + Arrays.toString(sayilar));
+    }
+}
+```
+
+---
+
+## **7. Dizi Kullanımında Dikkat Edilmesi Gerekenler**
+1. **Dizilerin Boyutu Sabittir:** Java'da diziler **dinamik değildir**, yani oluşturulduktan sonra boyutları değiştirilemez. Daha esnek bir yapı için `ArrayList` kullanılabilir.
+
+2. **Dizilerde Varsayılan Değerler:** Diziler oluşturulduğunda içindeki elemanlar şu varsayılan değerlere sahip olur:
+    - `int` → `0`
+    - `double` → `0.0`
+    - `boolean` → `false`
+    - `String` ve diğer referans tipleri → `null`
+
+3. **ArrayIndexOutOfBoundsException:** Dizinin sınırlarını aşan bir indekse erişmeye çalışırsanız hata alırsınız:
+   ```java
+   int[] dizi = {1, 2, 3};
+   System.out.println(dizi[3]); // Hata: ArrayIndexOutOfBoundsException
+   ```
+
+---
+
+## **8. Alternatif: List Kullanımı (Dizi Yerine)**
+Eğer boyutu değişebilen bir diziye ihtiyacınız varsa, `ArrayList` kullanabilirsiniz:
+```java
+import java.util.ArrayList;
+
+public class DiziAlternatif {
+    public static void main(String[] args) {
+        ArrayList<Integer> sayilar = new ArrayList<>();
+        sayilar.add(10);
+        sayilar.add(20);
+        sayilar.add(30);
+
+        System.out.println("Liste: " + sayilar);
+        sayilar.remove(1); // 2. elemanı siler
+        System.out.println("Güncellenmiş Liste: " + sayilar);
+    }
+}
+```
+
+---
+
+## **Sonuç**
+Java'da diziler, aynı türdeki verileri saklamak için kullanılan **sabit boyutlu** veri yapılarıdır. Temel özellikleri:
+✅ Hızlı ve etkili bellek kullanımı sağlar.  
+✅ Sabit boyutlu oldukları için dinamik değişime uygun değildir.  
+✅ **`Arrays`** sınıfı ile ek işlemler yapılabilir.  
+✅ **Alternatif olarak `ArrayList` gibi koleksiyonlar kullanılabilir.**
+
+Bu detaylı rehberle, Java dizileri hakkında kapsamlı bir bilgiye sahip oldunuz! 🚀
+
+
+## Array Büyükten küçüğe
+```sh 
+
+```
+---
+Java'da bir diziyi **büyükten küçüğe** sıralamak için aşağıdaki yöntemlerden birini kullanabilirsiniz:
+
+---
+
+### **1. `Arrays.sort()` ile Büyükten Küçüğe Sıralama (Tersten Yazdırma)**
+Java'da `Arrays.sort()` metodu **küçükten büyüğe** sıralama yapar. Büyükten küçüğe sıralamak için **tersine çevirmeliyiz**.
+
+#### **Örnek:**
+```java
+import java.util.Arrays;
+import java.util.Collections;
+
+public class BuyuktenKucugeSiralama {
+    public static void main(String[] args) {
+        Integer[] sayilar = {5, 2, 9, 1, 3};
+
+        // Arrays.sort() + Collections.reverseOrder() ile büyükten küçüğe sıralama
+        Arrays.sort(sayilar, Collections.reverseOrder());
+
+        System.out.println("Büyükten Küçüğe Sıralanmış Dizi: " + Arrays.toString(sayilar));
+    }
+}
+```
+
+**Çıktı:**
+```
+Büyükten Küçüğe Sıralanmış Dizi: [9, 5, 3, 2, 1]
+```
+
+---
+
+### **2. `Arrays.sort()` ile Küçükten Büyüğe Sıralayıp Ters Çevirme**
+Eğer **primitive veri tipi** (`int`, `double`) kullanıyorsanız, `Collections.reverseOrder()` çalışmaz. Bu durumda önce `Arrays.sort()` ile küçükten büyüğe sıralayıp, sonra ters çevirebiliriz.
+
+#### **Örnek (Primitive Tiplerle)**
+```java
+import java.util.Arrays;
+
+public class BuyuktenKucugeSiralamaPrimitive {
+    public static void main(String[] args) {
+        int[] sayilar = {5, 2, 9, 1, 3};
+
+        // Küçükten büyüğe sırala
+        Arrays.sort(sayilar);
+
+        // Ters çevirerek büyükten küçüğe yazdır
+        System.out.print("Büyükten Küçüğe Sıralanmış Dizi: ");
+        for (int i = sayilar.length - 1; i >= 0; i--) {
+            System.out.print(sayilar[i] + " ");
+        }
+    }
+}
+```
+
+**Çıktı:**
+```
+Büyükten Küçüğe Sıralanmış Dizi: 9 5 3 2 1
+```
+
+---
+
+### **3. `Arrays.stream().boxed()` ile Büyükten Küçüğe Sıralama (Java 8+)**
+Java 8 ve üstü sürümlerde **Streams API** kullanarak sıralama yapabilirsiniz.
+
+#### **Örnek (Lambda ile)**
+```java
+import java.util.Arrays;
+import java.util.Comparator;
+
+public class StreamSirala {
+    public static void main(String[] args) {
+        int[] sayilar = {5, 2, 9, 1, 3};
+
+        // Stream ile büyükten küçüğe sıralama
+        int[] sirali = Arrays.stream(sayilar)
+                             .boxed()
+                             .sorted(Comparator.reverseOrder())
+                             .mapToInt(Integer::intValue)
+                             .toArray();
+
+        System.out.println("Büyükten Küçüğe Sıralanmış Dizi: " + Arrays.toString(sirali));
+    }
+}
+```
+
+**Çıktı:**
+```
+Büyükten Küçüğe Sıralanmış Dizi: [9, 5, 3, 2, 1]
+```
+
+---
+
+### **Hangi Yöntemi Kullanmalıyım?**
+| **Yöntem** | **Kullanım Durumu** |
+|------------|--------------------|
+| `Arrays.sort()` + `Collections.reverseOrder()` | `Integer[]` dizisi için en hızlı yöntem. |
+| `Arrays.sort()` + `for` döngüsüyle ters yazdırma | `int[]` dizisi için uygun (primitive tip). |
+| `Streams API (Java 8+)` | Modern ve kısa kod yazmak isteyenler için. |
+
+Eğer `int[]` kullanıyorsanız **2. yöntemi**, `Integer[]` kullanıyorsanız **1. yöntemi** tercih edebilirsiniz. Java 8 ve sonrası için **3. yöntem** daha okunaklıdır.
+
+Hangi yöntemi seçerseniz seçin, büyükten küçüğe sıralamayı başarıyla yapabilirsiniz! 🚀
+
+
+## Cipher (AES/DES/RSA/HASHING)
+```sh 
+
+```
+---
 
 
 ## Cipher (AES/DES/RSA/HASHING)

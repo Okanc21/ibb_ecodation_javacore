@@ -4,6 +4,14 @@ import java.util.Scanner;
 
 public class Week1_examples_1 {
 
+
+    /* 1. Dereceden 1 Bilinmeyenli Denklemi Çözme
+   Soru:
+   Kullanıcıdan ax + b = 0 denklemi için a ve b değerlerini alıp x'i hesaplayan programı yazınız.
+   Çözüm:
+*/
+
+
     public static void main(String[] args) {
 
         //Scanner

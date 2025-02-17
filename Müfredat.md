@@ -11,7 +11,14 @@ Perşembe (6 Şubat) - 3 Saat
 Temel Java Sözdizimi . Değişkenler ve Veri Tipleri . Operatörler (Aritmetik, Karşılaştırma, Mantıksal vb.)
 Cumartesi (8 Şubat) - 4 Saat
 
-Kontrol Yapıları . if-else, switch-case . Debug nasıl atılır ? . for, while, do-while döngüleri, sonsuz döngüler
+Kontrol Yapıları . 
+if-else, switch-case .
+Debug nasıl atılır ? .
+for, while,
+do-while döngüleri,
+sonsuz döngüler
+
+
 
 2. Hafta
 Salı (11 Şubat) - 3 Saat
