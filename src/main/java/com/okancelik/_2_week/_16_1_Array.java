@@ -103,13 +103,19 @@ public class _16_1_Array {
         return rndInt;
     }
 
-
-    // fill
+// fill
     public static void arrayMethod7() {
 
         int[] number =new int[7];
+        // fill methodu tek bir değeri dizinin tüm elemanlarına atamak için tasarlanmıştır.
+
         Arrays.fill(number,randomNumber()); // fill in anlamı 5 sayısı ile diziyi doldurdu.
 
+       // iterative for ile her defasında farklı bir sayı  gelsin
+        for(int i = 0; i<number.length ; i++){
+           // number[i]=randomNumber(); 1 YOL
+            Arrays.setAll(number, data -> randomNumber()); // (2.YOL)
+            }
 
         // for each
         for (int temp : number){
