@@ -1,6 +1,8 @@
 package com.okancelik._2_week;
 
 import java.util.Arrays;
+import java.util.Collections;
+import java.util.Random;
 
 public class _16_1_Array {
     // Array
@@ -65,12 +67,12 @@ public class _16_1_Array {
                     .GREEN+temp+_15_4_SpecialColor.RESET);
         }
     }
-
+    // (alfabetik olarak)Arrays.short() küçükten büyüğe doğru sıralama
     public static void arrayMethod5() {
 
         String[] city = arrayMethod2();
         //dizilerde sıralama
-       // alfabetik sıralama ya da küçükten büyüğe doğru sıralama
+       // küçükten büyüğe doğru sıralama
 
         Arrays.sort(city);
 
@@ -80,6 +82,42 @@ public class _16_1_Array {
         }
     }
 
+    // Arrays.sort(city, Collections.reverseOrder()) doğru sıralama büyükten küçüğe doğru sıralama (alfabetik olarak?
+    public static void arrayMethod6() {
+
+        String[] city = arrayMethod2();
+        //dizilerde sıralama
+        // büyükten küçüğe doğru sıralama
+
+        Arrays.sort(city, Collections.reverseOrder());
+
+        // for each
+        for (int i = 0; i < city.length ; i++){
+            System.out.println(_15_4_SpecialColor.YELLOW+city[i]+_15_4_SpecialColor.RESET);
+        }
+    }
+
+    public static int randomNumber(){
+        Random random = new Random();
+        int rndInt = random.nextInt(9)+1;
+        return rndInt;
+    }
+
+
+    // fill
+    public static void arrayMethod7() {
+
+        int[] number =new int[7];
+        Arrays.fill(number,randomNumber()); // fill in anlamı 5 sayısı ile diziyi doldurdu.
+
+
+        // for each
+        for (int temp : number){
+            System.out.println(_15_4_SpecialColor.BLUE+ temp + _15_4_SpecialColor.RESET);
+        }
+    }
+
+
     //psvm
     public static void main(String[] args) {
 
@@ -87,7 +125,10 @@ public class _16_1_Array {
         //arrayMethod2();
         //arrayMethod3();
         //arrayMethod4();
-        arrayMethod5();
+        // arrayMethod5();
+        //arrayMethod6();
+        arrayMethod7();
+
         // methot2 ile methot1 içindeki  dizi işlemlerini bu
         // kullanım sayesinde ekrana çıktı olarak verebiliyoruz.
 
