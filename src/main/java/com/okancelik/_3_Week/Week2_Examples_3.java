@@ -1,4 +1,4 @@
-package com.okancelik._2_week;
+package com.okancelik._3_Week;
 
 import com.okancelik.utils.SpecialColor;
 
