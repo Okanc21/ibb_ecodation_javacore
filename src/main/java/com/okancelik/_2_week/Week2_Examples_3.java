@@ -1,7 +1,6 @@
 package com.okancelik._2_week;
 
-
-import com.hamitmizrak.utils.SpecialColor;
+import com.okancelik.utils.SpecialColor;
 
 import java.io.IOException;
 import java.util.Scanner;

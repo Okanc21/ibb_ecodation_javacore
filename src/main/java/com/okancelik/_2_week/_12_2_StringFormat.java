@@ -60,6 +60,9 @@ public class _12_2_StringFormat {
         System.out.println();
     }
 
+
+
+
     // formatter4 (printf)
     public static void formatter5() {
         String name = "okan";

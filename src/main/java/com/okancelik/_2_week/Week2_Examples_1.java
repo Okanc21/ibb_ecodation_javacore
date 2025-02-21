@@ -2,7 +2,7 @@ package com.okancelik._2_week;
 
 import java.util.Scanner;
 
-public class week2_Examples_1 {
+public class Week2_Examples_1 {
 
     public static void main(String[] args) {
 

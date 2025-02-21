@@ -10,7 +10,7 @@ Kullanıcının Verdiği pozitif bir sayıya kadar toplamını yapan hesaplayan 
  */
 
 
-public class week2_Examples_2 {
+public class Week2_Examples_2 {
 
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
