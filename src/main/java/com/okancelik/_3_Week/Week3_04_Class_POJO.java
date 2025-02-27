@@ -38,10 +38,8 @@ public class Week3_04_Class_POJO {
         pojo.setSurname("çelik");
         String nameAndSurname=pojo.getName().toString()+" "+pojo.getSurname().toString();
         System.out.println(SpecialColor.BLUE+nameAndSurname+SpecialColor.RESET);
-        // kullanıcının soy isminin ilk 3 harfini büyük yazınız ve soyismi eğer
-        // üç harften fazlaysa geri kalan harflerinin yerine yıldız ekleyin.
-        // okan ÇEL**(maskeleme)
-        // tip (loop, conditional)
+
+
 
     }
 
