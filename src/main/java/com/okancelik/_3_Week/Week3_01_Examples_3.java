@@ -50,14 +50,14 @@ Recursive| O(n)               | O(n)              | Daha okunaklı,      | Yava�
 // System
 
 // Access Modifier
-public class Week3_Examples_3 {
+public class Week3_01_Examples_3 {
 
     private static final int MAX_DECIMAL_ATTEMPTS = 3; // virgüllü sayı girme hakları
     private static final int MAX_RECURSIVE_LIMIT = 20; // faktörüyel hesaplaması sınırsız sayı olmadığı için sınırlama getirmemiz gerekiyor.
     // scanner
     private static final Scanner scanner = new Scanner(System.in);
     // loglama
-    private static final Logger logger = Logger.getLogger(Week3_Examples_3.class.getName());
+    private static final Logger logger = Logger.getLogger(Week3_01_Examples_3.class.getName());
     // ////////////////////////////////////////////////////
 
 // loglama

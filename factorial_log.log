@@ -1,6 +1,6 @@
-Şub 21, 2025 6:04:53 ÖS com.okancelik._3_Week.Week3_Examples_3 measureIterativeFactorial
+Şub 21, 2025 6:04:53 ÖS com.okancelik._3_Week.Week3_01_Examples_3 measureIterativeFactorial
 INFO: İteratif faktöriyel hesaplandı: 3! = 3
-Şub 21, 2025 6:05:01 ÖS com.okancelik._3_Week.Week3_Examples_3 runFactorialProgram
+Şub 21, 2025 6:05:01 ÖS com.okancelik._3_Week.Week3_01_Examples_3 runFactorialProgram
 WARNING: Recursive fonksiyon sınırı aşıldı: 23
-Şub 21, 2025 6:05:19 ÖS com.okancelik._3_Week.Week3_Examples_3 measureRecursiveFactorial
+Şub 21, 2025 6:05:19 ÖS com.okancelik._3_Week.Week3_01_Examples_3 measureRecursiveFactorial
 INFO: Recursive faktöriyel hesaplandı: 20! = 2432902008176640000
