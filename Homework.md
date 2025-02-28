@@ -72,6 +72,14 @@ null değeri ne zaman kullanabilirim ?
 > Array => foreach ile iterative for döngü arasındaki farklar nelerdir ?
 
 
-> ## 7.Ders Ödevi (20 Şubat)
+## 7.Ders Ödevi (20 Şubat)
 > constructor ile static {} arasındaki farklar ?
 > if(name!=null && !name.isEmpty())  bu kod ne iş yapar ?
+> name!=null:Kullanıcı hiç birşey girmemişse null,  !name.isEmpty() Eğer yazılımcı String name="";
+>
+
+## 8.Ders Ödevi (22 Şubat)
+> Öğrendiklerinizi test ediniz
+
+## 9.Ders Ödevi (22 Şubat)
+> StudentDto içersinde gerekli validation yazınız ? Örneğin vize,final sadece double girilecek harf veya özel simge girmeyecek

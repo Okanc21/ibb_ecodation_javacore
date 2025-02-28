@@ -1,21 +1,21 @@
-package com.okancelik._3_Week;
+package com.okancelik;
+
+
+import com.okancelik.utils.SpecialColor;
 
 import java.util.Date;
 import java.util.Objects;
-//1. kullanıcının soy isminin ilk 3 harfini büyük yazınız ve soyismi eğer
-// üç harften fazlaysa geri kalan harflerinin yerine yıldız ekleyin.
-// okan ÇEL**(maskeleme)
-// tip (loop, conditional)
 
-//2. isim ve soy isim birlikte ayarlanırken isim baş harfi büyük geriye kalan küçük olacak şekilde ayarlanabilir mi?
-//3. isim ve soyisim birilikte dönen bir methot oluşturabilir mi?
-//4. soyisimde noktalama işaretleri olup olmadığını kontrol eden bir doğrulama ekleyebilir mi ?
-//5. İsim veya soyisim boş girildiğinde bir değer atanabilir mi?
+
+/*1. Kullanıcının Soyisminin ilk üç harfini büyük yazınız ve soyisimi eğer 3 harften fazlaysa geri kalan harflerinin yerine yıldız (*)
+ Hamit MIZRAK , Hamit MIZ***(Maskeleme)
+ Tip(loop, conditional)*/
+//2. İsim birlikte ayarlanırken, isim baş harfi büyük geri kalan küçük olacak şekilde ayarlanabilir mi?
+//3. İsim birlikte dönen bir metod oluşturulabilir mi? Hamit Mızrak
+//4. Soyisimde noktalama işaretleri olup olmadığını kontrol eden bir doğrulama ekleyebilir miyiz?
+//5. İsim veya soyisim boş girildiğinde varsayılan bir değer atanabilir mi?
 //6. İsim ve soyisimde sadece harfler olup olmadığını kontrol edebilir miyiz?
-//7. Kullanıcıdan isim ve soyisim girerken karakter sınırı koyabilir miyiz?
-//8. İsim veya soyismi tamamen büyük harfe çevirecek bir metod ekleyebilir miyiz?
-
-
+//7. Kullanıcıdan isim ve soyismini girerken karakter sınırı koyabilir miyiz?
 public class Week3_05_Class_BEAN {
 
     // Field
@@ -48,16 +48,19 @@ public class Week3_05_Class_BEAN {
         this.createdDate = new Date(System.currentTimeMillis());
     }
 
+
     // Method
     public String fullName() {
-        return id + " " + name + " " + this.surname + " " + createdDate;
+        return id + " " + name.toString() + " " + this.surname + " " + createdDate;
     }
 
     // toString
+
     @Override
     public String toString() {
         return "Week3_05_Class_BEAN{" + "id=" + id + ", name='" + name + '\'' + ", surname='" + surname + '\'' + ", createdDate=" + createdDate + '}';
     }
+
 
     // Equals And HashCode
     @Override
@@ -82,31 +85,52 @@ public class Week3_05_Class_BEAN {
         this.id = id;
     }
 
+
     // NAME
+    // 2. İsim birlikte ayarlanırken, isim baş harfi büyük geri kalan küçük olacak şekilde ayarlanabilir mi?
+    // 4. İsimde noktalama işaretleri olup olmadığını kontrol eden bir doğrulama ekleyebilir miyiz? varsa noktalamadan itibaren silsin
     public String getName() {
         return name;
     }
 
-    public void setName(String name) {
+    // 2. İsim birlikte ayarlanırken, isim baş harfi büyük geri kalan küçük olacak şekilde ayarlanabilir mi?
+    // 4. İsimde noktalama işaretleri olup olmadığını kontrol eden bir doğrulama ekleyebilir miyiz? varsa eğer noktalı işaretten sonra gelen harfleri sil
+    public void setName(String name) throws IllegalAccessException {
+        if (name != null && !name.isEmpty() && name.matches(".*[.,!?;:]+.*")) {
+            //throw new IllegalAccessException("isimden noktalı işaretler var");
+            //System.err.println("isimden noktalı işaretler var");
+            System.out.println(SpecialColor.RED + "İsimde noktalama işaretleri var, noktalama işaretinden sonraki harfler silindi" + SpecialColor.RESET);
+            name = name.replaceAll("[.,!?;:].*", "");
+            System.out.println(name);
+        }
         if (name != null && !name.isEmpty()) {
             this.name = name.substring(0, 1).toUpperCase() + name.substring(1).toLowerCase();
         } else {
-            this.name = "Okan";
+            this.name = name;
         }
     }
 
     // SURNAME
+    /*
+    1. Kullanıcının Soyisminin ilk üç harfini büyük yazınız ve soyisimi eğer 3 harften fazlaysa geri kalan harflerinin yerine yıldız (*)
+    okan çelik , okan ÇEL***(Maskeleme)
+    Tip(loop, conditional)
+    */
     public String getSurname() {
         return surname;
     }
 
     public void setSurname(String surname) {
-        if (surname == null || !surname.matches("[a-zA-ZğüşıöçĞÜŞİÖÇ]+")) {
-            throw new IllegalArgumentException("Soyisim sadece harf içermelidir!");
-        } else if (surname.length() >= 3) {
+        if (!name.matches("[a-zA-ZğüşıöçĞÜŞİÖÇ]+")) {
+            throw new IllegalArgumentException("İsim sadece harf içermelidir!");
+        } else if (surname != null && surname.length() >= 3) {
+            //this.surname="MIZ***";
             this.surname = surname.substring(0, 3).toUpperCase() + "*".repeat(surname.length() - 3);
-        } else {
+
+        } else if (surname != null) {
             this.surname = surname.toUpperCase();
+        } else {
+            this.surname = "";
         }
     }
 
@@ -120,15 +144,18 @@ public class Week3_05_Class_BEAN {
     }
 
     // PSVM
-    public static void main(String[] args) {
-        try {
-            Week3_05_Class_BEAN bean1 = new Week3_05_Class_BEAN();
-            bean1.setId(1L);
-            bean1.setName("Okan");
-            bean1.setSurname("Çelik");
-            System.out.println(" " + bean1 + " ");
-        } catch (IllegalArgumentException e) {
-            System.err.println("Hata: " + e.getMessage());
-        }
+    public static void main(String[] args) throws IllegalAccessException {
+        Week3_05_Class_BEAN bean1 = new Week3_05_Class_BEAN();
+        bean1.setId(1L);
+        bean1.setName("okan,ahmet");
+        bean1.setSurname("Mızrak");
+        //bean1.setSurname("Mız");
+        // System.out.println(SpecialColor.BLUE + bean1.getId() + " " + bean1.getName() + " " + bean1.getSurname() + " " + bean1.getCreatedDate() + SpecialColor.RESET);
+        System.out.println(SpecialColor.YELLOW + " " + bean1 + " " + SpecialColor.RESET);
+
+        // System.out.println("#################################################################");
+        // Week3_05_Class_BEAN bean2 = new Week3_05_Class_BEAN("okan2", "Mızrak222");
+        // System.out.println(SpecialColor.YELLOW + " " + bean2 + " " + SpecialColor.RESET);
+
     }
 }
