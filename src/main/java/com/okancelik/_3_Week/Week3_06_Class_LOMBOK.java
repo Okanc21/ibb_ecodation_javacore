@@ -1,17 +1,32 @@
 package com.okancelik._3_Week;
+import lombok.*;
 
+import java.util.Date;
+
+@NoArgsConstructor // parametresiz Constructor
+@AllArgsConstructor // parametreli Constructor
+//@Data
+@Getter
+@Setter
+@ToString
+@Builder
 public class Week3_06_Class_LOMBOK {
-    //field
+
+    // Field
+    private Long id;
     private String name;
     private String surname;
+    private Date createdDate;
 
+    public static void main(String[] args) {
+        Week3_06_Class_LOMBOK lombok= Week3_06_Class_LOMBOK.builder()
+                .id(1L)
+                .name("Hamit")
+                .surname("Surname")
+                .createdDate(new Date(System.currentTimeMillis()))
+                .build();
 
-    // constructor (parametresiz)
-    // Constructor (parametreli)
-    //method
-    // to String
-    // equals and HashCode
-    // getter and setter
+        System.out.println(lombok);
 
-
+    }
 }
