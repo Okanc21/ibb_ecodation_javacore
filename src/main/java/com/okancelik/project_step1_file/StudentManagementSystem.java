@@ -198,6 +198,9 @@ public class StudentManagementSystem {
                 case 2:
                     studentManagementSystem.list();;
                     break;
+                case 3:
+                studentManagementSystem.list();
+                break;
 
             }
 
