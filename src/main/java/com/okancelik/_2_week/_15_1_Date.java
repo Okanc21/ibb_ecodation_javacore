@@ -39,8 +39,7 @@ public class _15_1_Date {
                 .concat(":")
                 .concat(String.valueOf(now.getMinutes()))
                 .concat(":")
-                .concat(String.valueOf(now.getSeconds()))
-                .toString();
+                .concat(String.valueOf(now.getSeconds()));
         return specialFormat;
     }
 
@@ -65,7 +64,7 @@ public class _15_1_Date {
         //SimpleDateFormat sdf = new SimpleDateFormat("dd/MMMM/yyyy HH:mm:ss zzzz",locale);
 
         String formatedDate = String.format("Şimdiki Zaman: %s", sdf.format(now));
-        return new Date().toString() + " - " + formatedDate;
+        return new Date() + " - " + formatedDate;
     }
 
 

@@ -79,15 +79,11 @@ public class _12_1_String1 {
         System.out.println(vocabulary1.concat(" jsp").concat(" jsf"));
 
         // Birleştirme (StringBuilder)
-        StringBuilder stringBuilder= new StringBuilder();
-        stringBuilder.append(vocabulary1).append(" jsp").append(" jsf");
-        String dataToString1= stringBuilder.toString();
+        String dataToString1= vocabulary1 + " jsp" + " jsf";
         System.out.println(dataToString1);
 
         // Birleştirme (StringBuffer)
-        StringBuffer stringBuffer= new StringBuffer();
-        stringBuffer.append(vocabulary1).append(" jsp").append(" jsf");
-        String dataToString2= stringBuffer.toString();
+        String dataToString2= vocabulary1 + " jsp" + " jsf";
         System.out.println(dataToString2);
 
         // Hash code

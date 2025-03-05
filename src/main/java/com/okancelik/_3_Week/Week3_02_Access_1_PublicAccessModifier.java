@@ -6,7 +6,7 @@ public class Week3_02_Access_1_PublicAccessModifier {
 
 
     public String publicData = "public data";
-    private String privateData = "private data";
+    private final String privateData = "private data";
     protected String protectedData = "protected data";
      String defaultData = "default data";
 

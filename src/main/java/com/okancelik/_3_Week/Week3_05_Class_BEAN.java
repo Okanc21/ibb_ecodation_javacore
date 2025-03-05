@@ -51,7 +51,7 @@ public class Week3_05_Class_BEAN {
 
     // Method
     public String fullName() {
-        return id + " " + name.toString() + " " + this.surname + " " + createdDate;
+        return id + " " + name + " " + this.surname + " " + createdDate;
     }
 
     // toString

@@ -36,7 +36,7 @@ public class Week3_04_Class_POJO {
         Week3_04_Class_POJO pojo = new Week3_04_Class_POJO();
         pojo.setName("okan");
         pojo.setSurname("çelik");
-        String nameAndSurname=pojo.getName().toString()+" "+pojo.getSurname().toString();
+        String nameAndSurname= pojo.getName() +" "+ pojo.getSurname();
         System.out.println(SpecialColor.BLUE+nameAndSurname+SpecialColor.RESET);
 
 
