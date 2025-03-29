@@ -85,12 +85,12 @@ Cumartesi (22 Şubat) - 4 Saat
 
 ----------------------------------------------------------------------
 ### 4. Hafta
-🚀  4. Hafta 1-Dersi
+🚀  4. Hafta 1-Dersi (19:30-22:00)
 Salı (25 Şubat) - 3 Saat
 - Enum
 - Genel Örnek: Öğrenci Bilgi Sistem-2
 
-🚀  4. Hafta 2-Dersi
+🚀  4. Hafta 2-Dersi  (19:30-22:00)
 Perşembe (27 Şubat) - 3 Saat
 - MVC Nedir ?
 - Interface Nedir ?
@@ -98,7 +98,7 @@ Perşembe (27 Şubat) - 3 Saat
 - Genel Örnek: Öğrenci Bilgi Sistem-3
 
 
-🚀  4. Hafta 3-Dersi
+🚀  4. Hafta 3-Dersi (14:00-18:00)
 Cumartesi (1 Mart) - 4 Saat
 - Kalıtım (Inheritance)
   . Super ve Subclass kavramları
@@ -113,51 +113,64 @@ Cumartesi (1 Mart) - 4 Saat
 🚀  5. Hafta 1-Dersi
 Salı (4 Mart) - 3 Saat
 - Record
+- Lamda Expression
 - Inner Class
-- Generics (Tür Belirleyici)
-  . Tip güvenliği
-  . Iterator ve ListIterator
 - Genel Örnek: Öğrenci Bilgi Sistem Devam
-
 
 🚀  5. Hafta 2-Dersi
 Perşembe (6 Mart) - 3 Saat
+- Generics (Tür Belirleyici)
+  . Tip güvenliği
+  . Iterator ve ListIterator
 - Koleksiyonlar (Collections) ve Generics
   . Collection Framework Genel Bakış (List, Set, Map)
   . Temel implementasyonlar (ArrayList, LinkedList vb.)
-
+- Genel Örnek: Öğrenci Bilgi Sistem Devam
 
 🚀  5. Hafta 3-Dersi
 Cumartesi (8 Mart) - 4 Saat
-- Cipher (AES/DES/RSA/HASHING)
+- Annotation
 - Java 8+ Yenilikleri
   . Lambda İfadeleri
-  . Fonksiyonel Arabirimler
+  . @FunctionalInterface
+  . Fonksiyonel Arabirimler (filter, map, reduce gibi fonksiyonlar)
+  . Method ve Constructor Reference
+  . Optional Sınıfı
+  . Yeni Tarih ve Zaman API (java.time)
+  . Stream
+  . interface gövdeli metot için default kullanımı
 - Stream API
   . filter, map, reduce gibi fonksiyonlar
+- Optional
 
-  
 ----------------------------------------------------------------------
 ### 6. Hafta
 🚀  6. Hafta 1-Dersi
 Salı (11 Mart) - 3 Saat
-- Method ve Constructor Reference
-  - Optional Sınıfı
-    . Yeni Tarih ve Zaman API (java.time)
+- Composition
+- Clean Code
+- Software Prensible
+- SOLID
+- Design Pattern
+
+- Cipher (AES/DES/RSA/HASHING)
+- Reflection Nedir
 
 - Çoklu İş Parçacığı (Multithreading)
   . Thread Oluşturma ve Yönetimi
   . Senkronizasyon
-- - Eşzamanlılık (Concurrency)
-    . Yardımcı sınıflar (CountDownLatch, CyclicBarrier vb.)
-    . Concurrency API
 
+- Eşzamanlılık (Concurrency)
+  . Yardımcı sınıflar (CountDownLatch, CyclicBarrier vb.)
+  . Concurrency API
 - Genel Örnek: Öğrenci Bilgi Sistem Devam
-
 
 🚀  6. Hafta 2-Dersi
 Perşembe (13 Mart) - 3 Saat
 
+🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀
+🚀 PROJEYE BAŞLA
+Technology: Javafx, Javacore, H2DB
 
 🚀  6. Hafta 3-Dersi
 Cumartesi (15 Mart) - 4 Saat
@@ -167,6 +180,11 @@ Cumartesi (15 Mart) - 4 Saat
 
 #########################################################################################################
 #########################################################################################################
+Language : Java
+UI       : JavaFX
+Database : H2DB
+
+
 Eğer yetişirse; JavaFX kullanılacak
 ATM projesi için yukarıdaki Java SE konu başlıklarını kullanarak iki haftalık bir plan hazırladım.
 Bu plan, proje geliştirme sürecinde temel kavramları uygulamalı olarak içerecek şekilde yapılandırılmıştır.

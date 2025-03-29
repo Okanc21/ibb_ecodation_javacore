@@ -972,13 +972,13 @@ public class MemoryTest {
     public static void main(String[] args) {
         int a = 5;
         Integer b = new Integer(5);
-
+        
         modify(a, b);
-
+        
         System.out.println("a: " + a);  // 5
         System.out.println("b: " + b);  // 5
     }
-
+    
     public static void modify(int x, Integer y) {
         x = 10;       // Stack içindeki x değişir
         y = new Integer(10); // Yeni bir nesne oluşturulur (Heap)
@@ -1092,13 +1092,13 @@ public class ShortComparison {
     public static void main(String[] args) {
         Short wrapperTypeShort1 = new Short((short) 127);
         Short wrapperTypeShort2 = 127; // Autoboxing
-
+        
         Short wrapperTypeShort3 = new Short((short) 127);
         Short wrapperTypeShort4 = 127; // Autoboxing
-
+        
         System.out.println(wrapperTypeShort1 == wrapperTypeShort3); // false (Heap'te farklı nesneler)
         System.out.println(wrapperTypeShort2 == wrapperTypeShort4); // true (Cache mekanizması sayesinde aynı nesne)
-
+        
         Short wrapperTypeShort5 = 32767;
         Short wrapperTypeShort6 = 32767;
 
@@ -1467,7 +1467,7 @@ public class WideningExample {
     public static void main(String[] args) {
         int sayi = 100;
         double genisSayi = sayi; // Otomatik dönüşüm (int → double)
-
+        
         System.out.println("int değer: " + sayi);
         System.out.println("double değere dönüştü: " + genisSayi);
     }
@@ -1632,10 +1632,10 @@ Kedi kedi = (Kedi) hayvan; // HATA! hayvan nesnesi aslında bir Kedi değil.
 
 ```java
 if (hayvan instanceof Kedi) {
-Kedi kedi = (Kedi) hayvan;
+    Kedi kedi = (Kedi) hayvan;
     kedi.miyavla();
 } else {
-        System.out.println("Nesne Kedi türüne ait değil.");
+    System.out.println("Nesne Kedi türüne ait değil.");
 }
 ```
 
@@ -1673,7 +1673,7 @@ public class StringToIntExample {
     public static void main(String[] args) {
         String sayiStr = "123"; // String veri
         int sayi = Integer.parseInt(sayiStr); // String → int dönüşümü
-
+        
         System.out.println("String: " + sayiStr);
         System.out.println("int: " + sayi);
     }
@@ -1703,7 +1703,7 @@ public class ValueOfExample {
     public static void main(String[] args) {
         String sayiStr = "456";
         int sayi = Integer.valueOf(sayiStr); // String → Integer
-
+        
         System.out.println("int değeri: " + sayi);
     }
 }
@@ -1723,7 +1723,7 @@ public class IntToStringExample {
     public static void main(String[] args) {
         int sayi = 789;
         String sayiStr = String.valueOf(sayi); // int → String
-
+        
         System.out.println("int: " + sayi);
         System.out.println("String: " + sayiStr);
     }
@@ -1739,7 +1739,7 @@ public class IntToStringExample2 {
     public static void main(String[] args) {
         int sayi = 1234;
         String sayiStr = Integer.toString(sayi); // int → String
-
+        
         System.out.println("String değeri: " + sayiStr);
     }
 }
@@ -1757,7 +1757,7 @@ public class PlusStringExample {
     public static void main(String[] args) {
         int sayi = 500;
         String sayiStr = sayi + ""; // int → String
-
+        
         System.out.println("String değeri: " + sayiStr);
     }
 }
@@ -1817,8 +1817,8 @@ Math sınıfı **mutlak değer, maksimum, minimum gibi işlemleri** kolayca yapa
 
 ```java
 System.out.println(Math.abs(-15)); // 15
-        System.out.println(Math.max(100, 200)); // 200
-        System.out.println(Math.min(50, 30)); // 30
+System.out.println(Math.max(100, 200)); // 200
+System.out.println(Math.min(50, 30)); // 30
 ```
 
 ---
@@ -1834,10 +1834,10 @@ System.out.println(Math.abs(-15)); // 15
 
 ```java
 System.out.println(Math.sqrt(16)); // 4.0
-        System.out.println(Math.pow(2, 5)); // 32.0
-        System.out.println(Math.exp(1)); // 2.718
-        System.out.println(Math.log(Math.E)); // 1.0
-        System.out.println(Math.log10(1000)); // 3.0
+System.out.println(Math.pow(2, 5)); // 32.0
+System.out.println(Math.exp(1)); // 2.718
+System.out.println(Math.log(Math.E)); // 1.0
+System.out.println(Math.log10(1000)); // 3.0
 ```
 
 ---
@@ -1853,8 +1853,8 @@ Java Math sınıfı **yuvarlama işlemleri için** farklı fonksiyonlar sunar.
 
 ```java
 System.out.println(Math.round(4.5)); // 5
-        System.out.println(Math.ceil(3.2)); // 4.0
-        System.out.println(Math.floor(6.8)); // 6.0
+System.out.println(Math.ceil(3.2)); // 4.0
+System.out.println(Math.floor(6.8)); // 6.0
 ```
 ---
 
@@ -1872,8 +1872,8 @@ Trigonometri fonksiyonları **radyan cinsinden** hesaplama yapar.
 
 ```java
 System.out.println(Math.sin(Math.PI/2)); // 1.0
-        System.out.println(Math.cos(0)); // 1.0
-        System.out.println(Math.tan(Math.PI/4)); // 1.0
+System.out.println(Math.cos(0)); // 1.0
+System.out.println(Math.tan(Math.PI/4)); // 1.0
 ```
 
 ---
@@ -1884,8 +1884,8 @@ System.out.println(Math.sin(Math.PI/2)); // 1.0
 **Örnek Kullanımlar:**
 ```java
 System.out.println(Math.random()); // 0.0 ile 1.0 arasında rastgele sayı
-        System.out.println((int)(Math.random() * 100)); // 0-99 arası sayı
-        System.out.println((int)(Math.random() * 50) + 1); // 1-50 arası sayı
+System.out.println((int)(Math.random() * 100)); // 0-99 arası sayı
+System.out.println((int)(Math.random() * 50) + 1); // 1-50 arası sayı
 ```
 
 ---
@@ -2304,16 +2304,16 @@ import java.util.Scanner;
 public class ScannerLoopExample {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-
+        
         while (true) {
             System.out.print("Bir sayı girin (Çıkış için -1): ");
             int sayi = scanner.nextInt();
-
+            
             if (sayi == -1) {
                 System.out.println("Çıkış yapıldı.");
                 break;
             }
-
+            
             System.out.println("Girdiğiniz sayı: " + sayi);
         }
 
@@ -2388,7 +2388,7 @@ Java'da kullanılan başlıca koşullu ifadeler şunlardır:
 public class IfExample {
     public static void main(String[] args) {
         int sayi = 10;
-
+        
         if (sayi > 5) { // Koşul doğru mu? Evet!
             System.out.println("Sayı 5'ten büyüktür.");
         }
@@ -2412,7 +2412,7 @@ Sayı 5'ten büyüktür.
 public class IfElseExample {
     public static void main(String[] args) {
         int sayi = 3;
-
+        
         if (sayi > 5) {
             System.out.println("Sayı 5'ten büyüktür.");
         } else {
@@ -2614,8 +2614,8 @@ Bu döngülerle birlikte **`break` ve `continue`** gibi kontrol ifadeleri kullan
 **Yapısı:**
 ```java
 for (başlangıç_değeri; koşul; artırma/azaltma) {
-        // Döngü bloğu
-        }
+    // Döngü bloğu
+}
 ```
 
 ### **Örnek 1: 1'den 5'e kadar yazdırma**
@@ -2672,8 +2672,8 @@ public class EvenNumbers {
 **Yapısı:**
 ```java
 while (koşul) {
-        // Döngü bloğu
-        }
+    // Döngü bloğu
+}
 ```
 
 ### **Örnek 3: `while` ile Sayı Yazdırma**
@@ -2681,7 +2681,7 @@ while (koşul) {
 public class WhileLoopExample {
     public static void main(String[] args) {
         int i = 1;
-
+        
         while (i <= 5) {
             System.out.println("i: " + i);
             i++; // i artırılıyor, yoksa sonsuz döngü olur.
@@ -2744,8 +2744,8 @@ Döngü sonlandı.
 **Yapısı:**
 ```java
 do {
-        // Döngü bloğu
-        } while (koşul);
+    // Döngü bloğu
+} while (koşul);
 ```
 
 ### **Örnek 5: `do-while` ile Kullanıcıdan Şifre Alma**
@@ -2784,8 +2784,8 @@ Giriş başarılı!
 **Yapısı:**
 ```java
 for (VeriTipi eleman : Dizi/Koleksiyon) {
-        // Döngü bloğu
-        }
+    // Döngü bloğu
+}
 ```
 
 ### **Örnek 6: `for-each` ile Dizi Elemanlarını Yazdırma**
@@ -2899,7 +2899,7 @@ Java'da `for` ve `while` döngüleri, tekrar eden işlemleri gerçekleştirmek i
 
 ```java
 for (int i = 0; i < 5; i++) {
-        System.out.println("i değeri: " + i);
+    System.out.println("i değeri: " + i);
 }
 ```
 ✅ **Avantajı**: Döngü değişkeni (`i`) döngü içinde tanımlandığı için **lokal kalır** ve kod daha okunaklıdır.
@@ -2913,9 +2913,9 @@ for (int i = 0; i < 5; i++) {
 ```java
 int i = 0;
 while (i < 5) {
-        System.out.println("i değeri: " + i);
-i++;
-        }
+    System.out.println("i değeri: " + i);
+    i++;
+}
 ```
 ✅ **Avantajı**: **Esnektir**, koşul başka bir yerden değiştirilebilir.
 
@@ -2942,9 +2942,9 @@ i++;
 ```java
 int i = 0;
 do {
-        System.out.println("i değeri: " + i);
-i++;
-        } while (i < 5);
+    System.out.println("i değeri: " + i);
+    i++;
+} while (i < 5);
 ```
 ✅ **Avantajı**: Kullanıcıdan giriş alırken veya en az bir kez çalışması gereken işlemlerde idealdir.
 
@@ -3523,7 +3523,7 @@ System.out.println(text.length()); // 17
 ```java
 String text = "Java";
 System.out.println(text.charAt(0)); // J
-        System.out.println(text.charAt(2)); // v
+System.out.println(text.charAt(2)); // v
 ```
 
 ---
@@ -3532,7 +3532,7 @@ System.out.println(text.charAt(0)); // J
 ```java
 String text = "Merhaba Dünya";
 System.out.println(text.substring(8)); // "Dünya"
-        System.out.println(text.substring(0, 7)); // "Merhaba"
+System.out.println(text.substring(0, 7)); // "Merhaba"
 ```
 
 ---
@@ -3541,7 +3541,7 @@ System.out.println(text.substring(8)); // "Dünya"
 ```java
 String text = "Java";
 System.out.println(text.toUpperCase()); // "JAVA"
-        System.out.println(text.toLowerCase()); // "java"
+System.out.println(text.toLowerCase()); // "java"
 ```
 
 ---
@@ -3552,7 +3552,7 @@ String a = "Java";
 String b = "java";
 
 System.out.println(a.equals(b)); // false
-        System.out.println(a.equalsIgnoreCase(b)); // true
+System.out.println(a.equalsIgnoreCase(b)); // true
 ```
 📌 **Neden `==` kullanılmamalı?**
 - `==`, **referansları** karşılaştırır.
@@ -3565,14 +3565,14 @@ System.out.println(a.equals(b)); // false
 ```java
 String text = "Java öğrenmek çok eğlenceli!";
 System.out.println(text.contains("Java")); // true
-        System.out.println(text.contains("Python")); // false
+System.out.println(text.contains("Python")); // false
 ```
 
 #### **`startsWith()` & `endsWith()` → Başlangıç ve Bitiş Kontrolü**
 ```java
 String text = "Merhaba Dünya";
 System.out.println(text.startsWith("Merhaba")); // true
-        System.out.println(text.endsWith("Dünya")); // true
+System.out.println(text.endsWith("Dünya")); // true
 ```
 
 ---
@@ -3583,7 +3583,7 @@ String metin = "Java,Python,C++";
 String[] diller = metin.split(",");
 
 for (String dil : diller) {
-        System.out.println(dil);
+    System.out.println(dil);
 }
 ```
 **Çıktı:**
@@ -3723,11 +3723,11 @@ Java'da `switch-case` ve `if-else if` yapıları, akış kontrolü sağlamak iç
 int sayi = 5;
 
 if (sayi > 0 && sayi <= 10) {
-        System.out.println("Sayı 1 ile 10 arasında");
+    System.out.println("Sayı 1 ile 10 arasında");
 } else if (sayi > 10 && sayi <= 20) {
-        System.out.println("Sayı 11 ile 20 arasında");
+    System.out.println("Sayı 11 ile 20 arasında");
 } else {
-        System.out.println("Sayı 20’den büyük");
+    System.out.println("Sayı 20’den büyük");
 }
 ```
 ✅ **Avantaj**: Aralık bazlı kontroller için uygundur.
@@ -3738,16 +3738,16 @@ if (sayi > 0 && sayi <= 10) {
 ```java
 int gun = 3;
 switch (gun) {
-        case 1:
+    case 1:
         System.out.println("Pazartesi");
         break;
-                case 2:
-                System.out.println("Salı");
+    case 2:
+        System.out.println("Salı");
         break;
-                case 3:
-                System.out.println("Çarşamba");
+    case 3:
+        System.out.println("Çarşamba");
         break;
-default:
+    default:
         System.out.println("Geçersiz gün");
 }
 ```
@@ -3778,14 +3778,14 @@ Java'da `switch-case` ve `if-else if` yapılarının algoritmik analizi için **
 ### **İf-Else If-Else**
 ```java
 if (x == 1) {
-        // İşlem 1
-        } else if (x == 2) {
-        // İşlem 2
-        } else if (x == 3) {
-        // İşlem 3
-        } else {
-        // Varsayılan işlem
-        }
+    // İşlem 1
+} else if (x == 2) {
+    // İşlem 2
+} else if (x == 3) {
+    // İşlem 3
+} else {
+    // Varsayılan işlem
+}
 ```
 - **En iyi durum (Best Case) - O(1)**: Eğer ilk `if` koşulu doğruysa, yalnızca bir kontrol yapılır.
 - **En kötü durum (Worst Case) - O(n)**: Tüm `if` blokları kontrol edildikten sonra `else` bloğuna ulaşılırsa **n adet karşılaştırma** yapılır.
@@ -3798,18 +3798,18 @@ if (x == 1) {
 ### **Switch-Case**
 ```java
 switch (x) {
-        case 1:
+    case 1:
         // İşlem 1
         break;
-        case 2:
+    case 2:
         // İşlem 2
         break;
-        case 3:
+    case 3:
         // İşlem 3
         break;
-default:
+    default:
         // Varsayılan işlem
-        }
+}
 ```
 Switch-case’in algoritmik analizi derleyici tarafından nasıl optimize edildiğine bağlıdır:
 
@@ -4168,7 +4168,7 @@ public class PrimitiveStackExample {
         int a = 10;
         int b = a; // b, a'nın değerini alır (Kopyalanır, adres paylaşımı olmaz)
         b = 20;
-
+        
         System.out.println("a: " + a); // 10
         System.out.println("b: " + b); // 20
     }
@@ -4267,7 +4267,7 @@ araba1.model = "Audi";
 Araba araba2 = araba1; // Aynı heap adresini gösterir
 araba2.model = "Tesla";
 
-        System.out.println(araba1.model); // Tesla
+System.out.println(araba1.model); // Tesla
 ```
 
 ### **📌 Deep Copy (Derin Kopyalama - Yeni Bir Nesne Oluşturur)**
@@ -4280,7 +4280,7 @@ araba2.model = araba1.model; // Yeni nesneye ayrı değer atanıyor.
 
 araba2.model = "Tesla";
 
-        System.out.println(araba1.model); // Audi (Değişmez!)
+System.out.println(araba1.model); // Audi (Değişmez!)
 System.out.println(araba2.model); // Tesla
 ```
 ✅ **Deep Copy kullanarak heap bellekte farklı nesneler oluşturmuş olduk.**
@@ -4349,7 +4349,7 @@ public class DateFormatExample {
     public static void main(String[] args) {
         Date tarih = new Date();
         SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
-
+        
         String formatliTarih = sdf.format(tarih);
         System.out.println("Formatlı Tarih: " + formatliTarih);
     }
@@ -4407,7 +4407,7 @@ public class LocalDateExample {
     public static void main(String[] args) {
         LocalDate bugun = LocalDate.now(); // Bugünün tarihi
         System.out.println("Bugünün Tarihi: " + bugun);
-
+        
         LocalDate ozelTarih = LocalDate.of(2025, 2, 12); // Özel bir tarih
         System.out.println("Özel Tarih: " + ozelTarih);
     }
@@ -4789,8 +4789,8 @@ System.out.println(metin); // null
 - Ancak, **kullanılmadan önce `null` kontrolü yapılmalıdır**:
 ```java
 if (metin != null) {
-        System.out.println(metin.length()); // NullPointerException'ı önler
-        }
+    System.out.println(metin.length()); // NullPointerException'ı önler
+}
 ```
 
 ---
@@ -4835,8 +4835,8 @@ System.out.println(kelime.length()); // 🚨 NullPointerException Hatası!
 **Çözüm:** `null` kontrolü yapın:
 ```java
 if (kelime != null) {
-        System.out.println(kelime.length());
-        }
+    System.out.println(kelime.length());
+}
 ```
 
 ---
@@ -5308,7 +5308,7 @@ int[] sayilar = {10, 20, 30, 40, 50};
 
 🚫 **Hatalı Tanımlama**
 ```java
-int[] dizi;
+int[] dizi; 
 dizi = {1, 2, 3, 4}; // HATA! Doğrudan böyle atama yapılamaz.
 ```
 
@@ -5330,10 +5330,10 @@ public class DiziErisim {
 
         // Dizinin 0. elemanını yazdırma
         System.out.println("İlk eleman: " + sayilar[0]); // 10
-
+        
         // Dizinin 2. elemanını değiştirme
         sayilar[2] = 100;
-
+        
         System.out.println("Yeni 2. eleman: " + sayilar[2]); // 100
     }
 }
@@ -5420,9 +5420,9 @@ int[][] matris = new int[3][3]; // 3x3'lük bir matris
 public class IkiBoyutluDizi {
     public static void main(String[] args) {
         int[][] matris = {
-                {1, 2, 3},
-                {4, 5, 6},
-                {7, 8, 9}
+            {1, 2, 3},
+            {4, 5, 6},
+            {7, 8, 9}
         };
 
         System.out.println("Orta Eleman: " + matris[1][1]); // 5
@@ -5438,9 +5438,9 @@ public class IkiBoyutluDizi {
 public class MatrisYazdirma {
     public static void main(String[] args) {
         int[][] matris = {
-                {1, 2, 3},
-                {4, 5, 6},
-                {7, 8, 9}
+            {1, 2, 3},
+            {4, 5, 6},
+            {7, 8, 9}
         };
 
         for (int i = 0; i < matris.length; i++) {
@@ -5572,7 +5572,7 @@ Bir diziye değer atamak için **indeks (index) numarası** kullanılır. Java'd
 
 Örnek:
 ```java
-int[] sayilar = new int[5];
+int[] sayilar = new int[5]; 
 
 sayilar[0] = 10;
 sayilar[1] = 20;
@@ -5602,14 +5602,14 @@ Dizilerde elemanlara erişmek için **for** ve **foreach** döngüleri kullanıl
 ### **4.1. For Döngüsü ile Erişim**
 ```java
 for (int i = 0; i < sayilar.length; i++) {
-        System.out.println("Eleman " + i + ": " + sayilar[i]);
+    System.out.println("Eleman " + i + ": " + sayilar[i]);
 }
 ```
 
 ### **4.2. Foreach Döngüsü ile Erişim**
 ```java
 for (int eleman : sayilar) {
-        System.out.println(eleman);
+    System.out.println(eleman);
 }
 ```
 
@@ -5639,10 +5639,10 @@ matris[2][2] = 9;
 ### **5.3. Matris İçin Döngü Kullanımı**
 ```java
 for (int i = 0; i < matris.length; i++) { //satır
-        for (int j = 0; j < matris[i].length; j++) { //sutun
+    for (int j = 0; j < matris[i].length; j++) { //sutun
         System.out.print(matris[i][j] + " ");
     }
-            System.out.println();
+    System.out.println();
 }
 ```
 
@@ -5803,10 +5803,10 @@ public class StreamSirala {
 
         // Stream ile büyükten küçüğe sıralama
         int[] sirali = Arrays.stream(sayilar)
-                .boxed()
-                .sorted(Comparator.reverseOrder())
-                .mapToInt(Integer::intValue)
-                .toArray();
+                             .boxed()
+                             .sorted(Comparator.reverseOrder())
+                             .mapToInt(Integer::intValue)
+                             .toArray();
 
         System.out.println("Büyükten Küçüğe Sıralanmış Dizi: " + Arrays.toString(sirali));
     }
@@ -6110,7 +6110,7 @@ public class GarbageCollectorExample {
 public class TimeExample {
     public static void main(String[] args) {
         long start = System.currentTimeMillis();
-
+        
         // 1 milyon döngü çalıştır
         for (int i = 0; i < 1_000_000; i++) { }
 
@@ -6265,9 +6265,9 @@ Burada `break` olmasaydı, `case 3` de çalışmaya devam ederdi.
 public class ExitExample {
     public static void main(String[] args) {
         System.out.println("Program başlıyor...");
-
+        
         System.exit(0); // Program burada tamamen sonlanır
-
+        
         System.out.println("Bu satır çalışmaz.");
     }
 }
@@ -6903,12 +6903,12 @@ public class Main {
     public static void main(String[] args) {
         // Araba sınıfından bir nesne oluşturma
         Araba araba1 = new Araba();
-
+        
         // Nesne özelliklerine değer atama
         araba1.marka = "Toyota";
         araba1.model = "Corolla";
         araba1.yil = 2022;
-
+        
         // Metodu çağırma
         araba1.bilgileriGoster();
     }
@@ -7023,7 +7023,7 @@ class Araba {
 public class Main {
     public static void main(String[] args) {
         Araba araba1 = new Araba("Mercedes", "E-Class", 2022);
-
+        
         // Getter kullanarak değerleri al
         System.out.println("Marka: " + araba1.getMarka());
         System.out.println("Model: " + araba1.getModel());
@@ -7055,7 +7055,7 @@ Bu işleme **kalıtım (inheritance)** denir ve `extends` anahtar kelimesi kulla
 // Üst Sınıf (Parent Class)
 class Arac {
     String yakitTuru = "Benzin";
-
+    
     void hareketEt() {
         System.out.println("Araç hareket ediyor...");
     }
@@ -7324,8 +7324,8 @@ Spring’in eski sürümlerinde Bean tanımlamak için XML kullanılıyordu.
 
 ```xml
 <beans xmlns="http://www.springframework.org/schema/beans"
-       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-       xsi:schemaLocation="http://www.springframework.org/schema/beans
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans
         http://www.springframework.org/schema/beans/spring-beans.xsd">
 
     <bean id="myBean" class="com.example.MyService"/>
@@ -8174,7 +8174,7 @@ Enum’lar, tıpkı sınıflar gibi **alan (field) ve metodlar** içerebilir.
 ```java
 public enum Gunler {
     PAZARTESI(true), SALI(true), CARSAMBA(true), PERSEMBE(true), CUMA(true), CUMARTESI(false), PAZAR(false);
-
+    
     private boolean calismaGunu;
 
     Gunler(boolean calismaGunu) {
@@ -8362,6 +8362,1739 @@ Toplama sonucu: 8
 Java Enum, sabit değerleri tanımlamak için güçlü bir yapıdır. Sadece sabit listeleri tutmakla kalmaz, aynı zamanda veri ve metotlar içerebilir, dolayısıyla `enum`'lar nesne yönelimli programlamanın avantajlarından yararlanabilir. Enum'ları uygun şekilde kullanarak, hem kodunuzu daha okunabilir hale getirebilir hem de hata riskini minimize edebilirsiniz.
 
 
+## Inner Class
+```sh 
+
+```
+---
+
+# **Java'da Inner Class (İç İçe Sınıflar) Nedir?**
+Java'da **Inner Class (İç İçe Sınıflar)**, bir sınıfın içinde başka bir sınıf tanımlanmasını sağlayan yapıdır. Bir **inner class**, dış sınıfın üyesidir ve genellikle **dış sınıfın özel (private) üyelerine erişim sağlamak** amacıyla kullanılır.
+
+---
+
+## **Neden Inner Class Kullanılır?**
+1. **Dış sınıfın özel üyelerine erişimi kolaylaştırır.**
+2. **Kod organizasyonunu ve okunabilirliği artırır.**
+3. **Dış sınıfa sıkı bağlı ve tek başına anlamsız olan sınıfların tanımlanmasını sağlar.**
+4. **Gereksiz sınıf dosyası oluşturmayı engeller.**
+
+---
+
+## **Java'da Inner Class Çeşitleri**
+Java'da dört farklı türde **Inner Class** bulunur:
+1. **Normal Inner Class (Üye İç Sınıf)**
+2. **Static Inner Class (Statik İç Sınıf)**
+3. **Local Inner Class (Yerel İç Sınıf)**
+4. **Anonymous Inner Class (Anonim İç Sınıf)**
+
+---
+
+## **1. Normal Inner Class (Üye İç Sınıf)**
+- Bir sınıfın içinde başka bir sınıf olarak tanımlanır.
+- **Dış sınıfın her türlü üyesine erişebilir (private dahil).**
+- **Dış sınıf olmadan tek başına var olamaz.**
+
+### **Örnek: Normal Inner Class Kullanımı**
+```java
+class DisSinif {
+    private String mesaj = "Merhaba, Inner Class!";
+    
+    class IcSinif { // İç sınıf
+        void yazdir() {
+            System.out.println(mesaj); // Dış sınıfın özel değişkenine erişim
+        }
+    }
+}
+
+public class InnerClassOrnek {
+    public static void main(String[] args) {
+        DisSinif dis = new DisSinif();
+        DisSinif.IcSinif ic = dis.new IcSinif(); // İç sınıf nesnesi oluşturma
+        ic.yazdir();
+    }
+}
+```
+### **Çıktı:**
+```
+Merhaba, Inner Class!
+```
+Bu örnekte, **`IcSinif` dış sınıfın private değişkenine erişebilmektedir.**
+
+### **Dikkat Edilmesi Gerekenler:**
+- **Inner Class nesnesi oluşturulurken önce dış sınıfın nesnesi oluşturulmalıdır.**
+- **Dış sınıfın private değişkenlerine erişebilir.**
+
+---
+
+## **2. Static Inner Class (Statik İç Sınıf)**
+- `static` olarak tanımlandığında, **dış sınıfın nesnesine ihtiyaç duymadan kullanılabilir.**
+- **Sadece dış sınıfın `static` üyelerine erişebilir.**
+
+### **Örnek: Static Inner Class Kullanımı**
+```java
+class DisSinif {
+    static String veri = "Statik Veri";
+
+    static class IcSinif {
+        void yazdir() {
+            System.out.println("İç sınıf: " + veri); // Statik değişkene erişim
+        }
+    }
+}
+
+public class StaticInnerClassOrnek {
+    public static void main(String[] args) {
+        DisSinif.IcSinif ic = new DisSinif.IcSinif(); // Direkt nesne oluşturulabilir
+        ic.yazdir();
+    }
+}
+```
+### **Çıktı:**
+```
+İç sınıf: Statik Veri
+```
+
+### **Özetle:**
+- **Dış sınıfın statik üyelerine doğrudan erişebilir.**
+- **Dış sınıfın nesnesi oluşturulmadan iç sınıfın nesnesi oluşturulabilir.**
+
+---
+
+## **3. Local Inner Class (Yerel İç Sınıf)**
+- **Bir metodun içinde tanımlanır ve sadece o metodun içinde kullanılabilir.**
+- **Metodun içinde tanımlandığı için erişim belirleyicisi (`public`, `private` vs.) kullanılamaz.**
+- **Bulunduğu metodun `final` olmayan yerel değişkenlerine erişemez.**
+
+### **Örnek: Local Inner Class Kullanımı**
+```java
+class DisSinif {
+    void disMetod() {
+        class YerelIcSinif { // Metot içinde inner class
+            void yazdir() {
+                System.out.println("Bu bir Yerel Inner Class");
+            }
+        }
+
+        YerelIcSinif ic = new YerelIcSinif();
+        ic.yazdir();
+    }
+}
+
+public class LocalInnerClassOrnek {
+    public static void main(String[] args) {
+        DisSinif dis = new DisSinif();
+        dis.disMetod(); // Sadece metod çağrıldığında çalışır
+    }
+}
+```
+### **Çıktı:**
+```
+Bu bir Yerel Inner Class
+```
+
+### **Özetle:**
+- **Bir metot içinde tanımlanır ve sadece o metodun içinde erişilebilir.**
+- **Metot çağrılmadan iç sınıfın nesnesi oluşturulamaz.**
+
+---
+
+## **4. Anonymous Inner Class (Anonim İç Sınıf)**
+- **İsimsizdir ve genellikle arayüzleri veya soyut sınıfları implement etmek için kullanılır.**
+- **Nesne oluşturma sırasında tanımlanır ve hemen kullanılır.**
+
+### **Örnek: Arayüz Kullanımı ile Anonim İç Sınıf**
+```java
+interface Mesaj {
+    void goster();
+}
+
+public class AnonymousInnerClassOrnek {
+    public static void main(String[] args) {
+        Mesaj mesaj = new Mesaj() {
+            public void goster() {
+                System.out.println("Bu bir Anonim Inner Class");
+            }
+        };
+
+        mesaj.goster();
+    }
+}
+```
+### **Çıktı:**
+```
+Bu bir Anonim Inner Class
+```
+
+### **Örnek: Soyut Sınıf Kullanımı ile Anonim Inner Class**
+```java
+abstract class Hayvan {
+    abstract void sesCikar();
+}
+
+public class AnonymousInnerClassOrnek {
+    public static void main(String[] args) {
+        Hayvan kedi = new Hayvan() {
+            void sesCikar() {
+                System.out.println("Miyav!");
+            }
+        };
+
+        kedi.sesCikar();
+    }
+}
+```
+### **Çıktı:**
+```
+Miyav!
+```
+
+### **Özetle:**
+- **Bir sınıfın veya arayüzün bir kerelik kullanımı için uygundur.**
+- **Genellikle olay dinleyicileri (Event Listeners) veya callback mekanizmalarında kullanılır.**
+
+---
+
+## **Inner Class Kullanım Senaryoları**
+1. **GUI Programlamada (Swing, JavaFX)**
+    - Anonim iç sınıflar, buton tıklama olaylarını yakalamak için yaygın olarak kullanılır.
+
+2. **Çok büyük sınıfları modüler hale getirmek için**
+    - Normal `Inner Class` ile büyük kod bloklarını daha okunaklı hale getirmek.
+
+3. **Bağımsız çalışamayan sınıfları gruplamak**
+    - Eğer bir sınıf **yalnızca belirli bir sınıfın içinde anlamlıysa**, **Inner Class kullanımı** iyi bir çözümdür.
+
+4. **Güvenlik ve Kapsülleme**
+    - Dış sınıfın private üyelerine erişim sağlamak için.
+
+---
+
+## **Sonuç**
+- **Inner Class'lar**, dış sınıfa ait mantıksal bileşenleri iç içe organize etmek için kullanılır.
+- **Dört temel türü vardır**: **Normal Inner Class, Static Inner Class, Local Inner Class ve Anonymous Inner Class.**
+- **Kod organizasyonunu iyileştirir ve gereksiz dosya oluşturmayı engeller.**
+- **Anonim sınıflar**, olay dinleme (event handling) ve tek seferlik işlemler için idealdir.
+
+### **Ne Zaman Kullanılmalı?**
+- Eğer **bir sınıf, yalnızca belirli bir dış sınıf içinde anlamlıysa**, Inner Class kullanımı mantıklıdır.
+- **Gereksiz Inner Class kullanımından kaçınılmalıdır**, çünkü bazen bağımsız sınıflar daha okunaklı ve sürdürülebilir olur.
+
+##  Çoklu İş Parçacığı (Multithreading)
+```sh 
+
+```
+---
+
+## Çoklu İş Parçacığı (Multithreading)
+
+Çoklu iş parçacığı (multithreading), bir programın birden fazla iş parçacığını (thread) eş zamanlı olarak çalıştırmasını sağlayan bir programlama modelidir. Modern bilgisayarlar ve işletim sistemleri, aynı anda birden fazla işlemi gerçekleştirebilme yeteneğine sahiptir. Multithreading, bu paralel işlem gücünü en iyi şekilde kullanarak programların daha verimli çalışmasını sağlar.
+
+Birçok uygulama, aynı anda birden fazla görevi yerine getirmek zorundadır. Örneğin:
+- Bir web tarayıcısı, birden fazla sekmeyi aynı anda işleyebilir.
+- Bir oyun motoru, grafik, ses ve fizik hesaplamalarını ayrı iş parçacıklarıyla yönetebilir.
+- Bir veritabanı sunucusu, çok sayıda istemciden gelen talepleri eş zamanlı olarak işleyebilir.
+
+Multithreading’in avantajları:
+- **Performans Artışı:** İşlemci kaynaklarını daha verimli kullanarak programın daha hızlı çalışmasını sağlar.
+- **Daha Hızlı Yanıt Süresi:** Kullanıcı arayüzünü ve arka plan işlemlerini birbirinden ayırarak daha akıcı bir deneyim sunar.
+- **Kaynak Paylaşımı:** Aynı bellek alanını paylaşarak daha düşük bellek tüketimi sağlar.
+- **İyileştirilmiş CPU Kullanımı:** Birden fazla çekirdeğe sahip işlemcilerden tam kapasite faydalanılabilir.
+
+Ancak, çoklu iş parçacığı kullanımı bazı zorlukları da beraberinde getirir:
+- **Senkronizasyon sorunları**
+- **Ölçeklenebilirlik problemleri**
+- **Deadlock (Ölü Kilitlenme)**
+- **Race condition (Yarış Koşulları)**
+
+Şimdi, multithreading ile ilgili temel konulara ayrıntılı şekilde bakalım.
+
+---
+
+## **1. Thread Oluşturma ve Yönetimi**
+
+Bir programda çoklu iş parçacığı kullanımı için işletim sisteminin sağladığı API’ler veya programlama dili seviyesindeki kütüphaneler kullanılır. Java, Python, C++ ve C# gibi diller, thread yönetimi için çeşitli mekanizmalar sağlar.
+
+### **1.1 Thread Nedir?**
+Thread, bir programın içinde çalışan en küçük yürütülebilir birimdir. Bir program, birden fazla thread çalıştırarak aynı anda birden fazla işi gerçekleştirebilir.
+
+### **1.2 Thread Nasıl Oluşturulur?**
+Farklı programlama dillerinde iş parçacığı oluşturma yöntemleri değişiklik gösterebilir. İşte bazı popüler dillerde iş parçacığı oluşturma örnekleri:
+
+### **Java'da Thread Oluşturma**
+Java'da iş parçacığı oluşturmanın iki temel yolu vardır:
+1. **Thread sınıfını genişletmek**
+2. **Runnable arayüzünü uygulamak**
+
+#### **1. Thread Sınıfını Genişletme**
+```java
+class MyThread extends Thread {
+    public void run() {
+        for (int i = 0; i < 5; i++) {
+            System.out.println(Thread.currentThread().getName() + " çalışıyor...");
+        }
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        MyThread thread1 = new MyThread();
+        MyThread thread2 = new MyThread();
+        
+        thread1.start();
+        thread2.start();
+    }
+}
+```
+
+#### **2. Runnable Arayüzünü Kullanma**
+```java
+class MyRunnable implements Runnable {
+    public void run() {
+        for (int i = 0; i < 5; i++) {
+            System.out.println(Thread.currentThread().getName() + " çalışıyor...");
+        }
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Thread thread1 = new Thread(new MyRunnable());
+        Thread thread2 = new Thread(new MyRunnable());
+        
+        thread1.start();
+        thread2.start();
+    }
+}
+```
+
+---
+
+### **Python’da Thread Oluşturma**
+Python'da threading modülü kullanılarak iş parçacıkları oluşturulabilir.
+
+#### **Threading Kullanarak Thread Oluşturma**
+```python
+import threading
+
+class MyThread(threading.Thread):
+    def run(self):
+        for i in range(5):
+            print(f"{threading.current_thread().name} çalışıyor...")
+
+thread1 = MyThread()
+thread2 = MyThread()
+
+thread1.start()
+thread2.start()
+```
+
+---
+
+### **C++’da Thread Kullanımı**
+C++11 ile birlikte `std::thread` kütüphanesi kullanılarak iş parçacıkları oluşturulabilir.
+
+```cpp
+#include <iostream>
+#include <thread>
+
+void threadFunction() {
+    for (int i = 0; i < 5; i++) {
+        std::cout << "Thread çalışıyor..." << std::endl;
+    }
+}
+
+int main() {
+    std::thread t1(threadFunction);
+    std::thread t2(threadFunction);
+
+    t1.join();
+    t2.join();
+
+    return 0;
+}
+```
+
+---
+
+## **2. Senkronizasyon**
+
+Çoklu iş parçacıklı programlama yaparken, iş parçacıklarının paylaşılan kaynaklara erişimi senkronize edilmezse beklenmedik hatalar oluşabilir. Bu tür sorunları önlemek için senkronizasyon mekanizmaları kullanılır.
+
+### **2.1 Yarış Koşulu (Race Condition)**
+Birden fazla iş parçacığının aynı veri kaynağına erişerek birbirinin işlemini bozmasına "yarış koşulu" (race condition) denir. Örneğin, aynı değişkeni değiştiren iki iş parçacığı beklenmedik sonuçlar üretebilir.
+
+Örnek:
+```python
+import threading
+
+counter = 0
+
+def increment():
+    global counter
+    for _ in range(1000000):
+        counter += 1
+
+t1 = threading.Thread(target=increment)
+t2 = threading.Thread(target=increment)
+
+t1.start()
+t2.start()
+
+t1.join()
+t2.join()
+
+print("Final Counter:", counter)  # Beklenen değer 2000000 fakat daha düşük olabilir
+```
+Yukarıdaki kodda, aynı değişkeni iki thread artırıyor ama sonuç beklenenden daha düşük olabilir çünkü işlemler çakışıyor.
+
+### **2.2 Mutex (Mutual Exclusion) ile Senkronizasyon**
+Yarış koşullarını engellemek için "mutex" kullanılabilir. Mutex, bir thread'in bir kaynağı kilitlemesini ve diğerlerinin beklemesini sağlar.
+
+Python'da `threading.Lock()` kullanarak bir mutex oluşturulabilir:
+
+```python
+import threading
+
+counter = 0
+lock = threading.Lock()
+
+def increment():
+    global counter
+    for _ in range(1000000):
+        with lock:
+            counter += 1
+
+t1 = threading.Thread(target=increment)
+t2 = threading.Thread(target=increment)
+
+t1.start()
+t2.start()
+
+t1.join()
+t2.join()
+
+print("Final Counter:", counter)  # Beklenen değer 2000000 olur
+```
+
+---
+
+### **2.3 Deadlock (Ölü Kilitlenme)**
+Deadlock, iki veya daha fazla iş parçacığının birbirlerini bekleyerek sonsuza kadar bloke olma durumudur.
+
+Örneğin:
+```python
+import threading
+
+lock1 = threading.Lock()
+lock2 = threading.Lock()
+
+def task1():
+    with lock1:
+        print("Task1: lock1 alındı")
+        with lock2:
+            print("Task1: lock2 alındı")
+
+def task2():
+    with lock2:
+        print("Task2: lock2 alındı")
+        with lock1:
+            print("Task2: lock1 alındı")
+
+t1 = threading.Thread(target=task1)
+t2 = threading.Thread(target=task2)
+
+t1.start()
+t2.start()
+
+t1.join()
+t2.join()
+```
+Burada `task1` ve `task2` birbirlerinin kilidini beklerse, program sonsuza kadar bekleyebilir.
+
+Deadlock önlemek için:
+- **Kilitleri her zaman aynı sırada almak**
+- **Timeout kullanmak**
+- **Avoiding circular waits (Döngüsel beklemelerden kaçınmak)**
+
+---
+
+Bu makalede çoklu iş parçacığı kavramını detaylıca inceledik. Senkronizasyon hataları, deadlock, yarış koşulları gibi konuların nasıl çözülebileceğini öğrendik. Gelişmiş sistemlerde multithreading, performansı artırabilir fakat dikkatli yönetilmezse ciddi sorunlara yol açabilir.
+
+
+## Eşzamanlılık (Concurrency)
+```sh 
+
+```
+---
+
+# **Eşzamanlılık (Concurrency) ve Concurrency API**
+
+Eşzamanlılık (Concurrency), bir programın aynı anda birden fazla görevi yerine getirebilmesini sağlayan bir kavramdır. Eşzamanlılık, tek bir işlemcide zaman dilimleriyle (time slicing) sağlanabileceği gibi, çok çekirdekli işlemcilerde gerçekten paralel çalışan iş parçacıklarıyla (multithreading) da gerçekleştirilebilir.
+
+Modern yazılım geliştirme süreçlerinde, özellikle yüksek performans gerektiren uygulamalarda eşzamanlılık çok kritik bir rol oynar. Örneğin:
+- **Web sunucuları**, aynı anda yüzlerce hatta binlerce istemciyi yönetir.
+- **Oyun motorları**, fizik hesaplamaları, ses işleme ve grafik render işlemlerini aynı anda gerçekleştirir.
+- **Veritabanı sistemleri**, farklı istemcilerden gelen talepleri paralel olarak işler.
+
+Eşzamanlılık, doğru yönetilmediği takdirde bazı problemlere neden olabilir:
+- **Yarış Koşulları (Race Conditions)**: İki veya daha fazla thread, aynı veri kaynağına eşzamanlı olarak erişirse, yanlış sonuçlar ortaya çıkabilir.
+- **Deadlock (Ölü Kilitlenme)**: Thread’ler birbirlerini beklerse, sistem kilitlenebilir.
+- **Starvation (Aç Kalma)**: Bazı thread’ler sürekli beklerken, diğerleri kaynakları tüketebilir.
+
+Bu tür problemleri çözmek ve çok iş parçacıklı (multithreaded) uygulamalar geliştirmek için Java Concurrency API gibi gelişmiş kütüphaneler ve mekanizmalar geliştirilmiştir.
+
+---
+
+# **1. Java’da Concurrency API ve Yardımcı Sınıflar**
+
+Java **Concurrency API**, çok iş parçacıklı programlamayı kolaylaştıran ve yönetilebilir hale getiren bir dizi sınıf ve arayüzden oluşur. Bu API sayesinde thread yönetimi, senkronizasyon ve eşzamanlı veri yapıları gibi işlemler daha güvenli ve verimli bir şekilde gerçekleştirilebilir.
+
+### **1.1. Concurrency API Temel Bileşenleri**
+Java'nın Concurrency API'si `java.util.concurrent` paketi altında yer alır ve aşağıdaki temel bileşenleri içerir:
+
+1. **Thread Pool (Havuz Yönetimi)**
+2. **Senkronizasyon Mekanizmaları (Lock, Semaphore, Monitor, etc.)**
+3. **Eşzamanlı Koleksiyonlar (Concurrent Collections)**
+4. **Zamanlanmış Görevler (Scheduled Tasks)**
+5. **Paralel İşleme (Fork/Join Framework)**
+6. **Gelişmiş Yardımcı Sınıflar (CountDownLatch, CyclicBarrier, Phaser vb.)**
+
+Şimdi bu bileşenleri detaylı bir şekilde inceleyelim.
+
+---
+
+## **2. Yardımcı Sınıflar (CountDownLatch, CyclicBarrier vb.)**
+Concurrency API, eşzamanlı işlemleri yönetmek için birçok yardımcı sınıf sunar. Bunlardan bazıları:
+
+### **2.1 CountDownLatch**
+`CountDownLatch`, belirli bir sayıya kadar geri sayım yapan ve bu sayım sıfır olduğunda bekleyen thread'leri serbest bırakan bir mekanizmadır.
+
+📌 **Kullanım Senaryosu**:
+- Büyük bir sistem başlatılırken, tüm bileşenlerin hazır olmasını beklemek.
+- Paralel çalışan thread'lerin tamamlanmasını beklemek.
+
+🔹 **Örnek: CountDownLatch Kullanımı**
+```java
+import java.util.concurrent.CountDownLatch;
+
+class Worker extends Thread {
+    private CountDownLatch latch;
+
+    public Worker(CountDownLatch latch) {
+        this.latch = latch;
+    }
+
+    public void run() {
+        System.out.println(Thread.currentThread().getName() + " çalışıyor...");
+        try {
+            Thread.sleep(2000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+        latch.countDown();  // Sayacı azalt
+    }
+}
+
+public class CountDownLatchExample {
+    public static void main(String[] args) throws InterruptedException {
+        CountDownLatch latch = new CountDownLatch(3);
+        
+        new Worker(latch).start();
+        new Worker(latch).start();
+        new Worker(latch).start();
+
+        latch.await();  // Tüm thread’ler bitene kadar bekler
+        System.out.println("Tüm iş parçacıkları tamamlandı. Ana işleme devam ediliyor.");
+    }
+}
+```
+**Çıktı:**
+```
+Thread-0 çalışıyor...
+Thread-1 çalışıyor...
+Thread-2 çalışıyor...
+Tüm iş parçacıkları tamamlandı. Ana işleme devam ediliyor.
+```
+---
+
+### **2.2 CyclicBarrier**
+`CyclicBarrier`, belirli sayıda thread'in aynı noktada buluşmasını sağlayan bir bariyer mekanizmasıdır.
+
+📌 **Kullanım Senaryosu**:
+- Paralel hesaplamalarda, belirli adımları tamamlamadan bir sonraki aşamaya geçmeyi önlemek.
+- Oyun motorlarında, tüm oyuncuların bir turu tamamlamasını beklemek.
+
+🔹 **Örnek: CyclicBarrier Kullanımı**
+```java
+import java.util.concurrent.CyclicBarrier;
+
+class Task extends Thread {
+    private CyclicBarrier barrier;
+
+    public Task(CyclicBarrier barrier) {
+        this.barrier = barrier;
+    }
+
+    public void run() {
+        System.out.println(Thread.currentThread().getName() + " görevini tamamladı.");
+        try {
+            barrier.await();  // Diğer thread’leri bekler
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        System.out.println(Thread.currentThread().getName() + " devam ediyor...");
+    }
+}
+
+public class CyclicBarrierExample {
+    public static void main(String[] args) {
+        CyclicBarrier barrier = new CyclicBarrier(3, () -> System.out.println("Tüm görevler tamamlandı!"));
+
+        new Task(barrier).start();
+        new Task(barrier).start();
+        new Task(barrier).start();
+    }
+}
+```
+**Çıktı:**
+```
+Thread-0 görevini tamamladı.
+Thread-1 görevini tamamladı.
+Thread-2 görevini tamamladı.
+Tüm görevler tamamlandı!
+Thread-0 devam ediyor...
+Thread-1 devam ediyor...
+Thread-2 devam ediyor...
+```
+---
+
+### **2.3 Phaser**
+Phaser, CyclicBarrier ve CountDownLatch’in daha esnek bir alternatifidir. Birden fazla aşamalı işlemi yönetmek için kullanılır.
+
+📌 **Kullanım Senaryosu**:
+- Çok aşamalı iş akışlarını senkronize etmek.
+- Belirli işlemlerin bir grup halinde tamamlanmasını sağlamak.
+
+---
+
+## **3. Concurrency API ile Thread Havuzu Yönetimi**
+`ExecutorService`, birden fazla iş parçacığını verimli bir şekilde yönetmek için kullanılır.
+
+🔹 **Örnek: Thread Havuzu Kullanımı**
+```java
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+
+class WorkerTask implements Runnable {
+    public void run() {
+        System.out.println(Thread.currentThread().getName() + " görevini çalıştırıyor...");
+    }
+}
+
+public class ExecutorServiceExample {
+    public static void main(String[] args) {
+        ExecutorService executor = Executors.newFixedThreadPool(3);
+
+        for (int i = 0; i < 5; i++) {
+            executor.execute(new WorkerTask());
+        }
+
+        executor.shutdown();
+    }
+}
+```
+**Çıktı:**
+```
+pool-1-thread-1 görevini çalıştırıyor...
+pool-1-thread-2 görevini çalıştırıyor...
+pool-1-thread-3 görevini çalıştırıyor...
+pool-1-thread-1 görevini çalıştırıyor...
+pool-1-thread-2 görevini çalıştırıyor...
+```
+---
+
+## **Sonuç**
+- **CountDownLatch**: Belli bir sayıya ulaşana kadar bekler.
+- **CyclicBarrier**: Tüm thread’lerin belirli bir noktada buluşmasını sağlar.
+- **Phaser**: Daha esnek bir senkronizasyon aracı.
+- **ExecutorService**: Thread havuzu yönetimi sağlar.
+
+Concurrency API, çok iş parçacıklı uygulamaları daha yönetilebilir hale getirerek performans ve güvenilirlik sağlar. Bu yapılar, büyük ölçekli yazılım projelerinde kritik öneme sahiptir.
+
+
+## MVC Nedir ?
+```sh 
+
+```
+---
+### **Java'da MVC (Model-View-Controller) Nedir?**
+MVC (Model-View-Controller), yazılım geliştirme süreçlerinde yaygın olarak kullanılan bir mimari desendir. Java uygulamalarında özellikle **Spring Framework, Java Swing, JavaFX ve JSP/Servlet** gibi teknolojilerde sıkça kullanılır. MVC, uygulama bileşenlerini üç ana katmana ayırarak, kodun modülerliğini ve sürdürülebilirliğini artırır.
+
+---
+
+## **1. MVC Mimarisinin Temel Bileşenleri**
+MVC, üç ana bileşenden oluşur:
+
+1. **Model (Veri Katmanı)**
+2. **View (Görünüm Katmanı)**
+3. **Controller (Kontrol Katmanı)**
+
+---
+
+### **1. Model (M) – Veri Katmanı**
+**Model, uygulamanın veri yönetiminden sorumlu bileşenidir.** Veri kaynağı (veritabanı, API vb.) ile etkileşim kurarak, bilgileri işler ve gerektiğinde günceller.
+
+#### **Model Katmanının Görevleri**
+- Veritabanı işlemlerini gerçekleştirir (CRUD - Create, Read, Update, Delete).
+- İş mantığını (business logic) içerir.
+- Controller tarafından çağrılır ve verileri View’a gönderir.
+
+#### **Model Örneği (Java)**
+```java
+public class User {
+    private int id;
+    private String name;
+    private String email;
+
+    // Constructor
+    public User(int id, String name, String email) {
+        this.id = id;
+        this.name = name;
+        this.email = email;
+    }
+
+    // Getter ve Setter metotları
+    public int getId() { return id; }
+    public void setId(int id) { this.id = id; }
+
+    public String getName() { return name; }
+    public void setName(String name) { this.name = name; }
+
+    public String getEmail() { return email; }
+    public void setEmail(String email) { this.email = email; }
+}
+```
+Bu örnekte `User` sınıfı, bir kullanıcıyı temsil eden Model katmanıdır.
+
+---
+
+### **2. View (V) – Görünüm Katmanı**
+**View, kullanıcıya gösterilen arayüz bileşenlerini içerir.** Java uygulamalarında View genellikle şu teknolojilerle oluşturulur:
+
+- **Swing / JavaFX**: Masaüstü uygulamaları için.
+- **JSP / Thymeleaf / HTML + JavaScript**: Web tabanlı uygulamalar için.
+
+#### **View Katmanının Görevleri**
+- Kullanıcıya verileri sunar.
+- Kullanıcıdan giriş alır ve Controller’a gönderir.
+- Kullanıcı deneyimi ile ilgili tasarım ve arayüzü içerir.
+
+#### **View Örneği (Java Swing)**
+```java
+import javax.swing.*;
+import java.awt.*;
+
+public class UserView {
+    public void showUserDetails(String name, String email) {
+        JFrame frame = new JFrame("User Details");
+        frame.setSize(300, 200);
+        frame.setLayout(new GridLayout(2, 1));
+
+        JLabel nameLabel = new JLabel("Name: " + name);
+        JLabel emailLabel = new JLabel("Email: " + email);
+
+        frame.add(nameLabel);
+        frame.add(emailLabel);
+
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frame.setVisible(true);
+    }
+}
+```
+Bu kod, `showUserDetails()` metodu ile kullanıcı bilgilerini bir Swing GUI penceresinde görüntüler.
+
+---
+
+### **3. Controller (C) – Kontrol Katmanı**
+**Controller, Model ve View arasında bağlantı kuran bileşendir.** Kullanıcının girdilerini işler, Model’e gönderir ve güncellenen veriyi View’a yönlendirir.
+
+#### **Controller Katmanının Görevleri**
+- Kullanıcının eylemlerine tepki verir.
+- Model ile View arasında veri alışverişini sağlar.
+- İş mantığını yönetir.
+
+#### **Controller Örneği (Java)**
+```java
+public class UserController {
+    private User model;
+    private UserView view;
+
+    public UserController(User model, UserView view) {
+        this.model = model;
+        this.view = view;
+    }
+
+    public void updateView() {
+        view.showUserDetails(model.getName(), model.getEmail());
+    }
+}
+```
+Bu kod, `User` modelinden aldığı bilgileri `UserView` arayüzüne aktarır.
+
+---
+
+## **2. MVC'nin Çalışma Mekanizması**
+1. Kullanıcı bir işlem gerçekleştirir (örn: butona tıklar, form gönderir).
+2. **Controller**, bu isteği alır ve işler.
+3. **Controller**, gerekli işlemleri yapmak için **Model**’e başvurur.
+4. **Model**, veriyi işler ve günceller.
+5. **Controller**, güncellenen Model bilgisini **View**'a iletir.
+6. **View**, güncellenmiş veriyi kullanıcıya gösterir.
+
+---
+
+## **3. Java'da MVC Kullanım Örnekleri**
+Java'da MVC mimarisi **masaüstü ve web uygulamalarında** geniş çapta kullanılır:
+
+### **1. Swing ile MVC**
+- **Model:** Kullanıcı veya ürün gibi nesneler.
+- **View:** JFrame, JLabel, JTextField gibi bileşenler.
+- **Controller:** Kullanıcı etkileşimlerini yöneten sınıf.
+
+### **2. Web Uygulamaları için MVC**
+Java web uygulamalarında **Spring MVC, JSP/Servlet** teknolojileri ile uygulanır.
+
+#### **Spring Boot ile Basit MVC Örneği**
+**Model Katmanı (User.java)**
+```java
+@Entity
+public class User {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+    private String name;
+    private String email;
+    
+    // Getter - Setter
+}
+```
+
+**Controller Katmanı (UserController.java)**
+```java
+@RestController
+@RequestMapping("/users")
+public class UserController {
+    @Autowired
+    private UserRepository userRepository;
+
+    @GetMapping("/{id}")
+    public ResponseEntity<User> getUser(@PathVariable Long id) {
+        Optional<User> user = userRepository.findById(id);
+        return user.map(ResponseEntity::ok).orElseGet(() -> ResponseEntity.notFound().build());
+    }
+}
+```
+
+**View Katmanı (user.html - Thymeleaf)**
+```html
+<!DOCTYPE html>
+<html>
+<head>
+    <title>User Details</title>
+</head>
+<body>
+    <h1>User Details</h1>
+    <p>Name: <span th:text="${user.name}"></span></p>
+    <p>Email: <span th:text="${user.email}"></span></p>
+</body>
+</html>
+```
+
+---
+
+## **4. MVC'nin Avantajları ve Dezavantajları**
+### **Avantajları**
+✅ **Kodun Modülerliği:** Model, View ve Controller ayrı katmanlarda olduğu için kod yönetimi kolaydır.  
+✅ **Bakımı Kolay:** Bir bileşende yapılan değişiklik diğerlerini etkilemez.  
+✅ **Test Edilebilirlik:** Her katman ayrı test edilebilir.  
+✅ **Yeniden Kullanılabilirlik:** Aynı Model veya Controller farklı View’lerle kullanılabilir.
+
+### **Dezavantajları**
+❌ **Başlangıçta Fazla Kod Yazma Gereksinimi:** Küçük projeler için karmaşık olabilir.  
+❌ **Fazladan Katmanlar Performans Maliyeti Getirebilir:** Büyük ölçekli projelerde optimize edilmesi gerekir.
+
+---
+
+## **Sonuç**
+Java'da **MVC mimarisi**, uygulamaların sürdürülebilirliğini ve genişletilebilirliğini artıran güçlü bir mimari desenidir. **Spring Boot, Java Swing, JavaFX ve JSP gibi teknolojilerde** yaygın olarak kullanılır. Model, View ve Controller bileşenleri sayesinde **katmanlı bir yapı sunarak, kodun okunabilirliğini ve test edilebilirliğini iyileştirir**.
+
+Bu mimariyi kullanarak, hem masaüstü hem de web tabanlı uygulamalar geliştirebilirsiniz! 🚀
+
+## **5. Java 8 ve Sonrasında Interface Geliştirmeleri**
+Java 8 ile birlikte **interface'ler artık gövdesi olan metotlara sahip olabilir**. Bunlar:
+1. **Default Metodlar** (default methods)
+2. **Static Metodlar** (static methods)
+
+### **5.1 Default Methods (Varsayılan Metodlar)**
+Interface içinde **default** anahtar kelimesiyle metot tanımlanabilir. Bu metotların bir gövdesi olur ve tüm implementasyonlar bu metodu miras alabilir.
+
+```java
+interface Vehicle {
+    default void start() {
+        System.out.println("Araç çalıştırıldı!");
+    }
+}
+
+class Car implements Vehicle {
+    // start() metodunu override etmek zorunda değiliz!
+}
+
+public class DefaultMethodExample {
+    public static void main(String[] args) {
+        Car car = new Car();
+        car.start(); // Çıktı: Araç çalıştırıldı!
+    }
+}
+```
+**Faydası:** Eğer bir interface’e yeni bir metod eklersek, onu implement eden eski kodlar bozulmaz.
+
+---
+
+### **5.2 Static Methods (Statik Metodlar)**
+Java 8 ile interface içinde **static metotlar** tanımlanabilir. Bunlar interface'e özgüdür ve çağırmak için interface adı kullanılır.
+
+```java
+interface Utility {
+    static void printMessage(String message) {
+        System.out.println(message);
+    }
+}
+
+public class StaticMethodExample {
+    public static void main(String[] args) {
+        Utility.printMessage("Merhaba, Java 8!");
+    }
+}
+```
+**Faydası:** Yardımcı metotları (utility methods) interface içinde gruplamak.
+
+---
+
+## **6. Marker Interfaces (İşaretleyici Arayüzler)**
+Bazı interface'ler **hiçbir metod içermez** ama yine de bir sınıfın belirli bir kategoriye ait olduğunu belirtmek için kullanılır. Bu tür interface'lere **Marker Interface** denir.
+
+### **Örnek: Serializable Interface**
+```java
+import java.io.Serializable;
+
+class Person implements Serializable {
+    String name;
+    int age;
+}
+```
+Burada `Person` sınıfı `Serializable` interface’ini implement ediyor, fakat herhangi bir metod yazmak zorunda değil. JVM, `Serializable` interface’ini kullanarak nesneleri **dizi (byte stream) halinde kaydedebilir veya gönderebilir.**
+
+Diğer **Marker Interface’ler**:
+- `Cloneable`
+- `Remote`
+
+---
+
+## **Sonuç**
+- **Interface, bir sınıfın uygulaması gereken metodları belirler.**
+- **Soyut (abstract) metodlar içerir ve bu metodların implement edilmesi gerekir.**
+- **Bir sınıf birden fazla interface implement edebilir.**
+- **Java 8 ile gelen `default` ve `static` metodlar sayesinde, interface'ler daha güçlü hale gelmiştir.**
+- **Marker Interface’ler, bir sınıfın belirli bir yeteneğe sahip olduğunu göstermek için kullanılır.**
+
+**Java'da Interface kullanımı, esneklik ve modülerlik sağladığı için yaygın olarak tercih edilir. 🚀**
+
+
+## CSV Nedir ?
+```sh 
+
+```
+---
+### **CSV (Comma-Separated Values) Nedir?**
+CSV, **Comma-Separated Values (Virgülle Ayrılmış Değerler)** anlamına gelen bir dosya formatıdır. Verileri **düz metin dosyası** olarak saklar ve her satır, bir veri kaydını temsil eder. **Sütunlar ise genellikle virgül (`,`) ile ayrılır.**
+
+### **CSV Formatının Temel Yapısı**
+- **Her satır bir kaydı temsil eder.**
+- **Veri alanları (sütunlar) virgülle ayrılır.**
+- **Genellikle `.csv` uzantılı bir dosyada saklanır.**
+- **Veri tabanı tablolarına benzer bir yapıdadır.**
+
+---
+
+### **Örnek CSV Formatı**
+Aşağıdaki CSV dosyasında **öğrenci bilgileri** bulunmaktadır:
+
+```
+1,Ali,Kaya,75.5,88.0,82.2,2001-05-20,UNDERGRADUATE
+2,Ayşe,Demir,60.0,75.0,69.0,1999-07-10,GRADUATE
+3,Mehmet,Yıldız,85.0,90.0,88.0,2000-02-15,PHD
+```
+
+Buradaki **sütunlar şunlardır:**
+| ID | Ad | Soyad | Vize | Final | Sonuç Notu | Doğum Tarihi | Eğitim Türü |
+|----|----|-------|------|-------|------------|-------------|-------------|
+| 1  | Ali  | Kaya  | 75.5 | 88.0 | 82.2       | 2001-05-20  | UNDERGRADUATE |
+| 2  | Ayşe | Demir | 60.0 | 75.0 | 69.0       | 1999-07-10  | GRADUATE |
+| 3  | Mehmet | Yıldız | 85.0 | 90.0 | 88.0   | 2000-02-15  | PHD |
+
+---
+
+### **CSV'nin Kullanım Alanları**
+📌 **Veri Depolama:** Küçük ölçekli uygulamalarda verileri saklamak için kullanılır.  
+📌 **Veri Transferi:** Farklı sistemler arasında veri alışverişi için yaygın olarak kullanılır.  
+📌 **Tablolar ve Raporlama:** Excel, Google Sheets gibi programlarda açılıp düzenlenebilir.  
+📌 **Veritabanı Entegrasyonu:** CSV formatındaki veriler, veritabanına kolayca aktarılabilir.
+
+---
+
+### **CSV ile JSON Karşılaştırması**
+| **Özellik**   | **CSV** | **JSON** |
+|--------------|--------|--------|
+| **Veri Yapısı** | Düz metin, satır-sütun bazlı | Hiyerarşik, nesne tabanlı |
+| **İnsan Okunabilirliği** | Kolay okunur | Daha yapılandırılmış, bazen karmaşık olabilir |
+| **Dosya Boyutu** | Daha küçük | Daha büyük |
+| **Destekleyen Programlar** | Excel, Google Sheets, Python, Java, Veritabanları | JavaScript, Python, Web API’leri |
+
+---
+
+### **CSV Kullanımı Java'da Neden Önemlidir?**
+✔ **Hafiftir:** Karmaşık veritabanları gerektirmez.  
+✔ **Kolay Kullanılır:** `BufferedReader` ve `BufferedWriter` ile kolayca okunup yazılabilir.  
+✔ **Esnektir:** Çeşitli programlar arasında veri alışverişi yapmak için uygundur.  
+✔ **Performanslıdır:** JSON veya XML gibi diğer formatlara göre daha hızlı işlenebilir.
+
+---
+
+Bu yüzden sizin kodunuzda **CSV formatı**, öğrencileri dosyaya yazmak ve tekrar yüklemek için kullanılıyor.  
+👉 **Öğrenci bilgilerini bir satır olarak kaydediyor ve tekrar nesneye dönüştürüyor.** 🚀
+
+
+## Interface Nedir ?
+```sh 
+
+```
+---
+
+# **Java'da Interface (Arayüz) Nedir?**
+Java'da **interface (arayüz)**, bir sınıfın uygulayabileceği bir **sözleşmeyi (contract)** tanımlayan bir yapıdır. Interface, bir sınıfın belirli metodları uygulamasını garanti eder, ancak metodların içeriğini (implementasyonunu) belirlemez. Yani, bir interface sadece metod imzalarını tanımlar ve bu metodları uygulayan sınıflar, bu metodları kendilerine uygun şekilde doldurmalıdır.
+
+Java'daki interface'ler **çoklu kalıtımı (multiple inheritance)** desteklemek ve **bağımsız modüler kod yazılmasını** sağlamak için kullanılır. **Polimorfizm (çok biçimlilik)** ve **bağımsızlık (decoupling)** gibi nesne yönelimli programlama (OOP) prensiplerini destekler.
+
+---
+
+## **1. Interface Tanımı ve Kullanımı**
+### **Temel Interface Tanımı**
+Bir interface, **`interface`** anahtar kelimesiyle tanımlanır. İçinde **soyut (abstract) metodlar** ve **sabit değişkenler (constants)** barındırabilir.
+
+```java
+interface Animal {
+    void eat();  // Soyut metod
+    void sleep();
+}
+```
+- **Metodlar:** Varsayılan olarak **public ve abstract** olur, bu yüzden `public abstract` yazmaya gerek yoktur.
+- **Değişkenler:** Interface içindeki tüm değişkenler varsayılan olarak **public, static ve final** olur.
+
+---
+
+## **2. Interface Kullanımı (Implement Edilmesi)**
+Bir sınıf, **`implements`** anahtar kelimesini kullanarak bir interface'i uygular (implement eder).
+
+### **Örnek: Bir Interface’i Uygulama**
+```java
+interface Animal {
+    void eat();
+    void sleep();
+}
+
+// Dog sınıfı, Animal interface'ini uyguluyor.
+class Dog implements Animal {
+    @Override
+    public void eat() {
+        System.out.println("Köpek yemek yiyor.");
+    }
+
+    @Override
+    public void sleep() {
+        System.out.println("Köpek uyuyor.");
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Dog dog = new Dog();
+        dog.eat();  // Çıktı: Köpek yemek yiyor.
+        dog.sleep(); // Çıktı: Köpek uyuyor.
+    }
+}
+```
+Burada:
+- **`Dog` sınıfı**, `Animal` interface'ini uygulamak zorunda olduğu için `eat()` ve `sleep()` metodlarını tanımlamak zorundadır.
+- Eğer bir sınıf, bir interface’i uygular ancak tüm metodlarını tanımlamazsa, **abstract** olarak işaretlenmelidir.
+
+---
+
+## **3. Interface İçinde Değişkenler (Sabitler)**
+Bir interface içinde tanımlanan değişkenler, **otomatik olarak public, static ve final olur**. Yani interface içindeki değişkenler **sabit (constant)** değerlerdir.
+
+### **Örnek: Interface İçinde Sabit Kullanımı**
+```java
+interface MathConstants {
+    double PI = 3.141592653589793; // public, static, final olarak kabul edilir.
+}
+
+// PI değerini kullanan bir sınıf
+class Circle {
+    public double getArea(double radius) {
+        return MathConstants.PI * radius * radius;
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Circle circle = new Circle();
+        System.out.println("Dairenin Alanı: " + circle.getArea(5));
+    }
+}
+```
+**Önemli Not:** Interface içindeki değişkenler **değiştirilemez**, çünkü **final** olarak kabul edilir.
+
+---
+
+## **4. Çoklu Kalıtım (Multiple Inheritance) ve Interface**
+Java, **class’lar arasında çoklu kalıtımı (multiple inheritance) desteklemez**, ancak birden fazla interface uygulamaya izin verir. Bu, kodun daha esnek ve modüler olmasını sağlar.
+
+### **Örnek: Bir Sınıfın Birden Fazla Interface’i Uygulaması**
+```java
+interface Flyable {
+    void fly();
+}
+
+interface Swimmable {
+    void swim();
+}
+
+class Bird implements Flyable, Swimmable {
+    @Override
+    public void fly() {
+        System.out.println("Kuş uçuyor.");
+    }
+
+    @Override
+    public void swim() {
+        System.out.println("Kuş yüzebiliyor.");
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Bird bird = new Bird();
+        bird.fly();  // Çıktı: Kuş uçuyor.
+        bird.swim(); // Çıktı: Kuş yüzebiliyor.
+    }
+}
+```
+**Burada:**
+- `Bird` sınıfı hem `Flyable` hem de `Swimmable` interface’ini uyguluyor.
+- Java, birden fazla interface uygulamayı desteklediği için `Bird` sınıfı birden fazla interface'in metodlarını yazabiliyor.
+
+---
+
+
+## Kalıtım Nedir ?
+```sh 
+
+```
+---
+## **Java'da Kalıtım (Inheritance) Nedir?**
+
+**Kalıtım (Inheritance)**, nesne yönelimli programlamada (OOP) en temel kavramlardan biridir. Kalıtım, bir sınıfın (class), başka bir sınıfın özelliklerini (alanlarını/field) ve davranışlarını (metotlarını) miras almasını sağlar. Java'da kalıtım, **code reusability (kod tekrar kullanımı)** ve **hiyerarşik organizasyon** sağlamak için kullanılır.
+
+---
+
+## **1. Kalıtımın Temel Mantığı**
+Bir **alt sınıf (subclass, child class)**, bir **üst sınıftan (superclass, parent class)** miras alır. Alt sınıf, üst sınıfta tanımlanan değişkenleri ve metotları tekrar yazmaya gerek kalmadan kullanabilir ve üzerine yeni özellikler ekleyebilir.
+
+Java'da bir sınıf başka bir sınıfı miras almak için **`extends`** anahtar kelimesini kullanır.
+
+### **Örnek: Basit Kalıtım**
+```java
+// Üst sınıf (Parent / Superclass)
+class Hayvan {
+    String isim;
+
+    void sesCikar() {
+        System.out.println("Hayvan ses çıkarıyor...");
+    }
+}
+
+// Alt sınıf (Child / Subclass)
+class Kedi extends Hayvan {
+    void miyavla() {
+        System.out.println("Kedi miyavlıyor: Miyav Miyav!");
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Kedi kedi = new Kedi();
+        kedi.isim = "Pamuk"; // Üst sınıftan miras alınan özellik
+        kedi.sesCikar();  // Üst sınıftan miras alınan metot
+        kedi.miyavla();  // Alt sınıfa özgü metot
+
+        System.out.println("Kedinin Adı: " + kedi.isim);
+    }
+}
+```
+### **Çıktı:**
+```
+Hayvan ses çıkarıyor...
+Kedi miyavlıyor: Miyav Miyav!
+Kedinin Adı: Pamuk
+```
+
+---
+
+## **2. Kalıtım Türleri**
+Java'da **çoklu kalıtım (multiple inheritance)** **sınıflar arasında desteklenmez**, ancak farklı türde kalıtımlar vardır:
+
+### **A. Tekli Kalıtım (Single Inheritance)**
+Bir sınıfın yalnızca **bir** sınıftan miras almasıdır.
+```java
+class A { /* ... */ }
+class B extends A { /* ... */ } // B sınıfı, A sınıfından türedi.
+```
+
+### **B. Çok Katmanlı Kalıtım (Multilevel Inheritance)**
+Bir sınıf, başka bir sınıftan türemiş bir sınıfı miras alır. **A → B → C** şeklinde bir zincir oluşur.
+```java
+class A {
+    void mesaj() {
+        System.out.println("Bu A sınıfı.");
+    }
+}
+
+class B extends A { }
+
+class C extends B { }
+
+public class Main {
+    public static void main(String[] args) {
+        C c = new C();
+        c.mesaj(); // A sınıfından miras alındı
+    }
+}
+```
+### **Çıktı:**
+```
+Bu A sınıfı.
+```
+
+### **C. Hiyerarşik Kalıtım (Hierarchical Inheritance)**
+Birden fazla alt sınıfın aynı üst sınıftan türemesi durumudur.
+```java
+class Hayvan {
+    void beslen() {
+        System.out.println("Hayvan besleniyor...");
+    }
+}
+
+class Kedi extends Hayvan {
+    void miyavla() {
+        System.out.println("Kedi miyavlıyor.");
+    }
+}
+
+class Köpek extends Hayvan {
+    void havla() {
+        System.out.println("Köpek havlıyor.");
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Kedi kedi = new Kedi();
+        kedi.beslen();
+        kedi.miyavla();
+
+        Köpek kopek = new Köpek();
+        kopek.beslen();
+        kopek.havla();
+    }
+}
+```
+### **Çıktı:**
+```
+Hayvan besleniyor...
+Kedi miyavlıyor.
+Hayvan besleniyor...
+Köpek havlıyor.
+```
+
+### **D. Java'da Çoklu Kalıtım (Multiple Inheritance) Desteklenmez**
+Java, **class** düzeyinde **çoklu kalıtımı** desteklemez. Çünkü **birden fazla üst sınıftan aynı isimde metodlar miras alınırsa** bir çakışma (ambiguity) sorunu ortaya çıkar.
+
+---
+
+## **3. `super` Anahtar Kelimesi**
+**`super`**, alt sınıftan üst sınıfa erişmek için kullanılır.
+
+- **Üst sınıfın constructor'ını çağırmak için**: `super(parametreler)`
+- **Üst sınıfın metodunu çağırmak için**: `super.metodAdi()`
+- **Üst sınıfın değişkenine erişmek için**: `super.degiskenAdi`
+
+### **Örnek: `super` Kullanımı**
+```java
+class Hayvan {
+    String isim = "Genel Hayvan";
+
+    void sesCikar() {
+        System.out.println("Hayvan sesi çıkarıyor...");
+    }
+}
+
+class Kedi extends Hayvan {
+    String isim = "Kedi";
+
+    void sesCikar() {
+        super.sesCikar(); // Üst sınıfın metodunu çağırır
+        System.out.println("Miyav Miyav!");
+    }
+
+    void yazdir() {
+        System.out.println("Alt sınıftaki isim: " + isim);
+        System.out.println("Üst sınıftaki isim: " + super.isim);
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Kedi kedi = new Kedi();
+        kedi.sesCikar();
+        kedi.yazdir();
+    }
+}
+```
+### **Çıktı:**
+```
+Hayvan sesi çıkarıyor...
+Miyav Miyav!
+Alt sınıftaki isim: Kedi
+Üst sınıftaki isim: Genel Hayvan
+```
+
+---
+
+## **4. `final` Anahtar Kelimesi ile Kalıtım Kısıtlaması**
+**`final`** anahtar kelimesiyle bir sınıfın veya metodun miras alınması engellenebilir:
+
+### **A. `final` ile Sınıfın Miras Alınmasını Engelleme**
+```java
+final class Hayvan { } 
+
+class Kedi extends Hayvan { } // HATA: 'Hayvan' miras alınamaz!
+```
+
+### **B. `final` ile Metodun Override Edilmesini Engelleme**
+```java
+class Hayvan {
+    final void sesCikar() {
+        System.out.println("Hayvan sesi çıkarıyor...");
+    }
+}
+
+class Kedi extends Hayvan {
+    void sesCikar() { // HATA: final metod override edilemez!
+        System.out.println("Miyav Miyav!");
+    }
+}
+```
+
+---
+
+## **Sonuç**
+- **Kalıtım**, **kod tekrarını azaltır** ve **daha düzenli kod yazmayı sağlar**.
+- **`extends` anahtar kelimesi** ile miras alınır.
+- **`super` anahtar kelimesi** üst sınıfın özelliklerine/metotlarına erişmek için kullanılır.
+- **`final` anahtar kelimesi**, miras alınmayı veya metodun override edilmesini engelleyebilir.
+- Java **çoklu kalıtımı desteklemez**, ancak **hiyerarşik ve çok katmanlı kalıtım** mümkündür.
+
+Bu bilgilerle, Java'da kalıtımı verimli bir şekilde kullanabilir ve OOP prensiplerini daha iyi anlayabilirsiniz! 🚀
+
+
+## Polymorphism Nedir ?
+```sh 
+
+```
+---
+
+# **Java'da Polymorphism (Çok Biçimlilik) Nedir?**
+
+**Polymorphism (Çok Biçimlilik)**, nesne yönelimli programlamanın (OOP) en önemli kavramlarından biridir. **"Poly" (çok) ve "Morph" (biçim)"** kelimelerinden türemiştir. **Aynı isimli bir metodun, farklı şekillerde davranabilmesini sağlar**. Bu sayede, **kod tekrarını azaltır**, **esneklik sağlar** ve **bakımı kolaylaştırır**.
+
+Java'da **Polymorphism** iki şekilde gerçekleşir:
+1. **Metot Overloading (Metot Aşırı Yükleme) → Compile-time Polymorphism**
+2. **Metot Overriding (Metot Geçersiz Kılma) → Runtime Polymorphism**
+
+---
+
+## **1. Compile-Time Polymorphism (Derleme Zamanı Polymorphism - Metot Overloading)**
+Bu tür **polymorphism**, **aynı isimde bir metodun farklı parametreler ile tanımlanmasıyla** elde edilir. Derleme zamanında hangi metodun çağrılacağı bellidir.
+
+### **Metot Overloading (Metot Aşırı Yükleme)**
+- Aynı sınıf içinde **aynı isimli metodun farklı parametreler** ile tanımlanmasıdır.
+- **Dönüş tipi değişse bile**, sadece dönüş tipinin değişmesi **overloading için yeterli değildir**.
+- **JVM (Java Virtual Machine) hangi metodun çağrılacağını derleme (compile-time) sırasında belirler.**
+
+### **Örnek 1: Metot Overloading**
+```java
+class HesapMakinesi {
+    // İki sayıyı toplama metodu
+    int topla(int a, int b) {
+        return a + b;
+    }
+
+    // Üç sayıyı toplama metodu (Aynı isim, farklı parametre sayısı)
+    int topla(int a, int b, int c) {
+        return a + b + c;
+    }
+
+    // Ondalıklı sayıları toplama metodu (Aynı isim, farklı parametre türü)
+    double topla(double a, double b) {
+        return a + b;
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        HesapMakinesi h = new HesapMakinesi();
+
+        System.out.println(h.topla(5, 10));        // 15
+        System.out.println(h.topla(5, 10, 20));    // 35
+        System.out.println(h.topla(3.5, 2.5));     // 6.0
+    }
+}
+```
+### **Çıktı:**
+```
+15
+35
+6.0
+```
+> **Not:** Java, hangi metodun çalıştırılacağını **parametre türlerine ve sayısına göre** derleme zamanında belirler.
+
+---
+
+## **2. Runtime Polymorphism (Çalışma Zamanı Polymorphism - Metot Overriding)**
+Bu tür **polymorphism**, **alt sınıfın (subclass), üst sınıftan (superclass) aldığı bir metodu kendi içinde tekrar tanımlamasıyla** sağlanır. **Hangi metodun çağrılacağı çalışma zamanında belirlenir.**
+
+### **Metot Overriding (Metot Geçersiz Kılma)**
+- **Üst sınıfta (parent class) tanımlı bir metodun, alt sınıfta (child class) tekrar tanımlanmasıdır.**
+- **Metod ismi, dönüş tipi ve parametre listesi aynı olmalıdır.**
+- **Alt sınıfta metodun davranışı değiştirilebilir.**
+- **Overriding işlemi için `@Override` anotasyonu kullanılır (zorunlu değildir ama önerilir).**
+- **Polymorphism sayesinde, bir üst sınıf referansı ile alt sınıf nesneleri çağrılabilir.**
+
+### **Örnek 2: Metot Overriding**
+```java
+class Hayvan {
+    void sesCikar() {
+        System.out.println("Hayvan ses çıkarıyor...");
+    }
+}
+
+class Kedi extends Hayvan {
+    @Override
+    void sesCikar() {
+        System.out.println("Miyav Miyav!");
+    }
+}
+
+class Köpek extends Hayvan {
+    @Override
+    void sesCikar() {
+        System.out.println("Hav Hav!");
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Hayvan h1 = new Kedi();  // Üst sınıf referansı ile alt sınıf nesnesi
+        Hayvan h2 = new Köpek(); // Üst sınıf referansı ile alt sınıf nesnesi
+
+        h1.sesCikar(); // Çalışma zamanında "Miyav Miyav!" çalışır
+        h2.sesCikar(); // Çalışma zamanında "Hav Hav!" çalışır
+    }
+}
+```
+### **Çıktı:**
+```
+Miyav Miyav!
+Hav Hav!
+```
+> **Not:** `h1` ve `h2` nesneleri **üst sınıfın (Hayvan) referansı ile tanımlandı**, ancak **alt sınıfların (Kedi, Köpek) metodları çalıştırıldı**. İşte bu çalışma zamanı polymorphism'idir.
+
+---
+
+## **3. Polymorphism'in Faydaları**
+1. **Kod tekrarını azaltır ve yeniden kullanılabilirliği artırır.**
+2. **Esnek ve ölçeklenebilir kod yazmayı sağlar.**
+3. **İlerleyen seviyede "Abstraction" ve "Interface" ile birlikte güçlü tasarımlar oluşturulmasını sağlar.**
+
+---
+
+## **4. `super` Anahtar Kelimesi ile Overriding Kullanımı**
+Bir alt sınıfta, **üst sınıfın metodunu çağırmak için** `super.metodAdi()` kullanılır.
+
+### **Örnek 3: `super` ile Overriding**
+```java
+class Arac {
+    void hizGoster() {
+        System.out.println("Araç hız gösteriyor...");
+    }
+}
+
+class Araba extends Arac {
+    @Override
+    void hizGoster() {
+        super.hizGoster(); // Üst sınıfın metodunu çağırır
+        System.out.println("Araba 120 km/h hız gösteriyor.");
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Araba araba = new Araba();
+        araba.hizGoster();
+    }
+}
+```
+### **Çıktı:**
+```
+Araç hız gösteriyor...
+Araba 120 km/h hız gösteriyor.
+```
+---
+
+## **5. `final` ile Polymorphism'i Kısıtlama**
+Java'da `final` anahtar kelimesi kullanılarak bir metodun **override edilmesi engellenebilir**.
+
+### **Örnek 4: `final` ile Overriding Engelleme**
+```java
+class Hayvan {
+    final void sesCikar() {
+        System.out.println("Hayvan sesi çıkarıyor...");
+    }
+}
+
+class Kedi extends Hayvan {
+    // @Override
+    // void sesCikar() { // HATA! final metod override edilemez
+    //     System.out.println("Miyav Miyav!");
+    // }
+}
+```
+> `sesCikar` metodu `final` olduğu için **Kedi sınıfında değiştirilemez (override edilemez).**
+
+---
+
+## **Özet**
+| Polymorphism Türü | Açıklama | Kullanılan Teknik |
+|-------------------|----------|------------------|
+| **Compile-time Polymorphism** | Aynı sınıf içinde aynı isimde metodlar, farklı parametrelerle tanımlanır. | **Method Overloading (Metot Aşırı Yükleme)** |
+| **Runtime Polymorphism** | Üst sınıftaki bir metod, alt sınıfta tekrar tanımlanır ve çalışma zamanında çağrılır. | **Method Overriding (Metot Geçersiz Kılma)** |
+
+### **Sonuç**
+- **Overloading**, aynı metodun **farklı parametrelerle** tanımlanmasını sağlar.
+- **Overriding**, alt sınıfların **üst sınıf metodlarını değiştirerek özelleştirmesine** olanak tanır.
+- **Polymorphism**, kodu daha **esnek, yönetilebilir ve genişletilebilir** hale getirir.
+
+Bu kavramlar Java'nın temel prensiplerinden biridir ve yazılım geliştirmede büyük avantajlar sağlar. 🚀
+
+
+## Abstract Nedir ?
+```sh 
+
+```
+---
+
+# **Java'da Abstract Nedir? (Detaylı Açıklama)**
+
+Java'da **abstract** kelimesi, "soyut" anlamına gelir ve nesne yönelimli programlamada (OOP - Object Oriented Programming) kullanılan önemli bir kavramdır. Java'da **abstract sınıflar (abstract class)** ve **abstract metotlar (abstract methods)**, kodun daha esnek ve yeniden kullanılabilir olmasını sağlamak için kullanılır.
+
+Bu yazıda, **abstract** kavramını en ince detayına kadar inceleyeceğiz.
+
+---
+
+## **1. Java'da Abstract Sınıf (Abstract Class) Nedir?**
+### **Tanım:**
+- **Abstract sınıf**, doğrudan bir nesnesi oluşturulamayan (instantiate edilemeyen) ve alt sınıflar tarafından miras alınması gereken bir sınıftır.
+- İçinde **abstract (soyut) metotlar** ve **normal metotlar** bulunabilir.
+- **Abstract metotlar**, gövdesi olmayan (sadece tanımı yapılan) metotlardır. Alt sınıflar tarafından **override (ezilerek uygulanması)** zorunludur.
+
+### **Örnek Durum:**
+Gerçek dünyadan bir örnek düşünelim:
+- "Hayvan" genel bir kavramdır. Ancak bir **"Hayvan" nesnesi oluşturamayız** çünkü hayvanın türü belli değildir.
+- Ancak **"Kedi", "Köpek" gibi türetilmiş sınıflar** oluşturabiliriz.
+- İşte bu noktada, **"Hayvan" sınıfını abstract olarak tanımlarız** ve alt sınıfların ("Kedi", "Köpek") bu yapıyı kullanmasını sağlarız.
+
+---
+
+## **2. Java'da Abstract Sınıf Kullanımı (Örnekler ve Açıklamalar)**
+
+### **2.1 Basit Bir Abstract Sınıf Örneği**
+```java
+// Abstract sınıf oluşturuluyor
+abstract class Hayvan {
+    // Abstract metod (gövdesi yok, alt sınıflar implement etmek zorunda)
+    abstract void sesCikar();
+    
+    // Normal metod (gövdesi var, alt sınıflar miras alabilir)
+    void yasamDongusu() {
+        System.out.println("Bütün hayvanlar doğar, büyür ve ölür.");
+    }
+}
+
+// Kedi sınıfı, Hayvan sınıfından miras alıyor
+class Kedi extends Hayvan {
+    // Abstract metodu override ediyor
+    void sesCikar() {
+        System.out.println("Miyav!");
+    }
+}
+
+// Köpek sınıfı, Hayvan sınıfından miras alıyor
+class Kopek extends Hayvan {
+    // Abstract metodu override ediyor
+    void sesCikar() {
+        System.out.println("Hav hav!");
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        // Hayvan sınıfının nesnesi oluşturulamaz!
+        // Hayvan h = new Hayvan();  // Hata verir!
+
+        Hayvan kedi = new Kedi();
+        kedi.sesCikar();  // Çıktı: Miyav!
+        kedi.yasamDongusu(); // Çıktı: Bütün hayvanlar doğar, büyür ve ölür.
+
+        Hayvan kopek = new Kopek();
+        kopek.sesCikar();  // Çıktı: Hav hav!
+        kopek.yasamDongusu(); // Çıktı: Bütün hayvanlar doğar, büyür ve ölür.
+    }
+}
+```
+
+### **Kod Açıklamaları:**
+- **`Hayvan` sınıfı abstract olarak tanımlandı.**
+- `sesCikar()` metodu **abstract metod** olarak tanımlandı, bu yüzden **alt sınıflar bunu kesinlikle override (ezerek) etmek zorunda.**
+- `yasamDongusu()` metodu ise **normal bir metod** olduğu için alt sınıflar bunu miras aldı.
+- `Kedi` ve `Köpek` sınıfları `Hayvan` sınıfını **extend (miras alarak)** etti ve `sesCikar()` metodunu kendi ihtiyaçlarına göre doldurdu.
+
+---
+
+## **3. Abstract Sınıfın Kuralları ve Özellikleri**
+### **3.1 Abstract Sınıfın İçinde Neler Olabilir?**
+| **Özellik** | **Abstract Sınıfta Kullanımı** |
+|------------|--------------------------------|
+| **Abstract metod** | Evet (Gövdesiz olarak tanımlanmalı) |
+| **Normal metod (gövdesi olan metodlar)** | Evet |
+| **Değişkenler (fields)** | Evet (Ancak `final` olmamalı) |
+| **Constructors (Yapıcı metodlar)** | Evet |
+| **Static metodlar** | Evet (Ancak abstract olamazlar) |
+
+---
+
+## **4. Abstract Metot Nedir?**
+### **Tanım:**
+- **Abstract metot**, sadece **tanımlanmış** ancak **gövdesi olmayan** bir metottur.
+- **Alt sınıflar (subclasses), bu metodu override etmek zorundadır.**
+
+### **Örnek:**
+```java
+abstract class Sekil {
+    abstract void alanHesapla(); // Gövdesi olmayan abstract metod
+}
+
+class Kare extends Sekil {
+    int kenar;
+
+    Kare(int kenar) {
+        this.kenar = kenar;
+    }
+
+    void alanHesapla() {
+        System.out.println("Karenin Alanı: " + (kenar * kenar));
+    }
+}
+
+class Daire extends Sekil {
+    double yaricap;
+
+    Daire(double yaricap) {
+        this.yaricap = yaricap;
+    }
+
+    void alanHesapla() {
+        System.out.println("Dairenin Alanı: " + (Math.PI * yaricap * yaricap));
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Sekil kare = new Kare(4);
+        kare.alanHesapla(); // Çıktı: Karenin Alanı: 16
+
+        Sekil daire = new Daire(3);
+        daire.alanHesapla(); // Çıktı: Dairenin Alanı: 28.27
+    }
+}
+```
+- `Sekil` sınıfı abstract olarak tanımlandı.
+- `alanHesapla()` metodu **abstract metod** olduğu için alt sınıflar bunu kesinlikle implement etmek zorunda.
+- `Kare` ve `Daire` sınıfları bu metodu kendi ihtiyaçlarına göre doldurdu.
+
+---
+
+## **5. Abstract ile Interface Farkı**
+| **Karşılaştırma** | **Abstract Class** | **Interface** |
+|-------------------|-------------------|--------------|
+| **Tanım** | Normal ve abstract metodları içeren bir sınıf | Sadece metod imzaları (Java 8+ ile varsayılan metodlar eklenebilir) |
+| **Metodlar** | Abstract + Normal metodlar olabilir | Tüm metodlar varsayılan olarak abstract’tır (Java 8+ ile default metodlar eklenebilir) |
+| **Değişkenler** | Değişkenler olabilir | Değişkenler **public static final** olmalıdır |
+| **Miras (Inheritance)** | Sadece **bir abstract class** extend edilebilir | Birden fazla interface **implement edilebilir** |
+
+---
+
+## **6. Avantajları ve Dezavantajları**
+### **Avantajlar:**
+✅ **Kod tekrarını önler:** Soyut sınıflar, ortak davranışları miras yoluyla tekrar kullanmayı sağlar.  
+✅ **Geliştirmeyi kolaylaştırır:** Alt sınıflar, abstract metodları kendi ihtiyaçlarına göre doldurabilir.  
+✅ **Daha iyi yapı sağlar:** Programcıları belli metodları kullanmaya zorlar, böylece yapı korunur.
+
+### **Dezavantajlar:**
+❌ **Çok fazla kullanılırsa karmaşıklık yaratabilir.**  
+❌ **Bir sınıf yalnızca bir abstract sınıftan türeyebilir.** (Interface ile birden fazla kalıtım yapılabilir.)
+
+---
+
+## **Sonuç**
+- **Abstract sınıflar**, kalıtım (inheritance) kullanarak ortak özellikleri paylaşan sınıflar için idealdir.
+- **Abstract metotlar**, alt sınıfların override etmesini zorunlu kılar.
+- **Abstract sınıf ile interface arasındaki farkları bilmek**, en iyi uygulamaları seçmek için önemlidir.
+
+Java'da **abstract yapılar, kodun daha düzenli ve yönetilebilir olmasını sağlar.**
+
+
+
 ## Record
 ```sh 
 
@@ -8402,7 +10135,7 @@ public class Kisi {
 
     @Override
     public boolean equals(Object o) { /* eşitlik kontrolü */ }
-
+    
     @Override
     public int hashCode() { /* hash hesaplama */ }
 
@@ -8420,7 +10153,7 @@ Bir `record` nesnesi oluşturma ve kullanma:
 public class RecordOrnek {
     public static void main(String[] args) {
         Kisi kisi = new Kisi("Ahmet", 25);
-
+        
         System.out.println(kisi.ad());  // "Ahmet"
         System.out.println(kisi.yas()); // 25
         System.out.println(kisi);       // Kisi[ad=Ahmet, yas=25]
@@ -8470,8 +10203,8 @@ Kisi kisi1 = new Kisi("Ahmet", 25);
 Kisi kisi2 = new Kisi("Ahmet", 25);
 
 System.out.println(kisi1.equals(kisi2)); // true
-        System.out.println(kisi1.hashCode()); // Aynı hashCode üretir
-        System.out.println(kisi2.hashCode());
+System.out.println(kisi1.hashCode()); // Aynı hashCode üretir
+System.out.println(kisi2.hashCode());
 ```
 
 **Çıktı:**
@@ -8830,1168 +10563,798 @@ public class StudentService {
 - Küçük ve **basit veri sınıfları** için **Record** harika bir seçimdir. ✅
 - Büyük, sık değiştirilen veya **iş mantığı içeren sınıflar** için **klasik sınıflar daha iyi bir seçenektir**. 🚀
 
-## Inner Class
+## Record Dezavantajları
 ```sh 
 
 ```
 ---
 
-# **Java'da Inner Class (İç İçe Sınıflar) Nedir?**
-Java'da **Inner Class (İç İçe Sınıflar)**, bir sınıfın içinde başka bir sınıf tanımlanmasını sağlayan yapıdır. Bir **inner class**, dış sınıfın üyesidir ve genellikle **dış sınıfın özel (private) üyelerine erişim sağlamak** amacıyla kullanılır.
+## Lambda Expresion Nedir ?
+```sh 
+
+```
+---
+### Java'da Lambda Expression Nedir? (Detaylı Anlatım)
+
+Lambda ifadeleri (Lambda Expressions), Java 8 ile birlikte gelen ve **fonksiyonel programlama paradigmalarına** destek sağlayan bir özelliktir. Java, geleneksel olarak **nesne yönelimli** bir dil olduğu için, bir fonksiyonu bağımsız bir varlık olarak tanımlamak mümkün değildi. Ancak **Java 8 ile birlikte, fonksiyonları ilk sınıf vatandaş (first-class citizen) olarak kullanma imkanı** getiren Lambda Expressions ve Functional Interfaces gibi yapılar eklenmiştir.
+
+Lambda ifadeleri, **anonim fonksiyonlar** olarak düşünülebilir. Yani, adı olmayan bir fonksiyon tanımlamak için kullanılırlar ve genellikle **bir arabirimin (interface) tek bir metot içeren haliyle (Functional Interface)** kullanılırlar.
 
 ---
 
-## **Neden Inner Class Kullanılır?**
-1. **Dış sınıfın özel üyelerine erişimi kolaylaştırır.**
-2. **Kod organizasyonunu ve okunabilirliği artırır.**
-3. **Dış sınıfa sıkı bağlı ve tek başına anlamsız olan sınıfların tanımlanmasını sağlar.**
-4. **Gereksiz sınıf dosyası oluşturmayı engeller.**
+## 🔹 Lambda Expression'ın Temel Yapısı
+
+Lambda ifadelerinin genel sözdizimi şu şekildedir:
+
+```java
+(parameters) -> expression
+```
+
+Veya **gövdesi birden fazla satırdan oluşuyorsa:**
+
+```java
+(parameters) -> { statements; }
+```
+
+Burada:
+- **(parameters)** → Metoda geçilecek parametrelerdir.
+- **->** → Lambda operatörüdür, yani "şu işlemi yap" anlamına gelir.
+- **expression veya { statements; }** → Lambda'nın gövdesidir, yani çalıştırılacak kod bloğudur.
 
 ---
 
-## **Java'da Inner Class Çeşitleri**
-Java'da dört farklı türde **Inner Class** bulunur:
-1. **Normal Inner Class (Üye İç Sınıf)**
-2. **Static Inner Class (Statik İç Sınıf)**
-3. **Local Inner Class (Yerel İç Sınıf)**
+## 🔹 Lambda Expression ile Gelen Avantajlar
+1. **Daha az kod yazımı:** Geleneksel anonim sınıflara göre daha kısa ve okunaklıdır.
+2. **Kodun okunabilirliğini artırır:** Lambda ifadeleri ile işlevsellik daha belirgin hale gelir.
+3. **Performans iyileştirmesi:** Geleneksel anonim sınıflara göre daha hızlıdır çünkü Lambda ifadeleri **JVM tarafından optimize edilir**.
+4. **Paralel programlamaya uygunluk:** Java 8 ile gelen **Stream API** ile birlikte kullanıldığında, Lambda ifadeleri çok daha etkili hale gelir.
+
+---
+
+## 🔹 Functional Interface ile Kullanımı
+Lambda ifadeleri **sadece tek bir metodu olan (Single Abstract Method - SAM) arabirimlerde kullanılabilir**. Java'da bu tür arabirimlere **Functional Interface** (Fonksiyonel Arayüz) denir.
+
+Java'da **@FunctionalInterface** adında özel bir anotasyon bulunmaktadır. **Bu anotasyon, bir arabirimin yalnızca bir tane soyut metot içermesini garanti eder.**
+
+Örnek bir **Functional Interface**:
+
+```java
+@FunctionalInterface
+interface MyFunctionalInterface {
+    void showMessage(String message);
+}
+```
+
+Yukarıdaki arayüzü **Lambda Expression** ile kullanabiliriz:
+
+```java
+public class LambdaExample {
+    public static void main(String[] args) {
+        MyFunctionalInterface messagePrinter = (message) -> System.out.println("Mesaj: " + message);
+        messagePrinter.showMessage("Merhaba Lambda!");
+    }
+}
+```
+
+### 🔹 Kodu İnceleyelim:
+1. **MyFunctionalInterface** adında bir fonksiyonel arayüz oluşturduk.
+2. **Lambda ifadesi ile `showMessage` metodunu tanımladık.**
+3. `showMessage("Merhaba Lambda!")` çağrıldığında, **Lambda ifadesinin içerisindeki kod bloğu çalışacaktır.**
+
+---
+
+## 🔹 Lambda Expression Örnekleri
+
+### 1️⃣ **Tek Parametreli ve Tek Satırlık Lambda**
+```java
+interface Square {
+    int calculate(int x);
+}
+
+public class LambdaDemo {
+    public static void main(String[] args) {
+        Square square = x -> x * x;
+        System.out.println("Sonuç: " + square.calculate(5)); // Çıktı: Sonuç: 25
+    }
+}
+```
+- `x -> x * x;` ifadesi, `Square` arayüzündeki `calculate` metodunu tanımlar.
+
+---
+
+### 2️⃣ **Çoklu Parametre Kullanımı**
+```java
+interface Addable {
+    int add(int a, int b);
+}
+
+public class LambdaDemo {
+    public static void main(String[] args) {
+        Addable adder = (a, b) -> a + b;
+        System.out.println("Toplam: " + adder.add(10, 20)); // Çıktı: Toplam: 30
+    }
+}
+```
+
+---
+
+### 3️⃣ **Blok Kullanımı ve Return İfadesi**
+```java
+interface Multiply {
+    int product(int a, int b);
+}
+
+public class LambdaDemo {
+    public static void main(String[] args) {
+        Multiply multiplication = (a, b) -> {
+            int result = a * b;
+            return result;
+        };
+        System.out.println("Çarpım: " + multiplication.product(10, 5)); // Çıktı: Çarpım: 50
+    }
+}
+```
+- **Birden fazla satırdan oluşan ifadeler için `{}` blokları kullanılır.**
+- **`return` ifadesi kullanılabilir.**
+
+---
+
+## 🔹 Java'da Lambda Kullanım Alanları
+
+### ✅ **1. Thread (İş Parçacıkları) Kullanımı**
+Lambda ifadeleri **Thread (İş Parçacıkları)** ile kullanılabilir:
+
+```java
+public class LambdaThreadExample {
+    public static void main(String[] args) {
+        // Geleneksel Yöntem
+        Runnable runnable1 = new Runnable() {
+            @Override
+            public void run() {
+                System.out.println("Thread çalışıyor...");
+            }
+        };
+        new Thread(runnable1).start();
+
+        // Lambda ile
+        Runnable runnable2 = () -> System.out.println("Lambda ile Thread çalışıyor...");
+        new Thread(runnable2).start();
+    }
+}
+```
+
+---
+
+### ✅ **2. Java Collections API ile Kullanım**
+Lambda ifadeleri, **List ve Map gibi koleksiyonların işlenmesini** kolaylaştırır.
+
+```java
+import java.util.Arrays;
+import java.util.List;
+
+public class LambdaListExample {
+    public static void main(String[] args) {
+        List<String> names = Arrays.asList("Ahmet", "Mehmet", "Ayşe", "Fatma");
+        
+        // Geleneksel Döngü
+        for (String name : names) {
+            System.out.println(name);
+        }
+        
+        // Lambda ile
+        names.forEach(name -> System.out.println(name));
+    }
+}
+```
+
+---
+
+### ✅ **3. Java Stream API ile Kullanım**
+Lambda ifadeleri, **Stream API** ile birleştirildiğinde oldukça güçlüdür:
+
+```java
+import java.util.Arrays;
+import java.util.List;
+
+public class LambdaStreamExample {
+    public static void main(String[] args) {
+        List<Integer> numbers = Arrays.asList(5, 10, 15, 20, 25);
+
+        // Tüm sayıların karesini al ve ekrana yazdır
+        numbers.stream().map(n -> n * n).forEach(System.out::println);
+    }
+}
+```
+Bu kod:
+1. `numbers.stream()` ile bir **akış (stream)** oluşturur.
+2. `.map(n -> n * n)` ile her elemanı **karesiyle değiştirir**.
+3. `.forEach(System.out::println)` ile sonuçları ekrana yazdırır.
+
+---
+
+## 🔹 Sonuç
+- **Lambda Expressions**, Java'da **daha fonksiyonel** bir programlama yaklaşımı sağlar.
+- **Anonim sınıflara** göre **daha kısa** ve **performanslıdır**.
+- **Functional Interface** yapıları ile birlikte **kod okunabilirliğini artırır**.
+- **Stream API, Thread ve Koleksiyonlar** gibi birçok yerde oldukça kullanışlıdır.
+
+Lambda ifadeleri, **Java 8 ve sonrası için en önemli yeniliklerden biridir** ve fonksiyonel programlamanın Java dünyasına entegrasyonunda büyük bir adımdır. 🚀
+
+
+
+## Inner Class Nedir ?
+```sh 
+
+```
+---
+
+# **Java’da Inner Class (İç İçe Sınıflar) Detaylı Anlatım**
+
+Java'da **Inner Class** (İç İçe Sınıf), bir sınıfın içinde tanımlanmış başka bir sınıftır. Java’da inner class kullanımı, kodun organize edilmesini kolaylaştırır, dış sınıfın üyelerine erişimi sağlar ve kapsülleme (encapsulation) avantajları sunar.
+
+---
+
+## **1. Inner Class Nedir?**
+Java'da bir sınıfı başka bir sınıfın içinde tanımlarsak, buna **Inner Class** (İç Sınıf) denir. **Inner Class**, genellikle dış (outer) sınıfa bağlıdır ve bağımsız olarak çalışamaz.
+
+- **Dış sınıf (Outer Class)**: İç sınıfı kapsayan ana sınıftır.
+- **İç sınıf (Inner Class)**: Dış sınıfın içinde tanımlanan sınıftır.
+
+### **Örnek: Basit Inner Class Kullanımı**
+```java
+class OuterClass { // Dış Sınıf
+    private String outerField = "Dış sınıf değişkeni";
+
+    // İç Sınıf
+    class InnerClass {
+        void display() {
+            System.out.println("İç sınıftan erişilen: " + outerField);
+        }
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        OuterClass outer = new OuterClass();  // Dış sınıf nesnesi oluştur
+        OuterClass.InnerClass inner = outer.new InnerClass();  // İç sınıf nesnesi oluştur
+        inner.display();  // Çıktı: İç sınıftan erişilen: Dış sınıf değişkeni
+    }
+}
+```
+**Açıklamalar:**
+- **InnerClass**, **OuterClass** içinde tanımlanmıştır.
+- **InnerClass**, **OuterClass**'ın özel değişkenlerine (`private outerField`) doğrudan erişebilir.
+- **InnerClass** nesnesi oluşturmak için önce **OuterClass** nesnesi oluşturulmalıdır.
+
+---
+
+## **2. Inner Class Türleri**
+Java'da **4 çeşit inner class** vardır:
+
+1. **Regular Inner Class (Normal İç Sınıf)**
+2. **Static Nested Class (Statik İç Sınıf)**
+3. **Method Local Inner Class (Metod İçinde Tanımlanan İç Sınıf)**
 4. **Anonymous Inner Class (Anonim İç Sınıf)**
 
 ---
 
-## **1. Normal Inner Class (Üye İç Sınıf)**
-- Bir sınıfın içinde başka bir sınıf olarak tanımlanır.
-- **Dış sınıfın her türlü üyesine erişebilir (private dahil).**
-- **Dış sınıf olmadan tek başına var olamaz.**
+## **2.1. Regular Inner Class (Normal İç Sınıf)**
+**Dış sınıfın içinde, statik olmayan bir sınıftır.** İç sınıfa erişmek için önce dış sınıfın nesnesi oluşturulmalıdır.
 
 ### **Örnek: Normal Inner Class Kullanımı**
 ```java
-class DisSinif {
-    private String mesaj = "Merhaba, Inner Class!";
+class Outer {
+    private String message = "Merhaba, ben dış sınıfım!";
 
-    class IcSinif { // İç sınıf
-        void yazdir() {
-            System.out.println(mesaj); // Dış sınıfın özel değişkenine erişim
+    class Inner {
+        void showMessage() {
+            System.out.println(message);  // Dış sınıfın private değişkenine erişim
         }
     }
 }
 
-public class InnerClassOrnek {
+public class Main {
     public static void main(String[] args) {
-        DisSinif dis = new DisSinif();
-        DisSinif.IcSinif ic = dis.new IcSinif(); // İç sınıf nesnesi oluşturma
-        ic.yazdir();
+        Outer outer = new Outer();  // Dış sınıf nesnesi
+        Outer.Inner inner = outer.new Inner();  // İç sınıf nesnesi
+        inner.showMessage();  // Çıktı: Merhaba, ben dış sınıfım!
     }
 }
 ```
-### **Çıktı:**
-```
-Merhaba, Inner Class!
-```
-Bu örnekte, **`IcSinif` dış sınıfın private değişkenine erişebilmektedir.**
-
-### **Dikkat Edilmesi Gerekenler:**
-- **Inner Class nesnesi oluşturulurken önce dış sınıfın nesnesi oluşturulmalıdır.**
-- **Dış sınıfın private değişkenlerine erişebilir.**
+### **Özellikler:**
+✔ Dış sınıfın private değişkenlerine erişebilir.  
+✔ İç sınıfa, dış sınıfın nesnesi üzerinden ulaşılır.  
+✔ Dış sınıf olmadan iç sınıfın bağımsız çalışması mümkün değildir.
 
 ---
 
-## **2. Static Inner Class (Statik İç Sınıf)**
-- `static` olarak tanımlandığında, **dış sınıfın nesnesine ihtiyaç duymadan kullanılabilir.**
-- **Sadece dış sınıfın `static` üyelerine erişebilir.**
+## **2.2. Static Nested Class (Statik İç Sınıf)**
+**Statik iç sınıflar**, **dış sınıfın bir örneğine (instance) ihtiyaç duymadan doğrudan kullanılabilir.**
 
 ### **Örnek: Static Inner Class Kullanımı**
 ```java
-class DisSinif {
-    static String veri = "Statik Veri";
+class Outer {
+    static String staticMessage = "Statik değişken!";
 
-    static class IcSinif {
-        void yazdir() {
-            System.out.println("İç sınıf: " + veri); // Statik değişkene erişim
+    // Statik İç Sınıf
+    static class StaticInner {
+        void display() {
+            System.out.println("Statik İç Sınıf: " + staticMessage);
         }
     }
 }
 
-public class StaticInnerClassOrnek {
+public class Main {
     public static void main(String[] args) {
-        DisSinif.IcSinif ic = new DisSinif.IcSinif(); // Direkt nesne oluşturulabilir
-        ic.yazdir();
+        Outer.StaticInner inner = new Outer.StaticInner();  // Dış sınıfın nesnesine gerek yok
+        inner.display();  // Çıktı: Statik İç Sınıf: Statik değişken!
     }
 }
 ```
-### **Çıktı:**
-```
-İç sınıf: Statik Veri
-```
-
-### **Özetle:**
-- **Dış sınıfın statik üyelerine doğrudan erişebilir.**
-- **Dış sınıfın nesnesi oluşturulmadan iç sınıfın nesnesi oluşturulabilir.**
+### **Özellikler:**
+✔ **Dış sınıfın nesnesine ihtiyaç duymaz.**  
+✔ **Sadece dış sınıfın `static` üyelerine erişebilir.**  
+✔ **Bağımsız bir sınıf gibi çalışabilir.**
 
 ---
 
-## **3. Local Inner Class (Yerel İç Sınıf)**
-- **Bir metodun içinde tanımlanır ve sadece o metodun içinde kullanılabilir.**
-- **Metodun içinde tanımlandığı için erişim belirleyicisi (`public`, `private` vs.) kullanılamaz.**
-- **Bulunduğu metodun `final` olmayan yerel değişkenlerine erişemez.**
+## **2.3. Method Local Inner Class (Metod İçinde Tanımlanan İç Sınıf)**
+**Bir metodun içinde tanımlanan iç sınıftır.** Yalnızca o metodun içinde kullanılabilir.
 
-### **Örnek: Local Inner Class Kullanımı**
+### **Örnek: Method Local Inner Class Kullanımı**
 ```java
-class DisSinif {
-    void disMetod() {
-        class YerelIcSinif { // Metot içinde inner class
-            void yazdir() {
-                System.out.println("Bu bir Yerel Inner Class");
+class Outer {
+    void outerMethod() {
+        class MethodInner {  // Metodun içinde tanımlı iç sınıf
+            void show() {
+                System.out.println("Merhaba, ben metod içindeki iç sınıfım!");
             }
         }
-
-        YerelIcSinif ic = new YerelIcSinif();
-        ic.yazdir();
+        MethodInner inner = new MethodInner(); // İç sınıf nesnesi oluştur
+        inner.show();
     }
 }
 
-public class LocalInnerClassOrnek {
+public class Main {
     public static void main(String[] args) {
-        DisSinif dis = new DisSinif();
-        dis.disMetod(); // Sadece metod çağrıldığında çalışır
+        Outer outer = new Outer();
+        outer.outerMethod();  // Çıktı: Merhaba, ben metod içindeki iç sınıfım!
     }
 }
 ```
-### **Çıktı:**
-```
-Bu bir Yerel Inner Class
-```
-
-### **Özetle:**
-- **Bir metot içinde tanımlanır ve sadece o metodun içinde erişilebilir.**
-- **Metot çağrılmadan iç sınıfın nesnesi oluşturulamaz.**
+### **Özellikler:**
+✔ **Sadece tanımlandığı metod içinde kullanılabilir.**  
+✔ **Dış sınıfın üyelerine erişebilir.**  
+✔ **Metod tamamlandığında bellekten silinir.**
 
 ---
 
-## **4. Anonymous Inner Class (Anonim İç Sınıf)**
-- **İsimsizdir ve genellikle arayüzleri veya soyut sınıfları implement etmek için kullanılır.**
-- **Nesne oluşturma sırasında tanımlanır ve hemen kullanılır.**
+## **2.4. Anonymous Inner Class (Anonim İç Sınıf)**
+**İsmi olmayan (anonymous) ve genellikle bir arayüzü veya sınıfı genişleten (extend) veya bir arayüzü uygulayan (implement) tek seferlik sınıflardır.**
 
-### **Örnek: Arayüz Kullanımı ile Anonim İç Sınıf**
+### **Örnek: Anonim İç Sınıf ile Arayüz Kullanımı**
 ```java
-interface Mesaj {
-    void goster();
+interface Message {
+    void showMessage();
 }
 
-public class AnonymousInnerClassOrnek {
+public class Main {
     public static void main(String[] args) {
-        Mesaj mesaj = new Mesaj() {
-            public void goster() {
-                System.out.println("Bu bir Anonim Inner Class");
+        // Anonim İç Sınıf
+        Message obj = new Message() {
+            public void showMessage() {
+                System.out.println("Anonim İç Sınıftan Merhaba!");
             }
         };
-
-        mesaj.goster();
+        obj.showMessage();  // Çıktı: Anonim İç Sınıftan Merhaba!
     }
 }
 ```
-### **Çıktı:**
-```
-Bu bir Anonim Inner Class
-```
-
-### **Örnek: Soyut Sınıf Kullanımı ile Anonim Inner Class**
+### **Örnek: Anonim İç Sınıf ile Abstract Sınıf Kullanımı**
 ```java
-abstract class Hayvan {
-    abstract void sesCikar();
+abstract class Animal {
+    abstract void makeSound();
 }
 
-public class AnonymousInnerClassOrnek {
+public class Main {
     public static void main(String[] args) {
-        Hayvan kedi = new Hayvan() {
-            void sesCikar() {
-                System.out.println("Miyav!");
+        Animal dog = new Animal() {
+            void makeSound() {
+                System.out.println("Hav hav! (Anonim Sınıf)");
             }
         };
-
-        kedi.sesCikar();
+        dog.makeSound();  // Çıktı: Hav hav! (Anonim Sınıf)
     }
 }
 ```
-### **Çıktı:**
-```
-Miyav!
-```
-
-### **Özetle:**
-- **Bir sınıfın veya arayüzün bir kerelik kullanımı için uygundur.**
-- **Genellikle olay dinleyicileri (Event Listeners) veya callback mekanizmalarında kullanılır.**
+### **Özellikler:**
+✔ **Tek seferlik kullanım içindir.**  
+✔ **Soyut sınıfları ve arayüzleri doğrudan implemente edebilir.**  
+✔ **Yeni bir sınıf tanımlamadan anında kullanılabilir.**
 
 ---
 
-## **Inner Class Kullanım Senaryoları**
-1. **GUI Programlamada (Swing, JavaFX)**
-    - Anonim iç sınıflar, buton tıklama olaylarını yakalamak için yaygın olarak kullanılır.
-
-2. **Çok büyük sınıfları modüler hale getirmek için**
-    - Normal `Inner Class` ile büyük kod bloklarını daha okunaklı hale getirmek.
-
-3. **Bağımsız çalışamayan sınıfları gruplamak**
-    - Eğer bir sınıf **yalnızca belirli bir sınıfın içinde anlamlıysa**, **Inner Class kullanımı** iyi bir çözümdür.
-
-4. **Güvenlik ve Kapsülleme**
-    - Dış sınıfın private üyelerine erişim sağlamak için.
+## **Sonuç ve Karşılaştırma**
+| Inner Class Türü | Bağımsız mı? | Dış Sınıfın Nesnesine İhtiyaç Duyar mı? | Kullanım Alanı |
+|------------------|-------------|---------------------------------|-----------------|
+| **Regular Inner Class** | ❌ Hayır | ✅ Evet | Dış sınıfın üyelerine erişim sağlamak için |
+| **Static Nested Class** | ✅ Evet | ❌ Hayır | Dış sınıf nesnesi olmadan bağımsız çalışma |
+| **Method Local Inner Class** | ❌ Hayır | ✅ Evet | Sadece belirli bir metod içinde kullanılmak üzere |
+| **Anonymous Inner Class** | ❌ Hayır | ✅ Evet | Tek seferlik kullanım için (arayüz veya abstract class) |
 
 ---
 
 ## **Sonuç**
-- **Inner Class'lar**, dış sınıfa ait mantıksal bileşenleri iç içe organize etmek için kullanılır.
-- **Dört temel türü vardır**: **Normal Inner Class, Static Inner Class, Local Inner Class ve Anonymous Inner Class.**
-- **Kod organizasyonunu iyileştirir ve gereksiz dosya oluşturmayı engeller.**
-- **Anonim sınıflar**, olay dinleme (event handling) ve tek seferlik işlemler için idealdir.
+Java’daki **inner class’lar**, kodu daha organize hale getirmek, dış sınıfın üyelerine erişmek ve encapsulation sağlamak için güçlü bir mekanizmadır. **Hangi tür iç sınıfı kullanacağınızı, ihtiyacınıza göre seçmelisiniz!** 🚀
 
-### **Ne Zaman Kullanılmalı?**
-- Eğer **bir sınıf, yalnızca belirli bir dış sınıf içinde anlamlıysa**, Inner Class kullanımı mantıklıdır.
-- **Gereksiz Inner Class kullanımından kaçınılmalıdır**, çünkü bazen bağımsız sınıflar daha okunaklı ve sürdürülebilir olur.
-
-##  Çoklu İş Parçacığı (Multithreading)
+## Generics Nedir ?
 ```sh 
 
 ```
 ---
-
-## Çoklu İş Parçacığı (Multithreading)
-
-Çoklu iş parçacığı (multithreading), bir programın birden fazla iş parçacığını (thread) eş zamanlı olarak çalıştırmasını sağlayan bir programlama modelidir. Modern bilgisayarlar ve işletim sistemleri, aynı anda birden fazla işlemi gerçekleştirebilme yeteneğine sahiptir. Multithreading, bu paralel işlem gücünü en iyi şekilde kullanarak programların daha verimli çalışmasını sağlar.
-
-Birçok uygulama, aynı anda birden fazla görevi yerine getirmek zorundadır. Örneğin:
-- Bir web tarayıcısı, birden fazla sekmeyi aynı anda işleyebilir.
-- Bir oyun motoru, grafik, ses ve fizik hesaplamalarını ayrı iş parçacıklarıyla yönetebilir.
-- Bir veritabanı sunucusu, çok sayıda istemciden gelen talepleri eş zamanlı olarak işleyebilir.
-
-Multithreading’in avantajları:
-- **Performans Artışı:** İşlemci kaynaklarını daha verimli kullanarak programın daha hızlı çalışmasını sağlar.
-- **Daha Hızlı Yanıt Süresi:** Kullanıcı arayüzünü ve arka plan işlemlerini birbirinden ayırarak daha akıcı bir deneyim sunar.
-- **Kaynak Paylaşımı:** Aynı bellek alanını paylaşarak daha düşük bellek tüketimi sağlar.
-- **İyileştirilmiş CPU Kullanımı:** Birden fazla çekirdeğe sahip işlemcilerden tam kapasite faydalanılabilir.
-
-Ancak, çoklu iş parçacığı kullanımı bazı zorlukları da beraberinde getirir:
-- **Senkronizasyon sorunları**
-- **Ölçeklenebilirlik problemleri**
-- **Deadlock (Ölü Kilitlenme)**
-- **Race condition (Yarış Koşulları)**
-
-Şimdi, multithreading ile ilgili temel konulara ayrıntılı şekilde bakalım.
+# **Java'da Generics (Jenerikler) Nedir?**
+Generics, Java'da **tip güvenliğini artırmak, kod tekrarını azaltmak ve runtime hatalarını compile-time'da yakalamak için** kullanılan bir özelliktir. **Jenerik yapılar, sınıflara, arayüzlere ve metotlara farklı veri tiplerini dinamik olarak atayabilmemizi sağlar.**
 
 ---
 
-## **1. Thread Oluşturma ve Yönetimi**
+## **📌 Neden Generics Kullanılır?**
+Generics kullanılmadan önce, `Object` sınıfı yaygın olarak kullanılıyordu. Ancak `Object`, farklı türleri saklayabildiği için **tip dönüşümleri (type casting) gerektiğinden** runtime hatalarına sebep olabiliyordu.
 
-Bir programda çoklu iş parçacığı kullanımı için işletim sisteminin sağladığı API’ler veya programlama dili seviyesindeki kütüphaneler kullanılır. Java, Python, C++ ve C# gibi diller, thread yönetimi için çeşitli mekanizmalar sağlar.
-
-### **1.1 Thread Nedir?**
-Thread, bir programın içinde çalışan en küçük yürütülebilir birimdir. Bir program, birden fazla thread çalıştırarak aynı anda birden fazla işi gerçekleştirebilir.
-
-### **1.2 Thread Nasıl Oluşturulur?**
-Farklı programlama dillerinde iş parçacığı oluşturma yöntemleri değişiklik gösterebilir. İşte bazı popüler dillerde iş parçacığı oluşturma örnekleri:
-
-### **Java'da Thread Oluşturma**
-Java'da iş parçacığı oluşturmanın iki temel yolu vardır:
-1. **Thread sınıfını genişletmek**
-2. **Runnable arayüzünü uygulamak**
-
-#### **1. Thread Sınıfını Genişletme**
+### 🔴 **Generics Olmadan (Eski Yöntem – Type Safety Yok)**
 ```java
-class MyThread extends Thread {
-    public void run() {
-        for (int i = 0; i < 5; i++) {
-            System.out.println(Thread.currentThread().getName() + " çalışıyor...");
-        }
-    }
-}
+import java.util.ArrayList;
 
-public class Main {
+public class WithoutGenerics {
     public static void main(String[] args) {
-        MyThread thread1 = new MyThread();
-        MyThread thread2 = new MyThread();
+        ArrayList list = new ArrayList(); // Tip belirtilmemiş
+        list.add("Merhaba");
+        list.add(100); // Farklı bir tür eklenebiliyor
 
-        thread1.start();
-        thread2.start();
+        String message = (String) list.get(0); // Type casting gerekiyor
+        System.out.println(message);
+
+        String number = (String) list.get(1); // ClassCastException HATASI!
+        System.out.println(number);
     }
 }
 ```
+### ❌ **Sorunlar:**
+- **Tip güvenliği yok:** Aynı `ArrayList` içine farklı türler eklenebilir.
+- **Type casting zorunlu:** `Object` tipinden spesifik tipe dönüşüm gerekir.
+- **Runtime hataları:** Yanlış casting yapılırsa **`ClassCastException`** oluşur.
 
-#### **2. Runnable Arayüzünü Kullanma**
+---
+
+## **✅ Generics ile Daha Güvenli Kod**
 ```java
-class MyRunnable implements Runnable {
-    public void run() {
-        for (int i = 0; i < 5; i++) {
-            System.out.println(Thread.currentThread().getName() + " çalışıyor...");
-        }
-    }
-}
+import java.util.ArrayList;
 
-public class Main {
+public class WithGenerics {
     public static void main(String[] args) {
-        Thread thread1 = new Thread(new MyRunnable());
-        Thread thread2 = new Thread(new MyRunnable());
-
-        thread1.start();
-        thread2.start();
-    }
-}
-```
-
----
-
-### **Python’da Thread Oluşturma**
-Python'da threading modülü kullanılarak iş parçacıkları oluşturulabilir.
-
-#### **Threading Kullanarak Thread Oluşturma**
-```python
-import threading
-
-class MyThread(threading.Thread):
-    def run(self):
-        for i in range(5):
-            print(f"{threading.current_thread().name} çalışıyor...")
-
-thread1 = MyThread()
-thread2 = MyThread()
-
-thread1.start()
-thread2.start()
-```
-
----
-
-### **C++’da Thread Kullanımı**
-C++11 ile birlikte `std::thread` kütüphanesi kullanılarak iş parçacıkları oluşturulabilir.
-
-```cpp
-#include <iostream>
-#include <thread>
-
-void threadFunction() {
-    for (int i = 0; i < 5; i++) {
-        std::cout << "Thread çalışıyor..." << std::endl;
-    }
-}
-
-int main() {
-    std::thread t1(threadFunction);
-    std::thread t2(threadFunction);
-
-    t1.join();
-    t2.join();
-
-    return 0;
-}
-```
-
----
-
-## **2. Senkronizasyon**
-
-Çoklu iş parçacıklı programlama yaparken, iş parçacıklarının paylaşılan kaynaklara erişimi senkronize edilmezse beklenmedik hatalar oluşabilir. Bu tür sorunları önlemek için senkronizasyon mekanizmaları kullanılır.
-
-### **2.1 Yarış Koşulu (Race Condition)**
-Birden fazla iş parçacığının aynı veri kaynağına erişerek birbirinin işlemini bozmasına "yarış koşulu" (race condition) denir. Örneğin, aynı değişkeni değiştiren iki iş parçacığı beklenmedik sonuçlar üretebilir.
-
-Örnek:
-```python
-import threading
-
-counter = 0
-
-def increment():
-    global counter
-    for _ in range(1000000):
-        counter += 1
-
-t1 = threading.Thread(target=increment)
-t2 = threading.Thread(target=increment)
-
-t1.start()
-t2.start()
-
-t1.join()
-t2.join()
-
-print("Final Counter:", counter)  # Beklenen değer 2000000 fakat daha düşük olabilir
-```
-Yukarıdaki kodda, aynı değişkeni iki thread artırıyor ama sonuç beklenenden daha düşük olabilir çünkü işlemler çakışıyor.
-
-### **2.2 Mutex (Mutual Exclusion) ile Senkronizasyon**
-Yarış koşullarını engellemek için "mutex" kullanılabilir. Mutex, bir thread'in bir kaynağı kilitlemesini ve diğerlerinin beklemesini sağlar.
-
-Python'da `threading.Lock()` kullanarak bir mutex oluşturulabilir:
-
-```python
-import threading
-
-counter = 0
-lock = threading.Lock()
-
-def increment():
-    global counter
-    for _ in range(1000000):
-        with lock:
-            counter += 1
-
-t1 = threading.Thread(target=increment)
-t2 = threading.Thread(target=increment)
-
-t1.start()
-t2.start()
-
-t1.join()
-t2.join()
-
-print("Final Counter:", counter)  # Beklenen değer 2000000 olur
-```
-
----
-
-### **2.3 Deadlock (Ölü Kilitlenme)**
-Deadlock, iki veya daha fazla iş parçacığının birbirlerini bekleyerek sonsuza kadar bloke olma durumudur.
-
-Örneğin:
-```python
-import threading
-
-lock1 = threading.Lock()
-lock2 = threading.Lock()
-
-def task1():
-    with lock1:
-        print("Task1: lock1 alındı")
-        with lock2:
-            print("Task1: lock2 alındı")
-
-def task2():
-    with lock2:
-        print("Task2: lock2 alındı")
-        with lock1:
-            print("Task2: lock1 alındı")
-
-t1 = threading.Thread(target=task1)
-t2 = threading.Thread(target=task2)
-
-t1.start()
-t2.start()
-
-t1.join()
-t2.join()
-```
-Burada `task1` ve `task2` birbirlerinin kilidini beklerse, program sonsuza kadar bekleyebilir.
-
-Deadlock önlemek için:
-- **Kilitleri her zaman aynı sırada almak**
-- **Timeout kullanmak**
-- **Avoiding circular waits (Döngüsel beklemelerden kaçınmak)**
-
----
-
-Bu makalede çoklu iş parçacığı kavramını detaylıca inceledik. Senkronizasyon hataları, deadlock, yarış koşulları gibi konuların nasıl çözülebileceğini öğrendik. Gelişmiş sistemlerde multithreading, performansı artırabilir fakat dikkatli yönetilmezse ciddi sorunlara yol açabilir.
-
-
-## Eşzamanlılık (Concurrency)
-```sh 
-
-```
----
-
-# **Eşzamanlılık (Concurrency) ve Concurrency API**
-
-Eşzamanlılık (Concurrency), bir programın aynı anda birden fazla görevi yerine getirebilmesini sağlayan bir kavramdır. Eşzamanlılık, tek bir işlemcide zaman dilimleriyle (time slicing) sağlanabileceği gibi, çok çekirdekli işlemcilerde gerçekten paralel çalışan iş parçacıklarıyla (multithreading) da gerçekleştirilebilir.
-
-Modern yazılım geliştirme süreçlerinde, özellikle yüksek performans gerektiren uygulamalarda eşzamanlılık çok kritik bir rol oynar. Örneğin:
-- **Web sunucuları**, aynı anda yüzlerce hatta binlerce istemciyi yönetir.
-- **Oyun motorları**, fizik hesaplamaları, ses işleme ve grafik render işlemlerini aynı anda gerçekleştirir.
-- **Veritabanı sistemleri**, farklı istemcilerden gelen talepleri paralel olarak işler.
-
-Eşzamanlılık, doğru yönetilmediği takdirde bazı problemlere neden olabilir:
-- **Yarış Koşulları (Race Conditions)**: İki veya daha fazla thread, aynı veri kaynağına eşzamanlı olarak erişirse, yanlış sonuçlar ortaya çıkabilir.
-- **Deadlock (Ölü Kilitlenme)**: Thread’ler birbirlerini beklerse, sistem kilitlenebilir.
-- **Starvation (Aç Kalma)**: Bazı thread’ler sürekli beklerken, diğerleri kaynakları tüketebilir.
-
-Bu tür problemleri çözmek ve çok iş parçacıklı (multithreaded) uygulamalar geliştirmek için Java Concurrency API gibi gelişmiş kütüphaneler ve mekanizmalar geliştirilmiştir.
-
----
-
-# **1. Java’da Concurrency API ve Yardımcı Sınıflar**
-
-Java **Concurrency API**, çok iş parçacıklı programlamayı kolaylaştıran ve yönetilebilir hale getiren bir dizi sınıf ve arayüzden oluşur. Bu API sayesinde thread yönetimi, senkronizasyon ve eşzamanlı veri yapıları gibi işlemler daha güvenli ve verimli bir şekilde gerçekleştirilebilir.
-
-### **1.1. Concurrency API Temel Bileşenleri**
-Java'nın Concurrency API'si `java.util.concurrent` paketi altında yer alır ve aşağıdaki temel bileşenleri içerir:
-
-1. **Thread Pool (Havuz Yönetimi)**
-2. **Senkronizasyon Mekanizmaları (Lock, Semaphore, Monitor, etc.)**
-3. **Eşzamanlı Koleksiyonlar (Concurrent Collections)**
-4. **Zamanlanmış Görevler (Scheduled Tasks)**
-5. **Paralel İşleme (Fork/Join Framework)**
-6. **Gelişmiş Yardımcı Sınıflar (CountDownLatch, CyclicBarrier, Phaser vb.)**
-
-Şimdi bu bileşenleri detaylı bir şekilde inceleyelim.
-
----
-
-## **2. Yardımcı Sınıflar (CountDownLatch, CyclicBarrier vb.)**
-Concurrency API, eşzamanlı işlemleri yönetmek için birçok yardımcı sınıf sunar. Bunlardan bazıları:
-
-### **2.1 CountDownLatch**
-`CountDownLatch`, belirli bir sayıya kadar geri sayım yapan ve bu sayım sıfır olduğunda bekleyen thread'leri serbest bırakan bir mekanizmadır.
-
-📌 **Kullanım Senaryosu**:
-- Büyük bir sistem başlatılırken, tüm bileşenlerin hazır olmasını beklemek.
-- Paralel çalışan thread'lerin tamamlanmasını beklemek.
-
-🔹 **Örnek: CountDownLatch Kullanımı**
-```java
-import java.util.concurrent.CountDownLatch;
-
-class Worker extends Thread {
-    private CountDownLatch latch;
-
-    public Worker(CountDownLatch latch) {
-        this.latch = latch;
-    }
-
-    public void run() {
-        System.out.println(Thread.currentThread().getName() + " çalışıyor...");
-        try {
-            Thread.sleep(2000);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
-        latch.countDown();  // Sayacı azalt
-    }
-}
-
-public class CountDownLatchExample {
-    public static void main(String[] args) throws InterruptedException {
-        CountDownLatch latch = new CountDownLatch(3);
-
-        new Worker(latch).start();
-        new Worker(latch).start();
-        new Worker(latch).start();
-
-        latch.await();  // Tüm thread’ler bitene kadar bekler
-        System.out.println("Tüm iş parçacıkları tamamlandı. Ana işleme devam ediliyor.");
-    }
-}
-```
-**Çıktı:**
-```
-Thread-0 çalışıyor...
-Thread-1 çalışıyor...
-Thread-2 çalışıyor...
-Tüm iş parçacıkları tamamlandı. Ana işleme devam ediliyor.
-```
----
-
-### **2.2 CyclicBarrier**
-`CyclicBarrier`, belirli sayıda thread'in aynı noktada buluşmasını sağlayan bir bariyer mekanizmasıdır.
-
-📌 **Kullanım Senaryosu**:
-- Paralel hesaplamalarda, belirli adımları tamamlamadan bir sonraki aşamaya geçmeyi önlemek.
-- Oyun motorlarında, tüm oyuncuların bir turu tamamlamasını beklemek.
-
-🔹 **Örnek: CyclicBarrier Kullanımı**
-```java
-import java.util.concurrent.CyclicBarrier;
-
-class Task extends Thread {
-    private CyclicBarrier barrier;
-
-    public Task(CyclicBarrier barrier) {
-        this.barrier = barrier;
-    }
-
-    public void run() {
-        System.out.println(Thread.currentThread().getName() + " görevini tamamladı.");
-        try {
-            barrier.await();  // Diğer thread’leri bekler
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-        System.out.println(Thread.currentThread().getName() + " devam ediyor...");
-    }
-}
-
-public class CyclicBarrierExample {
-    public static void main(String[] args) {
-        CyclicBarrier barrier = new CyclicBarrier(3, () -> System.out.println("Tüm görevler tamamlandı!"));
-
-        new Task(barrier).start();
-        new Task(barrier).start();
-        new Task(barrier).start();
-    }
-}
-```
-**Çıktı:**
-```
-Thread-0 görevini tamamladı.
-Thread-1 görevini tamamladı.
-Thread-2 görevini tamamladı.
-Tüm görevler tamamlandı!
-Thread-0 devam ediyor...
-Thread-1 devam ediyor...
-Thread-2 devam ediyor...
-```
----
-
-### **2.3 Phaser**
-Phaser, CyclicBarrier ve CountDownLatch’in daha esnek bir alternatifidir. Birden fazla aşamalı işlemi yönetmek için kullanılır.
-
-📌 **Kullanım Senaryosu**:
-- Çok aşamalı iş akışlarını senkronize etmek.
-- Belirli işlemlerin bir grup halinde tamamlanmasını sağlamak.
-
----
-
-## **3. Concurrency API ile Thread Havuzu Yönetimi**
-`ExecutorService`, birden fazla iş parçacığını verimli bir şekilde yönetmek için kullanılır.
-
-🔹 **Örnek: Thread Havuzu Kullanımı**
-```java
-import java.util.concurrent.ExecutorService;
-import java.util.concurrent.Executors;
-
-class WorkerTask implements Runnable {
-    public void run() {
-        System.out.println(Thread.currentThread().getName() + " görevini çalıştırıyor...");
-    }
-}
-
-public class ExecutorServiceExample {
-    public static void main(String[] args) {
-        ExecutorService executor = Executors.newFixedThreadPool(3);
-
-        for (int i = 0; i < 5; i++) {
-            executor.execute(new WorkerTask());
-        }
-
-        executor.shutdown();
-    }
-}
-```
-**Çıktı:**
-```
-pool-1-thread-1 görevini çalıştırıyor...
-pool-1-thread-2 görevini çalıştırıyor...
-pool-1-thread-3 görevini çalıştırıyor...
-pool-1-thread-1 görevini çalıştırıyor...
-pool-1-thread-2 görevini çalıştırıyor...
-```
----
-
-## **Sonuç**
-- **CountDownLatch**: Belli bir sayıya ulaşana kadar bekler.
-- **CyclicBarrier**: Tüm thread’lerin belirli bir noktada buluşmasını sağlar.
-- **Phaser**: Daha esnek bir senkronizasyon aracı.
-- **ExecutorService**: Thread havuzu yönetimi sağlar.
-
-Concurrency API, çok iş parçacıklı uygulamaları daha yönetilebilir hale getirerek performans ve güvenilirlik sağlar. Bu yapılar, büyük ölçekli yazılım projelerinde kritik öneme sahiptir.
-
-
-## MVC Nedir ?
-```sh 
-
-```
----
-### **Java'da MVC (Model-View-Controller) Nedir?**
-MVC (Model-View-Controller), yazılım geliştirme süreçlerinde yaygın olarak kullanılan bir mimari desendir. Java uygulamalarında özellikle **Spring Framework, Java Swing, JavaFX ve JSP/Servlet** gibi teknolojilerde sıkça kullanılır. MVC, uygulama bileşenlerini üç ana katmana ayırarak, kodun modülerliğini ve sürdürülebilirliğini artırır.
-
----
-
-## **1. MVC Mimarisinin Temel Bileşenleri**
-MVC, üç ana bileşenden oluşur:
-
-1. **Model (Veri Katmanı)**
-2. **View (Görünüm Katmanı)**
-3. **Controller (Kontrol Katmanı)**
-
----
-
-### **1. Model (M) – Veri Katmanı**
-**Model, uygulamanın veri yönetiminden sorumlu bileşenidir.** Veri kaynağı (veritabanı, API vb.) ile etkileşim kurarak, bilgileri işler ve gerektiğinde günceller.
-
-#### **Model Katmanının Görevleri**
-- Veritabanı işlemlerini gerçekleştirir (CRUD - Create, Read, Update, Delete).
-- İş mantığını (business logic) içerir.
-- Controller tarafından çağrılır ve verileri View’a gönderir.
-
-#### **Model Örneği (Java)**
-```java
-public class User {
-    private int id;
-    private String name;
-    private String email;
-
-    // Constructor
-    public User(int id, String name, String email) {
-        this.id = id;
-        this.name = name;
-        this.email = email;
-    }
-
-    // Getter ve Setter metotları
-    public int getId() { return id; }
-    public void setId(int id) { this.id = id; }
-
-    public String getName() { return name; }
-    public void setName(String name) { this.name = name; }
-
-    public String getEmail() { return email; }
-    public void setEmail(String email) { this.email = email; }
-}
-```
-Bu örnekte `User` sınıfı, bir kullanıcıyı temsil eden Model katmanıdır.
-
----
-
-### **2. View (V) – Görünüm Katmanı**
-**View, kullanıcıya gösterilen arayüz bileşenlerini içerir.** Java uygulamalarında View genellikle şu teknolojilerle oluşturulur:
-
-- **Swing / JavaFX**: Masaüstü uygulamaları için.
-- **JSP / Thymeleaf / HTML + JavaScript**: Web tabanlı uygulamalar için.
-
-#### **View Katmanının Görevleri**
-- Kullanıcıya verileri sunar.
-- Kullanıcıdan giriş alır ve Controller’a gönderir.
-- Kullanıcı deneyimi ile ilgili tasarım ve arayüzü içerir.
-
-#### **View Örneği (Java Swing)**
-```java
-import javax.swing.*;
-import java.awt.*;
-
-public class UserView {
-    public void showUserDetails(String name, String email) {
-        JFrame frame = new JFrame("User Details");
-        frame.setSize(300, 200);
-        frame.setLayout(new GridLayout(2, 1));
-
-        JLabel nameLabel = new JLabel("Name: " + name);
-        JLabel emailLabel = new JLabel("Email: " + email);
-
-        frame.add(nameLabel);
-        frame.add(emailLabel);
-
-        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        frame.setVisible(true);
-    }
-}
-```
-Bu kod, `showUserDetails()` metodu ile kullanıcı bilgilerini bir Swing GUI penceresinde görüntüler.
-
----
-
-### **3. Controller (C) – Kontrol Katmanı**
-**Controller, Model ve View arasında bağlantı kuran bileşendir.** Kullanıcının girdilerini işler, Model’e gönderir ve güncellenen veriyi View’a yönlendirir.
-
-#### **Controller Katmanının Görevleri**
-- Kullanıcının eylemlerine tepki verir.
-- Model ile View arasında veri alışverişini sağlar.
-- İş mantığını yönetir.
-
-#### **Controller Örneği (Java)**
-```java
-public class UserController {
-    private User model;
-    private UserView view;
-
-    public UserController(User model, UserView view) {
-        this.model = model;
-        this.view = view;
-    }
-
-    public void updateView() {
-        view.showUserDetails(model.getName(), model.getEmail());
-    }
-}
-```
-Bu kod, `User` modelinden aldığı bilgileri `UserView` arayüzüne aktarır.
-
----
-
-## **2. MVC'nin Çalışma Mekanizması**
-1. Kullanıcı bir işlem gerçekleştirir (örn: butona tıklar, form gönderir).
-2. **Controller**, bu isteği alır ve işler.
-3. **Controller**, gerekli işlemleri yapmak için **Model**’e başvurur.
-4. **Model**, veriyi işler ve günceller.
-5. **Controller**, güncellenen Model bilgisini **View**'a iletir.
-6. **View**, güncellenmiş veriyi kullanıcıya gösterir.
-
----
-
-## **3. Java'da MVC Kullanım Örnekleri**
-Java'da MVC mimarisi **masaüstü ve web uygulamalarında** geniş çapta kullanılır:
-
-### **1. Swing ile MVC**
-- **Model:** Kullanıcı veya ürün gibi nesneler.
-- **View:** JFrame, JLabel, JTextField gibi bileşenler.
-- **Controller:** Kullanıcı etkileşimlerini yöneten sınıf.
-
-### **2. Web Uygulamaları için MVC**
-Java web uygulamalarında **Spring MVC, JSP/Servlet** teknolojileri ile uygulanır.
-
-#### **Spring Boot ile Basit MVC Örneği**
-**Model Katmanı (User.java)**
-```java
-@Entity
-public class User {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
-    private String name;
-    private String email;
-
-    // Getter - Setter
-}
-```
-
-**Controller Katmanı (UserController.java)**
-```java
-@RestController
-@RequestMapping("/users")
-public class UserController {
-    @Autowired
-    private UserRepository userRepository;
-
-    @GetMapping("/{id}")
-    public ResponseEntity<User> getUser(@PathVariable Long id) {
-        Optional<User> user = userRepository.findById(id);
-        return user.map(ResponseEntity::ok).orElseGet(() -> ResponseEntity.notFound().build());
-    }
-}
-```
-
-**View Katmanı (user.html - Thymeleaf)**
-```html
-<!DOCTYPE html>
-<html>
-<head>
-    <title>User Details</title>
-</head>
-<body>
-<h1>User Details</h1>
-<p>Name: <span th:text="${user.name}"></span></p>
-<p>Email: <span th:text="${user.email}"></span></p>
-</body>
-</html>
-```
-
----
-
-## **4. MVC'nin Avantajları ve Dezavantajları**
-### **Avantajları**
-✅ **Kodun Modülerliği:** Model, View ve Controller ayrı katmanlarda olduğu için kod yönetimi kolaydır.  
-✅ **Bakımı Kolay:** Bir bileşende yapılan değişiklik diğerlerini etkilemez.  
-✅ **Test Edilebilirlik:** Her katman ayrı test edilebilir.  
-✅ **Yeniden Kullanılabilirlik:** Aynı Model veya Controller farklı View’lerle kullanılabilir.
-
-### **Dezavantajları**
-❌ **Başlangıçta Fazla Kod Yazma Gereksinimi:** Küçük projeler için karmaşık olabilir.  
-❌ **Fazladan Katmanlar Performans Maliyeti Getirebilir:** Büyük ölçekli projelerde optimize edilmesi gerekir.
-
----
-
-## **Sonuç**
-Java'da **MVC mimarisi**, uygulamaların sürdürülebilirliğini ve genişletilebilirliğini artıran güçlü bir mimari desenidir. **Spring Boot, Java Swing, JavaFX ve JSP gibi teknolojilerde** yaygın olarak kullanılır. Model, View ve Controller bileşenleri sayesinde **katmanlı bir yapı sunarak, kodun okunabilirliğini ve test edilebilirliğini iyileştirir**.
-
-Bu mimariyi kullanarak, hem masaüstü hem de web tabanlı uygulamalar geliştirebilirsiniz! 🚀
-
-## Interface Nedir ?
-```sh 
-
-```
----
-
-# **Java'da Interface (Arayüz) Nedir?**
-Java'da **interface (arayüz)**, bir sınıfın uygulayabileceği bir **sözleşmeyi (contract)** tanımlayan bir yapıdır. Interface, bir sınıfın belirli metodları uygulamasını garanti eder, ancak metodların içeriğini (implementasyonunu) belirlemez. Yani, bir interface sadece metod imzalarını tanımlar ve bu metodları uygulayan sınıflar, bu metodları kendilerine uygun şekilde doldurmalıdır.
-
-Java'daki interface'ler **çoklu kalıtımı (multiple inheritance)** desteklemek ve **bağımsız modüler kod yazılmasını** sağlamak için kullanılır. **Polimorfizm (çok biçimlilik)** ve **bağımsızlık (decoupling)** gibi nesne yönelimli programlama (OOP) prensiplerini destekler.
-
----
-
-## **1. Interface Tanımı ve Kullanımı**
-### **Temel Interface Tanımı**
-Bir interface, **`interface`** anahtar kelimesiyle tanımlanır. İçinde **soyut (abstract) metodlar** ve **sabit değişkenler (constants)** barındırabilir.
-
-```java
-interface Animal {
-    void eat();  // Soyut metod
-    void sleep();
-}
-```
-- **Metodlar:** Varsayılan olarak **public ve abstract** olur, bu yüzden `public abstract` yazmaya gerek yoktur.
-- **Değişkenler:** Interface içindeki tüm değişkenler varsayılan olarak **public, static ve final** olur.
-
----
-
-## **2. Interface Kullanımı (Implement Edilmesi)**
-Bir sınıf, **`implements`** anahtar kelimesini kullanarak bir interface'i uygular (implement eder).
-
-### **Örnek: Bir Interface’i Uygulama**
-```java
-interface Animal {
-    void eat();
-    void sleep();
-}
-
-// Dog sınıfı, Animal interface'ini uyguluyor.
-class Dog implements Animal {
-    @Override
-    public void eat() {
-        System.out.println("Köpek yemek yiyor.");
-    }
-
-    @Override
-    public void sleep() {
-        System.out.println("Köpek uyuyor.");
-    }
-}
-
-public class Main {
-    public static void main(String[] args) {
-        Dog dog = new Dog();
-        dog.eat();  // Çıktı: Köpek yemek yiyor.
-        dog.sleep(); // Çıktı: Köpek uyuyor.
-    }
-}
-```
-Burada:
-- **`Dog` sınıfı**, `Animal` interface'ini uygulamak zorunda olduğu için `eat()` ve `sleep()` metodlarını tanımlamak zorundadır.
-- Eğer bir sınıf, bir interface’i uygular ancak tüm metodlarını tanımlamazsa, **abstract** olarak işaretlenmelidir.
-
----
-
-## **3. Interface İçinde Değişkenler (Sabitler)**
-Bir interface içinde tanımlanan değişkenler, **otomatik olarak public, static ve final olur**. Yani interface içindeki değişkenler **sabit (constant)** değerlerdir.
-
-### **Örnek: Interface İçinde Sabit Kullanımı**
-```java
-interface MathConstants {
-    double PI = 3.141592653589793; // public, static, final olarak kabul edilir.
-}
-
-// PI değerini kullanan bir sınıf
-class Circle {
-    public double getArea(double radius) {
-        return MathConstants.PI * radius * radius;
-    }
-}
-
-public class Main {
-    public static void main(String[] args) {
-        Circle circle = new Circle();
-        System.out.println("Dairenin Alanı: " + circle.getArea(5));
-    }
-}
-```
-**Önemli Not:** Interface içindeki değişkenler **değiştirilemez**, çünkü **final** olarak kabul edilir.
-
----
-
-## **4. Çoklu Kalıtım (Multiple Inheritance) ve Interface**
-Java, **class’lar arasında çoklu kalıtımı (multiple inheritance) desteklemez**, ancak birden fazla interface uygulamaya izin verir. Bu, kodun daha esnek ve modüler olmasını sağlar.
-
-### **Örnek: Bir Sınıfın Birden Fazla Interface’i Uygulaması**
-```java
-interface Flyable {
-    void fly();
-}
-
-interface Swimmable {
-    void swim();
-}
-
-class Bird implements Flyable, Swimmable {
-    @Override
-    public void fly() {
-        System.out.println("Kuş uçuyor.");
-    }
-
-    @Override
-    public void swim() {
-        System.out.println("Kuş yüzebiliyor.");
-    }
-}
-
-public class Main {
-    public static void main(String[] args) {
-        Bird bird = new Bird();
-        bird.fly();  // Çıktı: Kuş uçuyor.
-        bird.swim(); // Çıktı: Kuş yüzebiliyor.
-    }
-}
-```
-**Burada:**
-- `Bird` sınıfı hem `Flyable` hem de `Swimmable` interface’ini uyguluyor.
-- Java, birden fazla interface uygulamayı desteklediği için `Bird` sınıfı birden fazla interface'in metodlarını yazabiliyor.
-
----
-
-## **5. Java 8 ve Sonrasında Interface Geliştirmeleri**
-Java 8 ile birlikte **interface'ler artık gövdesi olan metotlara sahip olabilir**. Bunlar:
-1. **Default Metodlar** (default methods)
-2. **Static Metodlar** (static methods)
-
-### **5.1 Default Methods (Varsayılan Metodlar)**
-Interface içinde **default** anahtar kelimesiyle metot tanımlanabilir. Bu metotların bir gövdesi olur ve tüm implementasyonlar bu metodu miras alabilir.
-
-```java
-interface Vehicle {
-    default void start() {
-        System.out.println("Araç çalıştırıldı!");
-    }
-}
-
-class Car implements Vehicle {
-    // start() metodunu override etmek zorunda değiliz!
-}
-
-public class DefaultMethodExample {
-    public static void main(String[] args) {
-        Car car = new Car();
-        car.start(); // Çıktı: Araç çalıştırıldı!
-    }
-}
-```
-**Faydası:** Eğer bir interface’e yeni bir metod eklersek, onu implement eden eski kodlar bozulmaz.
-
----
-
-### **5.2 Static Methods (Statik Metodlar)**
-Java 8 ile interface içinde **static metotlar** tanımlanabilir. Bunlar interface'e özgüdür ve çağırmak için interface adı kullanılır.
-
-```java
-interface Utility {
-    static void printMessage(String message) {
+        ArrayList<String> list = new ArrayList<>(); // Generics ile tür belirtilmiş
+        list.add("Merhaba");
+        // list.add(100); // ❌ Derleme hatası verir!
+
+        String message = list.get(0); // Type casting gerekmez
         System.out.println(message);
     }
 }
+```
+### **🎯 Avantajlar:**
+✔ **Tip güvenliği sağlanır:** Yanlış veri eklenemez.  
+✔ **Type casting ihtiyacı ortadan kalkar:** Direkt doğru tipte veri çekilir.  
+✔ **Daha okunaklı ve güvenli kod yazılır.**
 
-public class StaticMethodExample {
+---
+
+# **📌 Generics Nerelerde Kullanılır?**
+- **Sınıflar (`Generic Class`)**
+- **Arayüzler (`Generic Interface`)**
+- **Metotlar (`Generic Method`)**
+- **Wildcard (`?` ile jenerik parametreler)**
+
+---
+
+# **1️⃣ Generics ile Sınıf Tanımlama (`Generic Class`)**
+Bir sınıfı **herhangi bir veri tipiyle çalışabilecek hale getirmek** için generics kullanabiliriz.
+
+### 🎯 **Örnek 1: Generic Bir Kutu (`Box<T>`) Sınıfı**
+```java
+// T => Type (Kullanıcı tarafından belirlenecek)
+public class Box<T> {
+    private T item; // Değişken türü dinamik
+
+    public void setItem(T item) {
+        this.item = item;
+    }
+
+    public T getItem() {
+        return item;
+    }
+}
+
+// Kullanımı
+public class Main {
     public static void main(String[] args) {
-        Utility.printMessage("Merhaba, Java 8!");
+        Box<String> stringBox = new Box<>();
+        stringBox.setItem("Merhaba, Java!");
+        System.out.println(stringBox.getItem()); // Çıktı: Merhaba, Java!
+
+        Box<Integer> intBox = new Box<>();
+        intBox.setItem(42);
+        System.out.println(intBox.getItem()); // Çıktı: 42
     }
 }
 ```
-**Faydası:** Yardımcı metotları (utility methods) interface içinde gruplamak.
+### **💡 Açıklamalar:**
+✔ `T` (Type Parameter) yerine **String, Integer, Double gibi veri tipleri** atanabilir.  
+✔ **Tek bir sınıf ile** farklı veri tipleri saklanabilir.  
+✔ **Kod tekrarını önler.**
 
 ---
 
-## **6. Marker Interfaces (İşaretleyici Arayüzler)**
-Bazı interface'ler **hiçbir metod içermez** ama yine de bir sınıfın belirli bir kategoriye ait olduğunu belirtmek için kullanılır. Bu tür interface'lere **Marker Interface** denir.
+# **2️⃣ Generics ile Arayüz Tanımlama (`Generic Interface`)**
+Bir interface’in farklı türler ile çalışmasını sağlamak için generics kullanılabilir.
 
-### **Örnek: Serializable Interface**
+### 🎯 **Örnek: Generics Kullanarak DAO Arayüzü (`IDaoGenerics<T>`)**
 ```java
-import java.io.Serializable;
-
-class Person implements Serializable {
-    String name;
-    int age;
+// T: Öğrenci, Öğretmen gibi herhangi bir nesne olabilir.
+public interface IDaoGenerics<T> {
+    void save(T t);
+    T findById(int id);
+    void delete(int id);
 }
 ```
-Burada `Person` sınıfı `Serializable` interface’ini implement ediyor, fakat herhangi bir metod yazmak zorunda değil. JVM, `Serializable` interface’ini kullanarak nesneleri **dizi (byte stream) halinde kaydedebilir veya gönderebilir.**
 
-Diğer **Marker Interface’ler**:
-- `Cloneable`
-- `Remote`
+**Arayüzü Kullanacak Bir Sınıf:**
+```java
+public class StudentDao implements IDaoGenerics<StudentDto> {
+    @Override
+    public void save(StudentDto student) {
+        System.out.println("Öğrenci kaydedildi: " + student.getName());
+    }
 
----
+    @Override
+    public StudentDto findById(int id) {
+        return new StudentDto(id, "Ahmet", "Yılmaz", 85.0, 90.0, java.time.LocalDate.of(2000, 5, 10), EStudentType.UNDERGRADUATE);
+    }
 
-## **Sonuç**
-- **Interface, bir sınıfın uygulaması gereken metodları belirler.**
-- **Soyut (abstract) metodlar içerir ve bu metodların implement edilmesi gerekir.**
-- **Bir sınıf birden fazla interface implement edebilir.**
-- **Java 8 ile gelen `default` ve `static` metodlar sayesinde, interface'ler daha güçlü hale gelmiştir.**
-- **Marker Interface’ler, bir sınıfın belirli bir yeteneğe sahip olduğunu göstermek için kullanılır.**
-
-**Java'da Interface kullanımı, esneklik ve modülerlik sağladığı için yaygın olarak tercih edilir. 🚀**
-
-
-## CSV Nedir ?
-```sh 
-
+    @Override
+    public void delete(int id) {
+        System.out.println("Öğrenci silindi: " + id);
+    }
+}
 ```
----
-### **CSV (Comma-Separated Values) Nedir?**
-CSV, **Comma-Separated Values (Virgülle Ayrılmış Değerler)** anlamına gelen bir dosya formatıdır. Verileri **düz metin dosyası** olarak saklar ve her satır, bir veri kaydını temsil eder. **Sütunlar ise genellikle virgül (`,`) ile ayrılır.**
-
-### **CSV Formatının Temel Yapısı**
-- **Her satır bir kaydı temsil eder.**
-- **Veri alanları (sütunlar) virgülle ayrılır.**
-- **Genellikle `.csv` uzantılı bir dosyada saklanır.**
-- **Veri tabanı tablolarına benzer bir yapıdadır.**
+✔ **Kod tekrarını önler**  
+✔ **Farklı veri türleriyle çalışabilir** (Öğrenci, Öğretmen, Ders vs.)
 
 ---
 
-### **Örnek CSV Formatı**
-Aşağıdaki CSV dosyasında **öğrenci bilgileri** bulunmaktadır:
+# **3️⃣ Generics ile Metot Tanımlama (`Generic Method`)**
+Belirli bir sınıfa bağlı olmadan **herhangi bir veri tipiyle çalışan metotlar** yazabiliriz.
 
+### 🎯 **Örnek: Generic Bir Swap (Değiştirme) Metodu**
+```java
+public class GenericMethodExample {
+    public static <T> void swap(T[] array, int i, int j) {
+        T temp = array[i];
+        array[i] = array[j];
+        array[j] = temp;
+    }
+
+    public static void main(String[] args) {
+        Integer[] numbers = {1, 2, 3, 4};
+        swap(numbers, 0, 2);
+        for (int num : numbers) {
+            System.out.print(num + " "); // Çıktı: 3 2 1 4
+        }
+    }
+}
 ```
-1,Ali,Kaya,75.5,88.0,82.2,2001-05-20,UNDERGRADUATE
-2,Ayşe,Demir,60.0,75.0,69.0,1999-07-10,GRADUATE
-3,Mehmet,Yıldız,85.0,90.0,88.0,2000-02-15,PHD
+✔ **Her türde veri ile çalışabilir**  
+✔ **Kod tekrarını azaltır**
+
+---
+
+# **4️⃣ Wildcard (`?` - Joker Karakter) Kullanımı**
+Bazen bir generics sınıfında **herhangi bir tipte veri kullanabileceğimiz bir yapı** isteriz.
+
+### 🎯 **Örnek: Üst Sınıf Kısıtlaması (`? extends Number`)**
+```java
+public class WildcardExample {
+    public static void printList(List<? extends Number> list) {
+        for (Number num : list) {
+            System.out.println(num);
+        }
+    }
+
+    public static void main(String[] args) {
+        List<Integer> intList = List.of(1, 2, 3);
+        List<Double> doubleList = List.of(2.5, 3.6);
+
+        printList(intList);   // Çalışır
+        printList(doubleList); // Çalışır
+    }
+}
 ```
-
-Buradaki **sütunlar şunlardır:**
-| ID | Ad | Soyad | Vize | Final | Sonuç Notu | Doğum Tarihi | Eğitim Türü |
-|----|----|-------|------|-------|------------|-------------|-------------|
-| 1  | Ali  | Kaya  | 75.5 | 88.0 | 82.2       | 2001-05-20  | UNDERGRADUATE |
-| 2  | Ayşe | Demir | 60.0 | 75.0 | 69.0       | 1999-07-10  | GRADUATE |
-| 3  | Mehmet | Yıldız | 85.0 | 90.0 | 88.0   | 2000-02-15  | PHD |
+✔ **? extends Number** → Sadece `Integer`, `Double`, `Float` gibi `Number` türevleri kabul edilir.  
+✔ **Joker karakter sayesinde** farklı türleri destekleyen metotlar yazabiliriz.
 
 ---
 
-### **CSV'nin Kullanım Alanları**
-📌 **Veri Depolama:** Küçük ölçekli uygulamalarda verileri saklamak için kullanılır.  
-📌 **Veri Transferi:** Farklı sistemler arasında veri alışverişi için yaygın olarak kullanılır.  
-📌 **Tablolar ve Raporlama:** Excel, Google Sheets gibi programlarda açılıp düzenlenebilir.  
-📌 **Veritabanı Entegrasyonu:** CSV formatındaki veriler, veritabanına kolayca aktarılabilir.
+# **🚀 Sonuç: Generics Kullanmanın Avantajları**
+✅ **Tip güvenliği sağlar** (Yanlış veri eklenemez)  
+✅ **Kod tekrarını azaltır** (Aynı kod farklı veri türleriyle çalışır)  
+✅ **Okunabilirliği artırır** (Casting ihtiyacını ortadan kaldırır)  
+✅ **Performansı artırır** (Compile-time hatalarını yakalar)
 
----
-
-### **CSV ile JSON Karşılaştırması**
-| **Özellik**   | **CSV** | **JSON** |
-|--------------|--------|--------|
-| **Veri Yapısı** | Düz metin, satır-sütun bazlı | Hiyerarşik, nesne tabanlı |
-| **İnsan Okunabilirliği** | Kolay okunur | Daha yapılandırılmış, bazen karmaşık olabilir |
-| **Dosya Boyutu** | Daha küçük | Daha büyük |
-| **Destekleyen Programlar** | Excel, Google Sheets, Python, Java, Veritabanları | JavaScript, Python, Web API’leri |
-
----
-
-### **CSV Kullanımı Java'da Neden Önemlidir?**
-✔ **Hafiftir:** Karmaşık veritabanları gerektirmez.  
-✔ **Kolay Kullanılır:** `BufferedReader` ve `BufferedWriter` ile kolayca okunup yazılabilir.  
-✔ **Esnektir:** Çeşitli programlar arasında veri alışverişi yapmak için uygundur.  
-✔ **Performanslıdır:** JSON veya XML gibi diğer formatlara göre daha hızlı işlenebilir.
-
----
-
-Bu yüzden sizin kodunuzda **CSV formatı**, öğrencileri dosyaya yazmak ve tekrar yüklemek için kullanılıyor.  
-👉 **Öğrenci bilgilerini bir satır olarak kaydediyor ve tekrar nesneye dönüştürüyor.** 🚀
+Java generics sayesinde daha **esnek, güvenli ve performanslı kod** yazabiliriz. 🚀
 
 
-## Kalıtım Nedir ?
-```sh 
-
-```
----
-
-## Abstract Nedir ?
-```sh 
-
-```
----
-
-## Polymorphism Nedir ?
+## Collection Nedir ?
 ```sh 
 
 ```
 ---
 
+# **Java'da Collection Nedir? (Detaylı Açıklama)**
+
+Java'da **Collection (Koleksiyonlar)**, birden fazla veriyi belirli bir yapı içerisinde saklamak, yönetmek ve işlemek için kullanılan bir çerçevedir (framework). Java Collection Framework (JCF), çeşitli veri yapıları ve algoritmalar içerir ve bunlar, Java'da veri yönetimini oldukça esnek ve verimli hale getirir.
+
+## **1. Collection Framework Nedir?**
+Java Collection Framework, Java’nın veri yapılarıyla çalışma yeteneğini geliştiren bir yapıdır. Java SE 2 ile birlikte gelmiştir ve veri yapıları ile algoritmaları içeren, **verimli veri depolama, erişim ve manipülasyon mekanizmaları** sağlayan bir çerçevedir.
+
+Collection framework, **Array, LinkedList, Stack, Queue, HashMap, TreeSet gibi çeşitli veri yapıları** içerir. Bu framework, koleksiyonları oluşturma, düzenleme, sıralama ve arama işlemlerini kolaylaştıran birçok yardımcı sınıf ve metod içerir.
+
+## **2. Java Collection Framework İçerisindeki Bileşenler**
+Java Collection Framework, temel olarak şu bileşenlerden oluşur:
+1. **Interfaces (Arayüzler)** → Collection, List, Set, Queue, Map vb.
+2. **Classes (Sınıflar)** → ArrayList, LinkedList, HashSet, TreeSet, HashMap, TreeMap vb.
+3. **Algorithms (Algoritmalar)** → Sıralama, arama, değiştirme vb.
+
+---
+
+# **3. Collection Arayüzleri (Interfaces)**
+Java'daki Collection Framework, çeşitli **arayüzler** kullanarak farklı veri yapılarını temsil eder. Bu arayüzler, koleksiyonların nasıl çalışması gerektiğini belirleyen kuralları tanımlar. En temel arayüz **Collection** arayüzüdür ve diğer arayüzler buradan türetilmiştir.
+
+## **3.1 Collection Arayüzü (Temel Arayüz)**
+Tüm koleksiyon türleri için ortak olan temel bir arayüzdür. List, Set ve Queue gibi arayüzler **Collection** arayüzünden türetilmiştir. **Map arayüzü** ise Collection’dan türetilmemiştir çünkü Map bir anahtar-değer (key-value) tabanlı veri yapısıdır.
+
+```java
+public interface Collection<E> extends Iterable<E> { 
+    boolean add(E e);
+    boolean remove(Object o);
+    boolean contains(Object o);
+    int size();
+    boolean isEmpty();
+    Iterator<E> iterator();
+}
+```
+
+---
+
+## **3.2 List Arayüzü (Ordered - Sıralı Veri)**
+- **List**, öğeleri belirli bir sıralamada saklayan ve aynı elemandan birden fazla içerebilen bir koleksiyon türüdür.
+- Elemanlara **indeks** ile erişilebilir.
+- List'ler veri ekleme, çıkarma ve güncelleme gibi işlemler için kullanılır.
+
+### **List’i Uygulayan Sınıflar:**
+- **ArrayList**
+- **LinkedList**
+- **Vector** (Çok nadiren kullanılır)
+- **Stack** (Vector'dan türetilmiştir)
+
+```java
+List<String> myList = new ArrayList<>();
+myList.add("Java");
+myList.add("Python");
+myList.add("C++");
+System.out.println(myList.get(1)); // Python
+```
+
+### **ArrayList vs LinkedList**
+| Özellik | ArrayList | LinkedList |
+|---------|----------|------------|
+| Erişim Hızı | Hızlı (O(1)) | Yavaş (O(n)) |
+| Ekleme/Silme | Yavaş (O(n)) | Hızlı (O(1) baştan/baştan silme) |
+| Bellek Kullanımı | Daha az bellek kullanır | Daha fazla bellek kullanır (düğümler nedeniyle) |
+
+---
+
+## **3.3 Set Arayüzü (Benzersiz - Unique Elemanlar)**
+- **Set**, **aynı elemandan birden fazla içeremez**.
+- Elemanlar sırasız olabilir.
+- Elemanlar, koleksiyona belirli bir kurala göre eklenir.
+
+### **Set’i Uygulayan Sınıflar:**
+- **HashSet** (Hızlıdır, sıralama yok)
+- **LinkedHashSet** (Ekleme sırasını korur)
+- **TreeSet** (Kendi içinde sıralı)
+
+```java
+Set<String> mySet = new HashSet<>();
+mySet.add("Java");
+mySet.add("Python");
+mySet.add("Java");  // Tekrar eden eleman eklenmez!
+System.out.println(mySet); // [Java, Python]
+```
+
+---
+
+## **3.4 Queue Arayüzü (İlk Giren İlk Çıkar - FIFO)**
+- **Queue**, elemanları bir sıraya koyar ve ekleme/çıkarmayı belirli bir düzene göre yapar.
+- **FIFO (First In, First Out)** mantığıyla çalışır.
+
+### **Queue’yi Uygulayan Sınıflar:**
+- **PriorityQueue** (Öncelik bazlı sıralama)
+- **LinkedList** (Queue olarak kullanılabilir)
+- **ArrayDeque** (Çift yönlü kuyruk)
+
+```java
+Queue<Integer> queue = new LinkedList<>();
+queue.add(10);
+queue.add(20);
+queue.add(30);
+System.out.println(queue.poll()); // 10 (ilk eklenen çıkar)
+```
+
+---
+
+## **3.5 Map Arayüzü (Key-Value - Anahtar-Değer)**
+- **Map**, bir anahtar (key) ve bu anahtara bağlı bir değer (value) saklayan koleksiyon türüdür.
+- **Anahtarlar benzersizdir**, ancak değerler tekrar edebilir.
+- **Collection arayüzünden türememiştir.**
+
+### **Map’i Uygulayan Sınıflar:**
+- **HashMap** (Sırasız, en hızlı performans)
+- **LinkedHashMap** (Eklenme sırasını korur)
+- **TreeMap** (Anahtarları sıralı tutar)
+
+```java
+Map<String, Integer> myMap = new HashMap<>();
+myMap.put("Elma", 3);
+myMap.put("Armut", 5);
+myMap.put("Muz", 7);
+System.out.println(myMap.get("Elma")); // 3
+```
+
+---
+
+# **4. Collection Framework’te Kullanılan Önemli Metotlar**
+Collection sınıflarında en yaygın kullanılan metodlar şunlardır:
+
+| Metot | Açıklama |
+|------------|-------------|
+| `add(E e)` | Eleman ekler |
+| `remove(Object o)` | Elemanı kaldırır |
+| `size()` | Eleman sayısını döndürür |
+| `isEmpty()` | Boş olup olmadığını kontrol eder |
+| `clear()` | Tüm elemanları temizler |
+| `contains(Object o)` | Elemanın var olup olmadığını kontrol eder |
+| `iterator()` | Koleksiyon üzerinde döngü yapmayı sağlar |
+
+---
+
+# **5. Java Collections Algoritmaları (Collections Utility Sınıfı)**
+Java, `Collections` sınıfı altında birçok yardımcı algoritma sunar. Bunlar:
+- **sort()** → Listeyi sıralar
+- **reverse()** → Listeyi ters çevirir
+- **shuffle()** → Liste elemanlarını karıştırır
+- **binarySearch()** → Liste içinde ikili arama yapar
+- **max()** ve **min()** → En büyük ve en küçük elemanı bulur
+
+```java
+List<Integer> numbers = new ArrayList<>(Arrays.asList(10, 5, 8, 3, 2));
+Collections.sort(numbers);
+System.out.println(numbers); // [2, 3, 5, 8, 10]
+```
+
+---
+
+# **Sonuç**
+Java Collection Framework, büyük veri kümelerini yönetmeyi kolaylaştırır ve verimli veri işleme sağlar. **List, Set, Queue ve Map** arayüzleri, farklı ihtiyaçlara göre özelleştirilmiş veri yapıları sunar.
+
+Koleksiyonlarla çalışırken hangi yapının kullanılacağını **veri yapısının gereksinimlerine göre** seçmek önemlidir.
 
 ## Java 8 gelen özellikler Nedir ?
 ```sh 
@@ -10097,10 +11460,10 @@ Java 8 ile gelen **Stream API**, koleksiyonlar (List, Set, Map) üzerinde fonksi
 ```java
 List<String> names = Arrays.asList("Ali", "Veli", "Ayşe", "Fatma");
 for (String name : names) {
-        if (name.startsWith("A")) {
+    if (name.startsWith("A")) {
         System.out.println(name);
     }
-            }
+}
 ```
 
 ### **Java 8 ile (Stream API Kullanımı)**
@@ -10108,7 +11471,7 @@ for (String name : names) {
 List<String> names = Arrays.asList("Ali", "Veli", "Ayşe", "Fatma");
 names.stream()
      .filter(name -> name.startsWith("A"))
-        .forEach(System.out::println);
+     .forEach(System.out::println);
 ```
 ✅ **Faydaları:** Daha kısa ve okunabilir kod, paralel işlem yapma imkanı (parallelStream()), kodun fonksiyonel hale gelmesi.
 
@@ -10208,8 +11571,8 @@ public class CollectorsExample {
     public static void main(String[] args) {
         List<String> names = Arrays.asList("Ali", "Veli", "Ayşe", "Fatma");
         List<String> filteredNames = names.stream()
-                .filter(name -> name.startsWith("A"))
-                .collect(Collectors.toList());
+                                          .filter(name -> name.startsWith("A"))
+                                          .collect(Collectors.toList());
 
         System.out.println(filteredNames); // ["Ali", "Ayşe"]
     }
@@ -10237,6 +11600,7 @@ public class NashornExample {
 ---
 
 Bu detaylı açıklamalar ile Java 8’in sunduğu tüm önemli yenilikleri kapsadık! 🚀
+
 
 
 ## Java 8 gelen özelliklerden stream nedir ?
@@ -10472,11 +11836,1476 @@ public class StreamReduceExample {
 Stream API, Java 8’in getirdiği en güçlü özelliklerden biridir ve modern Java programlamada oldukça yaygın kullanılmaktadır. 🚀
 
 
-## Cipher (AES/DES/RSA/HASHING)
+## Javada Annotation Nedir ?
 ```sh 
 
 ```
 ---
+Java'da **Annotation (Notasyon)**, kod hakkında ek bilgi sağlayan bir **metadata** (üst bilgi) mekanizmasıdır. Annotation'lar, kodun derlenmesi, çalıştırılması veya analiz edilmesi sırasında derleyici, çalışma zamanı araçları veya IDE tarafından işlenebilir.
+
+---
+
+# **Annotation Nedir?**
+Annotation’lar, bir programın kaynak koduna eklenen özel işaretlerdir ve **sınıflara, metotlara, değişkenlere, parametrelere ve diğer bileşenlere uygulanabilir**. Ancak, programın mantığını doğrudan etkilemezler. Annotation’lar, derleyici direktifleri, hata yakalama bilgileri ve çalışma zamanı işlemleri için kullanılır.
+
+Java'daki **annotation'lar genellikle framework'ler ve kütüphaneler tarafından kullanılır**. Örneğin, Spring, Hibernate ve JUnit gibi framework'lerde annotation’lar, yapılandırma ve otomasyon süreçlerini kolaylaştırır.
+
+---
+
+# **Annotation Kullanım Alanları**
+Annotation’lar üç ana kategoride kullanılır:
+
+1. **Derleyici Direktifleri (Compiler Instructions)**
+    - Derleyiciye hata veya uyarı mesajları hakkında bilgi verir.
+    - Örneğin: `@Override`, `@SuppressWarnings`
+
+2. **Kod Üretme (Code Generation)**
+    - Çeşitli araçlar tarafından kod üretmek için kullanılır.
+    - Örneğin: `@Entity`, `@Getter`, `@Setter` (Lombok)
+
+3. **Çalışma Zamanında (Runtime Processing)**
+    - Çalışma zamanı işlemleri için **Reflection API** ile kullanılabilir.
+    - Örneğin: `@Autowired`, `@Transactional` (Spring Framework)
+
+---
+
+# **Java'da Annotation Türleri**
+Java’da annotation’lar üç farklı şekilde sınıflandırılabilir:
+
+### **1. Java'nın Varsayılan (Built-in) Annotation’ları**
+Java’nın kendi içinde sunduğu bazı annotation’lar şunlardır:
+
+| Annotation | Açıklama |
+|------------|----------|
+| `@Override` | Bir metotun üst sınıftaki metodu ezdiğini belirtir. |
+| `@Deprecated` | Bir metot veya sınıfın kullanım dışı olduğunu belirtir. |
+| `@SuppressWarnings` | Derleyicinin belirli uyarıları göz ardı etmesini sağlar. |
+| `@FunctionalInterface` | Bir arayüzün yalnızca bir metot içermesi gerektiğini belirtir. |
+| `@SafeVarargs` | Değişken uzunlukta parametre listesi (varargs) kullanan metotlarda güvenli kullanım sağlanmasını belirtir. |
+| `@Native` | Sabit (constant) değişkenlerin `native code` içinde kullanılacağını belirtir. |
+
+Örnek:
+```java
+class Base {
+    void show() {
+        System.out.println("Base class");
+    }
+}
+
+class Derived extends Base {
+    @Override
+    void show() {  // `@Override` kullanımı
+        System.out.println("Derived class");
+    }
+}
+```
+
+---
+
+### **2. Meta-Annotation (Annotation’ları Anotasyonlama)**
+Java’da annotation’ların nasıl çalıştığını ve hangi alanlarda geçerli olduğunu belirleyen meta-annotation’lar vardır.
+
+| Meta-Annotation | Açıklama |
+|-----------------|----------|
+| `@Target` | Annotation’ın uygulanabileceği öğeleri belirtir (sınıf, metot, alan, parametre, vb.). |
+| `@Retention` | Annotation’ın ne kadar süreyle saklanacağını belirtir. |
+| `@Inherited` | Annotation’ın alt sınıflar tarafından miras alınmasını sağlar. |
+| `@Documented` | Annotation’ın Javadoc’ta görünmesini sağlar. |
+| `@Repeatable` | Aynı annotation’ın birden fazla kez kullanılmasını sağlar. |
+
+Örnek:
+```java
+import java.lang.annotation.ElementType;
+import java.lang.annotation.Retention;
+import java.lang.annotation.RetentionPolicy;
+import java.lang.annotation.Target;
+
+// Bu annotation yalnızca metodlara uygulanabilir.
+@Target(ElementType.METHOD)
+@Retention(RetentionPolicy.RUNTIME)
+@interface MyAnnotation {
+    String value() default "Varsayılan Değer";
+}
+```
+
+---
+
+### **3. Kullanıcı Tanımlı (Custom) Annotation’lar**
+Kendi annotation’larımızı oluşturabiliriz.
+
+Örnek olarak bir **loglama** annotation’ı yapalım:
+```java
+import java.lang.annotation.*;
+
+@Retention(RetentionPolicy.RUNTIME) // Çalışma zamanında erişilebilir
+@Target(ElementType.METHOD) // Yalnızca metotlara uygulanabilir
+@interface LogExecutionTime {
+}
+```
+
+Şimdi bu annotation’ı bir metotta kullanalım:
+```java
+class Test {
+    @LogExecutionTime
+    void process() {
+        System.out.println("Bu metot loglanacak.");
+    }
+}
+```
+Bu annotation’ı **Reflection API** ile işleyebiliriz:
+```java
+import java.lang.reflect.Method;
+
+public class AnnotationProcessor {
+    public static void main(String[] args) throws Exception {
+        Method method = Test.class.getMethod("process");
+        
+        if (method.isAnnotationPresent(LogExecutionTime.class)) {
+            System.out.println("process() metodu LogExecutionTime annotation’ı ile işaretlenmiştir.");
+        }
+    }
+}
+```
+Bu kodun çıktısı:
+```
+process() metodu LogExecutionTime annotation’ı ile işaretlenmiştir.
+```
+
+---
+
+# **Annotation’ların Retention Policy (Saklama Politikaları)**
+Bir annotation’ın hangi aşamada saklanacağını belirlemek için `@Retention` kullanılır.
+
+| Retention Policy | Açıklama |
+|------------------|----------|
+| `SOURCE` | Yalnızca kaynak kodda bulunur, derleme sırasında atılır. |
+| `CLASS` | Derleme aşamasında derlenmiş kodda bulunur, ancak çalışma zamanında erişilemez. |
+| `RUNTIME` | Çalışma zamanında Reflection API ile erişilebilir. |
+
+Örnek:
+```java
+@Retention(RetentionPolicy.RUNTIME)
+@interface RuntimeAnnotation {
+}
+```
+
+---
+
+# **İleri Düzey Kullanım: Annotation İşleyici (Processor)**
+Çalışma zamanında annotation'ları okumak için **Reflection API** kullanılır.
+
+Örneğin:
+```java
+import java.lang.reflect.Method;
+
+@Retention(RetentionPolicy.RUNTIME)
+@Target(ElementType.METHOD)
+@interface MyTest {
+}
+
+class Demo {
+    @MyTest
+    void testMethod() {
+        System.out.println("Test metodu çalıştı.");
+    }
+}
+
+public class AnnotationProcessor {
+    public static void main(String[] args) {
+        for (Method method : Demo.class.getDeclaredMethods()) {
+            if (method.isAnnotationPresent(MyTest.class)) {
+                try {
+                    method.invoke(new Demo()); // Metodu çağır
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+            }
+        }
+    }
+}
+```
+Bu kod `@MyTest` annotation’ına sahip metotları çalıştırır.
+
+Çıktı:
+```
+Test metodu çalıştı.
+```
+
+---
+
+# **Sonuç**
+- **Annotation’lar**, Java’da meta-veri (metadata) eklemek için kullanılan mekanizmalardır.
+- **Framework ve kütüphanelerde yaygın olarak kullanılırlar** (Spring, Hibernate, Lombok, JUnit).
+- **Üç temel türü vardır**: Java’nın kendi annotation’ları, meta-annotation’lar ve kullanıcı tanımlı annotation’lar.
+- **Çalışma zamanında işlenebilir** ve **Reflection API** ile okunabilir.
+- **Modern Java uygulamalarında, özellikle Spring Boot gibi framework’lerde merkezi bir rol oynar.**
+
+
+## Javada Optional
+```sh 
+
+```
+---
+
+Java'da `Optional<T>` sınıfı, **null referanslarını güvenli bir şekilde ele almak için** kullanılır. `Optional`, **"null safety"** sağlayarak, `NullPointerException` hatalarını minimize etmeye yardımcı olur.
+
+---
+
+## **1. Optional Nedir?**
+`Optional`, `java.util` paketinde bulunan ve **içinde bir değer olup olmadığını temsil eden bir kapsayıcı (container)** sınıftır.
+
+- **Boş olabilir (`Optional.empty()`)**
+- **Bir değer içerebilir (`Optional.of(T value)`)**
+
+Java 8 ile tanıtılmıştır ve özellikle **null kontrollerini daha okunaklı ve güvenli hale getirmek için** kullanılır.
+
+---
+
+## **2. Optional Nasıl Kullanılır?**
+### **2.1. Optional ile Değer Oluşturma**
+```java
+import java.util.Optional;
+
+public class Main {
+    public static void main(String[] args) {
+        // Değer içeren bir Optional nesnesi
+        Optional<String> optionalWithValue = Optional.of("Merhaba, Java!");
+
+        // Boş bir Optional nesnesi
+        Optional<String> emptyOptional = Optional.empty();
+
+        // Nullable bir değer içerebilen Optional
+        Optional<String> nullableOptional = Optional.ofNullable(null); // Boş Optional döner
+
+        System.out.println("Optional Değer: " + optionalWithValue.orElse("Varsayılan Değer"));
+        System.out.println("Boş Optional: " + emptyOptional.orElse("Varsayılan Değer"));
+    }
+}
+```
+---
+## **3. Optional Kullanım Senaryoları**
+### **3.1. Optional ile Null Kontrolü**
+**Klasik Null Kontrolü:**
+```java
+public String getUserName(User user) {
+    if (user != null) {
+        return user.getName();
+    } else {
+        return "Bilinmeyen Kullanıcı";
+    }
+}
+```
+**Optional ile Null Kontrolü:**
+```java
+public String getUserName(User user) {
+    return Optional.ofNullable(user)
+                   .map(User::getName)
+                   .orElse("Bilinmeyen Kullanıcı");
+}
+```
+💡 **Avantaj:** Daha okunaklı ve hatasız bir kod yapısı sağlanır.
+
+---
+
+### **3.2. Optional ile Değer Varlığını Kontrol Etme**
+```java
+Optional<String> optionalValue = Optional.of("Java 8");
+
+// Eğer değer varsa, yazdır
+optionalValue.ifPresent(value -> System.out.println("Değer: " + value));
+```
+💡 **Avantaj:** `null` kontrolü yapmadan doğrudan işlem yapmamızı sağlar.
+
+---
+
+### **3.3. Optional ile Varsayılan Değer Kullanımı**
+```java
+String result = optionalValue.orElse("Varsayılan Değer");
+System.out.println(result);
+```
+💡 **Avantaj:** Eğer `optionalValue` içinde değer varsa onu döndürür, yoksa varsayılan değeri döndürür.
+
+Alternatif olarak:
+```java
+String result = optionalValue.orElseGet(() -> "Varsayılan Değer");
+```
+💡 **Fark:** `orElse()` her zaman çalışır, ancak `orElseGet()` sadece `Optional` boşsa çalışır.
+
+---
+
+### **3.4. Optional ile Exception Fırlatma**
+```java
+String value = optionalValue.orElseThrow(() -> new IllegalArgumentException("Değer bulunamadı!"));
+```
+💡 **Avantaj:** Eğer değer boşsa, belirli bir hata fırlatabiliriz.
+
+---
+
+## **4. Optional ile Fonksiyonel Programlama**
+### **4.1. map() Kullanımı**
+Eğer `Optional` içinde bir değer varsa, `map()` ile bu değeri dönüştürebiliriz.
+```java
+Optional<String> name = Optional.of("Java");
+Optional<Integer> nameLength = name.map(String::length);
+System.out.println(nameLength.orElse(0)); // Çıktı: 4
+```
+💡 **Avantaj:** Null kontrolü yapmadan, doğrudan değer üzerinde işlem yapabiliriz.
+
+---
+
+### **4.2. flatMap() Kullanımı**
+`Optional<Optional<T>>` gibi iç içe `Optional` oluşmasını engellemek için `flatMap()` kullanılır.
+```java
+class User {
+    private Optional<String> email;
+
+    public Optional<String> getEmail() {
+        return email;
+    }
+}
+
+User user = new User();
+Optional<String> email = Optional.of(user).flatMap(User::getEmail);
+```
+💡 **Avantaj:** İç içe Optional kullanımını önler.
+
+---
+
+## **5. Optional Kullanılmaması Gereken Durumlar**
+**1️⃣ DTO veya Entity içinde Optional Kullanımı:**
+- `Optional` bir sınıfın alanı olarak kullanılmamalıdır. Çünkü `Optional` serileştirilmeye uygun değildir.
+
+```java
+// KÖTÜ KULLANIM ❌
+class User {
+    private Optional<String> email; // Kullanılmamalı!
+}
+```
+- Bunun yerine, normal değişken kullanın:
+```java
+// DOĞRU KULLANIM ✅
+class User {
+    private String email;
+}
+```
+
+**2️⃣ Koleksiyonlar İçinde Optional Kullanımı:**
+- Koleksiyon içinde `Optional` kullanmak yerine, boş koleksiyon döndürmek daha iyidir.
+```java
+// KÖTÜ KULLANIM ❌
+List<Optional<String>> emails;
+
+// DOĞRU KULLANIM ✅
+List<String> emails = Collections.emptyList();
+```
+
+---
+
+## **Sonuç**
+✅ `Optional<T>` sınıfı, `null` kontrolünü daha okunaklı ve güvenli hale getirir.  
+✅ `if (obj != null)` gibi geleneksel `null` kontrollerini azaltır.  
+✅ Fonksiyonel programlama prensiplerine uygun olarak çalışır.  
+❌ DTO'lar ve koleksiyonlar içinde kullanılmamalıdır.
+
+💡 **Özetle**, Java'da `Optional`, **null kaynaklı hataları önlemek ve kodun daha temiz olmasını sağlamak** için harika bir araçtır! 🚀
+
+
+## Javada Cipher (AES/DES/HASHING) Nedir ?
+```sh 
+
+```                                                                            
+---
+
+Pom.xml
+<!-- Java Cryptography Extension (JCE) İçin Gerekli -->
+<dependency>
+<groupId>javax.xml.bind</groupId>
+<artifactId>jaxb-api</artifactId>
+<version>2.3.1</version>
+</dependency>
+
+<!-- Java'da Şifreleme (AES) İçin Apache Commons Codec -->
+<dependency>
+    <groupId>commons-codec</groupId>
+    <artifactId>commons-codec</artifactId>
+    <version>1.15</version>
+</dependency>
+
+Java'da **Cipher** sınıfı, Java Cryptography Extension (JCE) API’si tarafından sağlanan bir şifreleme mekanizmasıdır ve şifreleme (encryption) ve şifre çözme (decryption) işlemleri için kullanılır. **Cipher** sınıfı, **AES, DES, RSA, HASHING (MD5, SHA-256 gibi)** gibi birçok algoritmayı destekler.
+
+---
+
+## **Cipher Sınıfı Nedir?**
+`javax.crypto.Cipher` sınıfı, Java'da **kriptografik dönüşümler** (cryptographic transformations) gerçekleştirmek için kullanılır. Bu dönüşümler şunları içerebilir:
+- Veri şifreleme (Encryption)
+- Veri şifre çözme (Decryption)
+- Veri imzalama (Signing)
+- Veri doğrulama (Verification)
+
+Bir **Cipher** nesnesi aşağıdaki **modlardan** biriyle çalışabilir:
+1. **ENCRYPT_MODE** → Şifreleme modu (Veriyi şifreler)
+2. **DECRYPT_MODE** → Şifre çözme modu (Şifrelenmiş veriyi çözer)
+3. **WRAP_MODE** → Anahtar sarmalama (Key Wrapping)
+4. **UNWRAP_MODE** → Anahtar çözme (Key Unwrapping)
+
+Cipher, genellikle bir anahtar (Key) ve bir algoritma belirterek kullanılır.
+
+---
+
+# **1. AES (Advanced Encryption Standard)**
+### **Nedir?**
+- AES, **simetrik şifreleme algoritmasıdır**. (Aynı anahtar hem şifreleme hem de şifre çözme için kullanılır.)
+- **Blok şifreleme algoritmasıdır** ve 128-bit blok boyutuna sahiptir.
+- **Anahtar boyutları**: 128-bit, 192-bit ve 256-bit olabilir.
+- **Güvenli ve yaygın olarak kullanılan bir algoritmadır.** (Bankacılık, VPN, Wi-Fi şifreleme vb.)
+
+### **AES ile Şifreleme ve Çözme Kodu**
+```java
+import javax.crypto.Cipher;
+import javax.crypto.KeyGenerator;
+import javax.crypto.SecretKey;
+import java.util.Base64;
+
+public class AESExample {
+    public static void main(String[] args) throws Exception {
+        // AES Anahtarı oluştur
+        KeyGenerator keyGenerator = KeyGenerator.getInstance("AES");
+        keyGenerator.init(128); // 128-bit anahtar
+        SecretKey secretKey = keyGenerator.generateKey();
+
+        // Cipher nesnesini AES için başlat
+        Cipher cipher = Cipher.getInstance("AES");
+
+        String originalText = "Merhaba, AES Şifreleme!";
+        
+        // Şifreleme (Encryption)
+        cipher.init(Cipher.ENCRYPT_MODE, secretKey);
+        byte[] encryptedBytes = cipher.doFinal(originalText.getBytes());
+        String encryptedText = Base64.getEncoder().encodeToString(encryptedBytes);
+        System.out.println("Şifrelenmiş Metin: " + encryptedText);
+
+        // Şifre Çözme (Decryption)
+        cipher.init(Cipher.DECRYPT_MODE, secretKey);
+        byte[] decryptedBytes = cipher.doFinal(Base64.getDecoder().decode(encryptedText));
+        String decryptedText = new String(decryptedBytes);
+        System.out.println("Çözülen Metin: " + decryptedText);
+    }
+}
+```
+
+#### **AES ile Şifreleme Modları**
+AES şifreleme **farklı blok şifreleme modları** ile kullanılabilir:
+1. **ECB (Electronic Codebook)** → Zayıf, tekrar eden blokları aynı şekilde şifreler.
+2. **CBC (Cipher Block Chaining)** → Önceki bloğun çıktısını XOR ile karıştırarak daha güvenli hale getirir.
+3. **CFB (Cipher Feedback)** → Akış şifrelemesi gibi çalışır.
+4. **OFB (Output Feedback)** → Blokları bağımsız olarak şifreler.
+5. **GCM (Galois Counter Mode)** → Kimlik doğrulamalı şifreleme sağlar.
+
+AES **CBC Modu** kullanımı:
+```java
+Cipher cipher = Cipher.getInstance("AES/CBC/PKCS5Padding");
+```
+
+---
+
+# **2. DES (Data Encryption Standard)**
+### **Nedir?**
+- **Simetrik bir şifreleme algoritmasıdır.** (AES gibi aynı anahtarı kullanır.)
+- **Blok boyutu**: 64-bit
+- **Anahtar uzunluğu**: 56-bit
+- **Eskimiş bir algoritmadır ve günümüzde pek güvenli değildir.** (AES’e göre zayıf)
+
+### **DES ile Şifreleme ve Çözme**
+```java
+import javax.crypto.Cipher;
+import javax.crypto.KeyGenerator;
+import javax.crypto.SecretKey;
+import java.util.Base64;
+
+public class DESExample {
+    public static void main(String[] args) throws Exception {
+        // DES Anahtarı oluştur
+        KeyGenerator keyGenerator = KeyGenerator.getInstance("DES");
+        SecretKey secretKey = keyGenerator.generateKey();
+
+        // Cipher nesnesini DES için başlat
+        Cipher cipher = Cipher.getInstance("DES");
+
+        String originalText = "Merhaba, DES Şifreleme!";
+        
+        // Şifreleme
+        cipher.init(Cipher.ENCRYPT_MODE, secretKey);
+        byte[] encryptedBytes = cipher.doFinal(originalText.getBytes());
+        String encryptedText = Base64.getEncoder().encodeToString(encryptedBytes);
+        System.out.println("Şifrelenmiş Metin: " + encryptedText);
+
+        // Şifre Çözme
+        cipher.init(Cipher.DECRYPT_MODE, secretKey);
+        byte[] decryptedBytes = cipher.doFinal(Base64.getDecoder().decode(encryptedText));
+        String decryptedText = new String(decryptedBytes);
+        System.out.println("Çözülen Metin: " + decryptedText);
+    }
+}
+```
+**DES, zayıf olduğu için AES tercih edilmelidir.**
+
+---
+
+# **3. RSA (Rivest-Shamir-Adleman)**
+### **Nedir?**
+- **Asimetrik şifreleme algoritmasıdır.** (Şifreleme ve şifre çözme için farklı anahtarlar kullanılır.)
+- **Genellikle dijital imzalar ve anahtar değişimi için kullanılır.**
+- **Anahtar uzunluğu**: 1024-bit, 2048-bit, 4096-bit olabilir.
+- **Çok güvenlidir ancak yavaştır.**
+
+### **RSA ile Şifreleme ve Çözme**
+```java
+import javax.crypto.Cipher;
+import java.security.KeyPair;
+import java.security.KeyPairGenerator;
+import java.util.Base64;
+
+public class RSAExample {
+    public static void main(String[] args) throws Exception {
+        // RSA Anahtar Çifti Oluştur
+        KeyPairGenerator keyPairGenerator = KeyPairGenerator.getInstance("RSA");
+        keyPairGenerator.initialize(2048);
+        KeyPair keyPair = keyPairGenerator.generateKeyPair();
+
+        // Cipher nesnesini RSA için başlat
+        Cipher cipher = Cipher.getInstance("RSA");
+
+        String originalText = "Merhaba, RSA Şifreleme!";
+        
+        // Şifreleme (Public Key kullanarak)
+        cipher.init(Cipher.ENCRYPT_MODE, keyPair.getPublic());
+        byte[] encryptedBytes = cipher.doFinal(originalText.getBytes());
+        String encryptedText = Base64.getEncoder().encodeToString(encryptedBytes);
+        System.out.println("Şifrelenmiş Metin: " + encryptedText);
+
+        // Şifre Çözme (Private Key kullanarak)
+        cipher.init(Cipher.DECRYPT_MODE, keyPair.getPrivate());
+        byte[] decryptedBytes = cipher.doFinal(Base64.getDecoder().decode(encryptedText));
+        String decryptedText = new String(decryptedBytes);
+        System.out.println("Çözülen Metin: " + decryptedText);
+    }
+}
+```
+
+---
+
+# **4. HASHING (SHA-256, MD5, SHA-512)**
+- **Hash fonksiyonları tek yönlüdür ve geri çevrilemez.**
+- **Parola saklama ve veri bütünlüğü sağlama işlemlerinde kullanılır.**
+- **MD5, SHA-1 artık güvenli değildir. SHA-256 veya SHA-512 tercih edilmelidir.**
+
+### **SHA-256 Hashleme**
+```java
+import java.security.MessageDigest;
+import java.util.Base64;
+
+public class HashingExample {
+    public static void main(String[] args) throws Exception {
+        String password = "123456";
+        
+        MessageDigest digest = MessageDigest.getInstance("SHA-256");
+        byte[] hash = digest.digest(password.getBytes());
+        
+        String hashedPassword = Base64.getEncoder().encodeToString(hash);
+        System.out.println("SHA-256 Hash: " + hashedPassword);
+    }
+}
+```
+
+---
+
+Bu açıklamalarla birlikte, **AES, DES, RSA ve Hashing algoritmalarının** Java'da nasıl kullanıldığını tam detaylı olarak öğrenmiş oldunuz. 🚀
+
+
+
+## Javada Composition
+```sh 
+
+```
+---
+
+## **Java'da Composition (Bileşim) Nedir?**
+
+### **1. Tanım**
+Composition (Bileşim), bir sınıfın başka bir sınıfı nesne olarak içermesi anlamına gelir. Bu, OOP'nin (Nesne Yönelimli Programlama) en önemli özelliklerinden biridir ve "Has-A (Sahip Olma)" ilişkisini ifade eder. Yani, bir sınıf başka bir sınıfa "sahiptir" ve onun özelliklerini kendi içinde kullanabilir.
+
+Inheritance (Miras) ile karşılaştırıldığında, composition genellikle **daha esnek ve güçlü bir ilişki** sunar. Çünkü miras (inheritance), kalıtım hiyerarşisi oluştururken, composition doğrudan nesneleri kullanarak sınıflar arasında ilişki kurar.
+
+---
+
+### **2. Composition’un Temel Mantığı**
+Composition şu mantık üzerine kuruludur:
+
+- Bir sınıfın, başka bir sınıfın yeteneklerini kullanabilmesi için, o sınıfın bir **örneğini (instance)** içinde bulundurur.
+- Bir nesne, içerdiği nesnenin metodlarını çağırarak, bileşen nesnenin fonksiyonlarını kendi içinde kullanabilir.
+- Kalıtımda olduğu gibi bir is-a (bir şeydir) ilişkisi değil, **has-a (bir şeye sahiptir) ilişkisi** oluşturur.
+
+---
+
+### **3. Composition’un Avantajları**
+1. **Daha Esnek ve Daha Az Bağımlı Kod:**
+    - Kalıtımda, bir sınıf başka bir sınıftan türediğinde tüm özelliklerini alır. Ancak, bu bağımlılığı artırır ve değişiklikleri zorlaştırır.
+    - Composition'da ise, yalnızca ihtiyacımız olan özellikleri nesne olarak dahil ederiz.
+
+2. **Çoklu Kullanım (Reusability):**
+    - Bileşim ile yazılan sınıflar, bağımsız bileşenlerden oluştuğu için birden fazla yerde tekrar kullanılabilir.
+
+3. **Daha Kolay Bakım (Maintainability):**
+    - Değişiklik yapmak daha kolaydır çünkü sınıflar birbirinden bağımsız çalışabilir.
+
+4. **Daha Güçlü Enkapsülasyon (Encapsulation):**
+    - Composition, kapsüllemeyi daha iyi destekler çünkü iç içe geçen nesneler arasında doğrudan bir kalıtım bağı bulunmaz.
+
+---
+
+### **4. Java'da Composition Örneği**
+
+Diyelim ki bir **Araba (Car)** sınıfımız var ve bir **Motor (Engine)** sınıfına ihtiyaç duyuyor. Burada **Araba**, bir **Motor**'a sahip olmalıdır.
+
+```java
+// Motor sınıfı
+class Engine {
+    private String type;
+    
+    public Engine(String type) {
+        this.type = type;
+    }
+    
+    public void start() {
+        System.out.println(type + " motor çalıştırıldı.");
+    }
+}
+
+// Araba sınıfı
+class Car {
+    private Engine engine; // Composition burada gerçekleşiyor
+    
+    public Car(Engine engine) {
+        this.engine = engine;
+    }
+    
+    public void startCar() {
+        System.out.println("Araba çalıştırılıyor...");
+        engine.start(); // İçerdiği motorun start() metodunu çağırıyoruz
+    }
+}
+
+// Ana sınıf (Main)
+public class Main {
+    public static void main(String[] args) {
+        Engine myEngine = new Engine("V8"); // Motor nesnesi oluşturduk
+        Car myCar = new Car(myEngine); // Arabayı motor ile ilişkilendirdik
+        myCar.startCar(); // Aracı çalıştır
+    }
+}
+```
+
+### **Çıktı**
+```
+Araba çalıştırılıyor...
+V8 motor çalıştırıldı.
+```
+
+Burada **Car (Araba) sınıfı, Engine (Motor) sınıfını içererek bir has-a ilişkisi oluşturdu**. Arabanın motoru olmadan çalışması mümkün değildir.
+
+---
+
+### **5. Inheritance (Kalıtım) ile Composition Karşılaştırması**
+Composition ve kalıtım farklı konseptlerdir. Peki, ne zaman composition ne zaman kalıtım kullanmalıyız?
+
+| **Özellik**         | **Inheritance (Kalıtım)** | **Composition (Bileşim)** |
+|---------------------|----------------------|----------------------|
+| **İlişki Türü**     | "Is-A" (Bir şeydir)   | "Has-A" (Bir şeye sahiptir) |
+| **Bağımlılık**      | Alt sınıf üst sınıfa bağımlıdır. | Daha bağımsızdır, sınıflar daha esnektir. |
+| **Esneklik**        | Değiştirmek zordur, miras alındığında tüm özellikler gelir. | Bir nesne içindeki bileşenler ayrı ayrı yönetilebilir. |
+| **Kullanım Durumu** | Mevcut bir sınıfın yeteneklerini genişletmek için. | Bir sınıfın başka bir sınıfın özelliklerine sahip olmasını sağlamak için. |
+
+#### **Örnek**
+- **Kalıtım (Inheritance) Kullanımı:**
+  ```java
+  class Animal {
+      void makeSound() {
+          System.out.println("Hayvan ses çıkarıyor.");
+      }
+  }
+  
+  class Dog extends Animal {
+      void bark() {
+          System.out.println("Köpek havlıyor.");
+      }
+  }
+  
+  public class Main {
+      public static void main(String[] args) {
+          Dog dog = new Dog();
+          dog.makeSound(); // Kalıtım yoluyla Animal sınıfının metodunu kullanabilir
+          dog.bark();
+      }
+  }
+  ```
+  **Çıktı:**
+  ```
+  Hayvan ses çıkarıyor.
+  Köpek havlıyor.
+  ```
+
+- **Composition Kullanımı:**
+  ```java
+  class Heart {
+      void pump() {
+          System.out.println("Kalp kan pompalıyor.");
+      }
+  }
+  
+  class Human {
+      private Heart heart;
+      
+      public Human() {
+          heart = new Heart(); // Composition
+      }
+      
+      void live() {
+          System.out.println("İnsan yaşıyor...");
+          heart.pump();
+      }
+  }
+  
+  public class Main {
+      public static void main(String[] args) {
+          Human human = new Human();
+          human.live();
+      }
+  }
+  ```
+  **Çıktı:**
+  ```
+  İnsan yaşıyor...
+  Kalp kan pompalıyor.
+  ```
+
+Burada **İnsan ve Kalp** arasında bir "Has-A" ilişkisi vardır. **İnsan bir kalp değildir, fakat bir kalbe sahiptir**. İşte bu, composition’un en büyük farkıdır.
+
+---
+
+### **6. Composition Kullanım Senaryoları**
+Composition genellikle şu durumlarda kullanılır:
+- **Karmaşık nesneleri modellemek için:** Örneğin, bir **Üniversite** içinde **Bölümler**, **Öğrenciler**, **Öğretmenler** bulunabilir.
+- **Kapsüllemeyi güçlendirmek için:** Sınıflar arasında sıkı bağımlılık olmadan yönetim sağlar.
+- **Kalıtımın gereksiz bağımlılığından kaçınmak için:** Örneğin, bir **Araç** sınıfı hem **Benzinli** hem **Elektrikli** motorları destekleyebilir. Kalıtım yerine motoru ayrı bir bileşen olarak tutmak daha mantıklıdır.
+
+---
+
+### **7. Sonuç**
+Composition, **OOP'de daha esnek ve modüler bir yapı sağlar**. Bir sınıfın başka bir sınıfın özelliklerini **kalıtım yerine bileşim yoluyla** kullanmasını sağlar. Özellikle **bağımlılıkları azaltmak, kod tekrarını önlemek ve daha sürdürülebilir yazılım geliştirmek** için önemlidir.
+
+Eğer bir nesne diğer bir nesneyi **sahipleniyorsa (has-a relationship)** ve o nesnenin fonksiyonlarını kullanıyorsa, Composition kullanmalısınız. Eğer bir nesne başka bir nesnenin özelliklerini tamamen devralıyorsa ve **o nesne onun bir türevidir (is-a relationship)**, o zaman kalıtım kullanabilirsiniz.
+
+
+## Thread Oluşturma ve Yönetimi
+```sh 
+
+```
+---
+
+# **Java'da Thread Oluşturma ve Yönetimi**
+
+Java'da **Thread (İş Parçacığı)**, programların paralel çalışmasını sağlamak için kullanılan bir mekanizmadır. Thread'ler, programın farklı bölümlerini aynı anda çalıştırarak performansı artırır ve CPU kullanımını optimize eder. Java'da **çoklu iş parçacığı (multithreading)**, bir uygulamanın birden fazla iş parçacığını aynı anda çalıştırmasını sağlar.
+
+---
+
+## **1. Thread Nedir?**
+Thread, bir programın bağımsız olarak çalıştırılabilen en küçük yürütülebilir birimidir. Java'da her uygulama, varsayılan olarak **main thread** ile başlar. Ekstra iş parçacıkları oluşturarak, işlemler paralel bir şekilde yürütülebilir.
+
+Örneğin, bir web sunucusu aynı anda birden fazla isteği işleyebilmek için birden fazla thread kullanır. Bir grafik arayüz uygulamasında, kullanıcı girişleri ve arka plan işlemleri farklı thread'ler tarafından yönetilir.
+
+---
+
+## **2. Java'da Thread Nasıl Oluşturulur?**
+Java'da thread oluşturmanın iki temel yolu vardır:
+
+1. **Thread sınıfını genişletmek (Extending the Thread Class)**
+2. **Runnable arayüzünü (Interface) uygulamak (Implementing Runnable Interface)**
+
+### **2.1 Thread Sınıfını Genişletmek**
+Java'da `Thread` sınıfını genişleterek (extend ederek) yeni bir thread oluşturabiliriz. `run()` metodu, thread çalıştırıldığında ne yapılacağını belirtir.
+
+**Örnek:**
+```java
+class MyThread extends Thread {
+    public void run() {
+        for (int i = 1; i <= 5; i++) {
+            System.out.println(Thread.currentThread().getName() + " - Değer: " + i);
+            try {
+                Thread.sleep(1000); // 1 saniye beklet
+            } catch (InterruptedException e) {
+                System.out.println("Thread kesintiye uğradı!");
+            }
+        }
+    }
+}
+
+public class ThreadExample {
+    public static void main(String[] args) {
+        MyThread thread1 = new MyThread();
+        MyThread thread2 = new MyThread();
+
+        thread1.start(); // Yeni bir iş parçacığı başlatır
+        thread2.start();
+    }
+}
+```
+**Çıktı:**
+```
+Thread-0 - Değer: 1
+Thread-1 - Değer: 1
+Thread-0 - Değer: 2
+Thread-1 - Değer: 2
+...
+```
+> **Not:** `start()` metodu `run()` metodunu çağırır ve thread'i başlatır. Eğer `run()` doğrudan çağrılırsa, thread olarak çalışmaz, normal bir metot çağrısı olur.
+
+---
+
+### **2.2 Runnable Arayüzünü Uygulamak**
+Thread oluşturmanın daha iyi bir yolu, `Runnable` arayüzünü uygulamaktır. Java'da bir sınıfın yalnızca bir üst sınıfı olabileceğinden (`Thread` sınıfını genişletmek kalıtımı sınırlar), `Runnable` arayüzü kullanmak daha esnek bir yaklaşımdır.
+
+**Örnek:**
+```java
+class MyRunnable implements Runnable {
+    public void run() {
+        for (int i = 1; i <= 5; i++) {
+            System.out.println(Thread.currentThread().getName() + " - Sayı: " + i);
+            try {
+                Thread.sleep(500);
+            } catch (InterruptedException e) {
+                System.out.println("Thread kesintiye uğradı!");
+            }
+        }
+    }
+}
+
+public class RunnableExample {
+    public static void main(String[] args) {
+        Thread thread1 = new Thread(new MyRunnable());
+        Thread thread2 = new Thread(new MyRunnable());
+
+        thread1.start();
+        thread2.start();
+    }
+}
+```
+
+**Avantajları:**
+- Java çoklu kalıtımı desteklemediği için `Runnable` kullanarak başka bir sınıfı da genişletebiliriz.
+- Daha temiz bir kod yapısı sağlar.
+
+---
+
+## **3. Thread Yönetimi**
+Birden fazla iş parçacığı kullanırken, thread'leri yönetmek oldukça önemlidir. Java'da thread yönetimi için çeşitli metotlar ve teknikler vardır.
+
+### **3.1 Thread Metotları**
+Aşağıda `Thread` sınıfında bulunan önemli metotlar verilmiştir:
+
+| Metot | Açıklama |
+|--------|---------|
+| `start()` | Thread'i başlatır ve `run()` metodunu çağırır. |
+| `run()` | Thread içinde çalıştırılacak kodu içerir. |
+| `sleep(ms)` | Thread'in belirtilen milisaniye kadar uyumasını sağlar. |
+| `join()` | Çağrılan thread bitene kadar diğerlerini bekletir. |
+| `yield()` | Mevcut thread'in çalışmasını duraklatır ve diğer thread'lere şans verir. |
+| `setPriority(int)` | Thread'in önceliğini belirler (1-10 arası). |
+| `getPriority()` | Thread'in mevcut önceliğini döndürür. |
+| `isAlive()` | Thread çalışıyorsa `true`, değilse `false` döndürür. |
+| `interrupt()` | Thread'i kesmek için kullanılır. |
+
+---
+
+### **3.2 Thread Önceliği (Priority)**
+Her thread'in bir önceliği vardır ve **1 ile 10** arasında bir değer alabilir.
+
+- `Thread.MIN_PRIORITY` (1) → En düşük öncelik
+- `Thread.NORM_PRIORITY` (5) → Varsayılan öncelik
+- `Thread.MAX_PRIORITY` (10) → En yüksek öncelik
+
+**Örnek:**
+```java
+class PriorityThread extends Thread {
+    public void run() {
+        System.out.println(Thread.currentThread().getName() + " Öncelik: " + Thread.currentThread().getPriority());
+    }
+}
+
+public class PriorityExample {
+    public static void main(String[] args) {
+        PriorityThread t1 = new PriorityThread();
+        PriorityThread t2 = new PriorityThread();
+        
+        t1.setPriority(Thread.MIN_PRIORITY);
+        t2.setPriority(Thread.MAX_PRIORITY);
+
+        t1.start();
+        t2.start();
+    }
+}
+```
+
+---
+
+### **3.3 Thread Senkronizasyonu**
+Çoklu thread'ler paylaşılan kaynaklara erişirken **veri tutarsızlığı** oluşabilir. Bunu önlemek için **synchronized** anahtar kelimesi kullanılır.
+
+**Örnek:**
+```java
+class Counter {
+    private int count = 0;
+
+    public synchronized void increment() {
+        count++;
+    }
+
+    public int getCount() {
+        return count;
+    }
+}
+
+public class SyncExample {
+    public static void main(String[] args) throws InterruptedException {
+        Counter counter = new Counter();
+
+        Thread t1 = new Thread(() -> {
+            for (int i = 0; i < 1000; i++) {
+                counter.increment();
+            }
+        });
+
+        Thread t2 = new Thread(() -> {
+            for (int i = 0; i < 1000; i++) {
+                counter.increment();
+            }
+        });
+
+        t1.start();
+        t2.start();
+        t1.join();
+        t2.join();
+
+        System.out.println("Final Count: " + counter.getCount());
+    }
+}
+```
+
+---
+
+## **4. Thread Havuzları (Thread Pools)**
+Çok fazla thread oluşturmak performans sorunlarına neden olabilir. **Executor Framework** kullanarak thread havuzu oluşturulabilir.
+
+**Örnek:**
+```java
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+
+public class ThreadPoolExample {
+    public static void main(String[] args) {
+        ExecutorService executor = Executors.newFixedThreadPool(3);
+
+        for (int i = 1; i <= 5; i++) {
+            int taskNumber = i;
+            executor.execute(() -> System.out.println("Görev " + taskNumber + " Çalışıyor"));
+        }
+
+        executor.shutdown();
+    }
+}
+```
+
+---
+
+## **Sonuç**
+Java'da thread yönetimi, performansı artırmak ve işlemleri daha verimli hale getirmek için kritik öneme sahiptir. `Thread` ve `Runnable` kullanarak thread'ler oluşturabilir, senkronizasyon sağlayabilir ve thread havuzları ile kaynak yönetimi yapabilirsiniz. Bu teknikler, çok iş parçacıklı uygulamalarda veri bütünlüğünü ve verimliliği artırmak için kullanılır.
+
+
+## Eşzamanlılık (Concurrency)
+```sh 
+
+```
+---
+
+# **Java'da Eşzamanlılık (Concurrency) - Kapsamlı Rehber**
+
+## **1. Giriş: Java'da Eşzamanlılık (Concurrency) Nedir?**
+Java, çok iş parçacıklı (multithreading) ve çok işlemcili (multiprocessing) programlamayı destekleyen güçlü bir programlama dilidir. Eşzamanlılık (concurrency), bir Java programında birden fazla görevin (task, thread, process) aynı zaman dilimi içinde yürütülebilmesini ifade eder. Java, eşzamanlı programlama için kapsamlı kütüphaneler, API'ler ve veri yapıları sunarak geliştiricilerin yüksek performanslı ve ölçeklenebilir uygulamalar oluşturmasını sağlar.
+
+## **2. Java'da Eşzamanlılık ve Paralellik**
+Java'da eşzamanlılık ve paralellik farklı konseptlerdir:
+
+- **Eşzamanlılık (Concurrency):** Birden fazla görevin (task) zaman paylaşımlı olarak çalıştırılması.
+- **Paralellik (Parallelism):** Birden fazla görevin aynı anda fiziksel olarak çalıştırılması (çok çekirdekli işlemciler ile mümkün).
+
+**Örnek:**
+- **Concurrency:** Tek bir CPU çekirdeği üzerinde, zaman dilimlerine bölerek birden fazla görevin sırayla çalıştırılması.
+- **Parallelism:** Çok çekirdekli bir CPU’da görevlerin gerçekten aynı anda çalıştırılması.
+
+---
+
+## **3. Java'da İş Parçacıkları (Threads)**
+Java'da eşzamanlı işlemler **Thread** sınıfı veya **Runnable** arayüzü ile oluşturulabilir.
+
+### **3.1. Thread Sınıfını Kullanarak Thread Oluşturma**
+Java'da iş parçacığı oluşturmanın en basit yolu, `Thread` sınıfından türetilmiş bir sınıf oluşturmaktır.
+
+```java
+class MyThread extends Thread {
+    public void run() {
+        System.out.println("Thread çalışıyor: " + Thread.currentThread().getName());
+    }
+    
+    public static void main(String[] args) {
+        MyThread t1 = new MyThread();
+        t1.start(); // Thread'i başlatır
+    }
+}
+```
+- `run()` metodu, iş parçacığının çalıştırılmasını sağlar.
+- `start()` metodu iş parçacığını başlatır.
+
+### **3.2. Runnable Arayüzünü Kullanarak Thread Oluşturma**
+Daha esnek bir yöntem, `Runnable` arayüzünü kullanmaktır.
+
+```java
+class MyRunnable implements Runnable {
+    public void run() {
+        System.out.println("Runnable thread çalışıyor: " + Thread.currentThread().getName());
+    }
+    
+    public static void main(String[] args) {
+        Thread t1 = new Thread(new MyRunnable());
+        t1.start();
+    }
+}
+```
+Bu yöntem, `Thread` sınıfını miras almadan iş parçacıkları oluşturmayı sağlar.
+
+### **3.3. Lambda İle Runnable Kullanımı**
+Java 8'den itibaren lambda ifadeleri ile daha kısa ve okunaklı bir şekilde `Runnable` nesnesi oluşturabiliriz:
+
+```java
+public class LambdaThread {
+    public static void main(String[] args) {
+        Thread thread = new Thread(() -> System.out.println("Lambda ile Thread çalışıyor."));
+        thread.start();
+    }
+}
+```
+
+---
+
+## **4. Java'da Thread Yönetimi**
+Java, iş parçacıklarını yönetmek ve kontrol etmek için çeşitli yöntemler sunar.
+
+### **4.1. Thread.sleep() ile İş Parçacığını Uyutma**
+`Thread.sleep(milisaniye)`, iş parçacığını belirtilen süre boyunca askıya alır.
+
+```java
+public class SleepExample {
+    public static void main(String[] args) {
+        Thread t1 = new Thread(() -> {
+            try {
+                System.out.println("Thread uyuyor...");
+                Thread.sleep(3000); // 3 saniye uyut
+                System.out.println("Thread uyandı.");
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+        });
+        t1.start();
+    }
+}
+```
+
+### **4.2. Thread.join() ile İş Parçacıklarının Senkronizasyonu**
+`join()` metodu, bir iş parçacığının diğer iş parçacığının tamamlanmasını beklemesini sağlar.
+
+```java
+public class JoinExample {
+    public static void main(String[] args) {
+        Thread t1 = new Thread(() -> {
+            for (int i = 1; i <= 5; i++) {
+                System.out.println("Thread 1: " + i);
+            }
+        });
+
+        Thread t2 = new Thread(() -> {
+            try {
+                t1.join(); // t1'in tamamlanmasını bekle
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+            System.out.println("Thread 2 başladı.");
+        });
+
+        t1.start();
+        t2.start();
+    }
+}
+```
+
+---
+
+## **5. Java'da Eşzamanlılık için Yüksek Seviyeli API'ler**
+Java'da **java.util.concurrent** paketi, iş parçacıkları ile çalışmayı kolaylaştıran birçok sınıf içerir.
+
+### **5.1. Executor Framework ile Thread Yönetimi**
+`ExecutorService`, iş parçacıklarını yönetmek için kullanılır.
+
+```java
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+
+public class ExecutorExample {
+    public static void main(String[] args) {
+        ExecutorService executor = Executors.newFixedThreadPool(3);
+
+        for (int i = 1; i <= 5; i++) {
+            executor.execute(() -> System.out.println("Çalışan thread: " + Thread.currentThread().getName()));
+        }
+        
+        executor.shutdown(); // Thread havuzunu kapat
+    }
+}
+```
+
+### **5.2. Future ve Callable ile Sonuç Döndüren İş Parçacıkları**
+`Callable`, `Runnable` arayüzünden farklı olarak bir sonuç döndürür.
+
+```java
+import java.util.concurrent.*;
+
+public class CallableExample {
+    public static void main(String[] args) throws Exception {
+        ExecutorService executor = Executors.newSingleThreadExecutor();
+
+        Callable<Integer> task = () -> {
+            TimeUnit.SECONDS.sleep(2);
+            return 123;
+        };
+
+        Future<Integer> future = executor.submit(task);
+        System.out.println("İşlem sonucu bekleniyor...");
+        Integer result = future.get(); // Bloklayıcı çağrı
+        System.out.println("Sonuç: " + result);
+
+        executor.shutdown();
+    }
+}
+```
+
+---
+
+## **6. Java'da Eşzamanlılık Problemleri ve Çözümleri**
+Eşzamanlı programlama sırasında karşılaşılan bazı problemler şunlardır:
+
+### **6.1. Yarış Koşulları (Race Condition)**
+Birden fazla iş parçacığının aynı değişkeni güncellemesi sonucu veri tutarsızlığı oluşabilir.
+
+```java
+class Counter {
+    private int count = 0;
+
+    public void increment() {
+        count++;
+    }
+
+    public int getCount() {
+        return count;
+    }
+}
+```
+**Çözüm:** `synchronized` anahtar kelimesi veya `ReentrantLock` kullanımı.
+
+```java
+class SafeCounter {
+    private int count = 0;
+
+    public synchronized void increment() {
+        count++;
+    }
+
+    public int getCount() {
+        return count;
+    }
+}
+```
+
+### **6.2. Deadlock (Çıkmaz Durumu)**
+İki iş parçacığı birbirinden kaynak beklerken sonsuz bekleme durumuna girer.
+
+**Çözüm:** Kaynak tahsis sırasını belirlemek.
+
+```java
+// Avoiding deadlock with ordered locking
+```
+
+### **6.3. Starvation ve Livelock**
+Bazı iş parçacıklarının kaynaklara erişememesi.
+
+**Çözüm:** Adil planlama (`Fair locks`), zaman aşımı mekanizmaları.
+
+---
+
+## **7. Sonuç**
+Java'da eşzamanlılık, performansı artırırken yönetilmesi gereken kritik konular içerir. **Thread**, **ExecutorService**, **Callable**, **Locks** gibi araçları doğru kullanarak yüksek performanslı uygulamalar geliştirebilirsiniz.
+
+
+## Reflection API
+```sh 
+
+```
+---
+# **Reflection API Nedir? (Çok Detaylı Açıklama)**
+
+## **1. Giriş: Reflection API Nedir?**
+**Reflection API**, **Java sınıflarını, metotlarını, değişkenlerini ve anotasyonlarını çalışma zamanında (runtime) dinamik olarak incelemek ve değiştirmek** için kullanılan güçlü bir mekanizmadır. Normalde, bir Java sınıfı derleme zamanında belirlenen yapıya sahiptir ve çalışma zamanında değiştirilemez. Ancak **Reflection** ile çalışma zamanında **bir sınıfın yapısını öğrenebilir, yeni nesneler oluşturabilir ve metotlarını çağırabiliriz.**
+
+### **Kullanım Alanları**
+- **Framework ve Kütüphanelerde**: Spring, Hibernate gibi framework'ler **Reflection** kullanır.
+- **Dinamik Kod Üretimi**: Runtime'da obje oluşturup metodlarını çağırabiliriz.
+- **Test ve Debugging Araçları**: Unit test framework'leri Reflection ile metotları çağırabilir.
+- **Kod Analizi (Introspection)**: Bir sınıfın içindeki **private metotları ve değişkenleri** analiz etmek için kullanılabilir.
+
+---
+
+## **2. Reflection API’nin Ana Bileşenleri**
+Java Reflection API, `java.lang.reflect` paketinde bulunur ve aşağıdaki temel bileşenleri içerir:
+
+1. **`Class<?>`** → Bir sınıfın yapısını temsil eder.
+2. **`Method`** → Bir sınıfın metotlarını temsil eder.
+3. **`Field`** → Bir sınıfın değişkenlerini temsil eder.
+4. **`Constructor`** → Bir sınıfın constructor metodlarını temsil eder.
+5. **`Modifier`** → Sınıf, metot veya değişkenin erişim belirleyicilerini alır.
+
+---
+
+## **3. Reflection API Kullanımı**
+### **3.1. Bir Sınıfın Yapısını İnceleme**
+Bir sınıfın Reflection API ile analiz edilmesi için **Class** nesnesi kullanılır.
+
+```java
+class Student {
+    private String name;
+    private int age;
+
+    public Student() {}
+
+    public Student(String name, int age) {
+        this.name = name;
+        this.age = age;
+    }
+
+    public void study() {
+        System.out.println(name + " çalışıyor...");
+    }
+}
+
+public class ReflectionExample {
+    public static void main(String[] args) throws ClassNotFoundException {
+        // 1. Yöntem: Class.forName()
+        Class<?> studentClass = Class.forName("Student");
+
+        // 2. Yöntem: .class kullanımı
+        Class<?> studentClass2 = Student.class;
+
+        // 3. Yöntem: getClass()
+        Student student = new Student();
+        Class<?> studentClass3 = student.getClass();
+
+        // Sınıf adını yazdır
+        System.out.println("Sınıf Adı: " + studentClass.getName());
+    }
+}
+```
+**Çıktı:**
+```
+Sınıf Adı: Student
+```
+
+---
+
+### **3.2. Bir Sınıftaki Tüm Metotları ve Değişkenleri Listeleme**
+Bir sınıfın **tüm metotlarını, değişkenlerini ve constructor'larını** almak için aşağıdaki yöntemler kullanılır.
+
+```java
+import java.lang.reflect.*;
+
+class Teacher {
+    private String name;
+    private double salary;
+
+    public Teacher() {}
+
+    public Teacher(String name, double salary) {
+        this.name = name;
+        this.salary = salary;
+    }
+
+    public void teach() {
+        System.out.println(name + " ders anlatıyor.");
+    }
+}
+
+public class ReflectionDetails {
+    public static void main(String[] args) {
+        Class<?> clazz = Teacher.class;
+
+        // Constructor bilgilerini al
+        Constructor<?>[] constructors = clazz.getConstructors();
+        System.out.println("\n### Constructor Listesi:");
+        for (Constructor<?> constructor : constructors) {
+            System.out.println(constructor);
+        }
+
+        // Metotları listele
+        Method[] methods = clazz.getDeclaredMethods();
+        System.out.println("\n### Metot Listesi:");
+        for (Method method : methods) {
+            System.out.println(method);
+        }
+
+        // Değişkenleri listele
+        Field[] fields = clazz.getDeclaredFields();
+        System.out.println("\n### Değişken Listesi:");
+        for (Field field : fields) {
+            System.out.println(field);
+        }
+    }
+}
+```
+
+**Çıktı:**
+```
+### Constructor Listesi:
+public Teacher()
+public Teacher(java.lang.String,double)
+
+### Metot Listesi:
+public void teach()
+
+### Değişken Listesi:
+private java.lang.String name
+private double salary
+```
+
+---
+
+### **3.3. Reflection ile Özel (private) Değişkenlere ve Metotlara Erişme**
+Normalde bir sınıfın **private değişkenlerine doğrudan erişilemez**, ancak Reflection API ile erişebiliriz.
+
+```java
+import java.lang.reflect.*;
+
+class Secret {
+    private String hiddenMessage = "Bu bir sır!";
+
+    private void secretMethod() {
+        System.out.println("Bu özel bir metottur.");
+    }
+}
+
+public class AccessPrivateFields {
+    public static void main(String[] args) throws Exception {
+        Secret secret = new Secret();
+        Class<?> clazz = secret.getClass();
+
+        // Private değişkene erişim
+        Field field = clazz.getDeclaredField("hiddenMessage");
+        field.setAccessible(true);
+        System.out.println("Gizli Mesaj: " + field.get(secret));
+
+        // Private metodu çağırma
+        Method method = clazz.getDeclaredMethod("secretMethod");
+        method.setAccessible(true);
+        method.invoke(secret);
+    }
+}
+```
+
+**Çıktı:**
+```
+Gizli Mesaj: Bu bir sır!
+Bu özel bir metottur.
+```
+> **Burada `setAccessible(true)` kullandık çünkü normalde private alanlara erişim yasaktır.**
+
+---
+
+### **3.4. Reflection ile Dinamik Nesne Oluşturma ve Metot Çağırma**
+Reflection ile **çalışma zamanında (runtime) nesne oluşturabiliriz.**
+
+```java
+import java.lang.reflect.Constructor;
+
+class Person {
+    private String name;
+
+    public Person() {
+        this.name = "Bilinmeyen";
+    }
+
+    public Person(String name) {
+        this.name = name;
+    }
+
+    public void introduce() {
+        System.out.println("Benim adım " + name);
+    }
+}
+
+public class DynamicObjectCreation {
+    public static void main(String[] args) throws Exception {
+        // Person sınıfının class objesini al
+        Class<?> clazz = Person.class;
+
+        // Parametresiz Constructor ile nesne oluştur
+        Object obj1 = clazz.getDeclaredConstructor().newInstance();
+        Method method1 = clazz.getMethod("introduce");
+        method1.invoke(obj1); // Çıktı: Benim adım Bilinmeyen
+
+        // Parametreli Constructor ile nesne oluştur
+        Constructor<?> constructor = clazz.getConstructor(String.class);
+        Object obj2 = constructor.newInstance("Ahmet");
+        method1.invoke(obj2); // Çıktı: Benim adım Ahmet
+    }
+}
+```
+
+---
+
+## **4. Reflection API’nin Dezavantajları**
+**Her güçlü özellik gibi Reflection API’nin de bazı dezavantajları vardır:**
+1. **Performans Kaybı**: Reflection, normal metot çağrılarına kıyasla **%10-30 daha yavaştır**.
+2. **Güvenlik Riski**: Private metotlara erişebiliriz, ancak bu **güvenlik açığına neden olabilir**.
+3. **Kodun Okunabilirliğini Azaltır**: Normal kodlara kıyasla **daha karmaşık** ve **hata ayıklaması zor** olabilir.
+
+---
+
+## **5. Reflection API Nerelerde Kullanılır?**
+- **Spring Framework**: Dependency Injection için kullanır.
+- **JUnit, Mockito**: Unit test yazarken private metotları test edebiliriz.
+- **ORM Frameworkleri (Hibernate, JPA)**: Veritabanı nesnelerini dinamik olarak yönetir.
+- **Runtime Proxy Oluşturma**: Java Dynamic Proxy Pattern ile interface'lerin implementasyonlarını runtime'da oluşturabiliriz.
+
+---
+
+## **Sonuç**
+**Reflection API**, Java'nın **dinamik ve esnek bir dil olmasını sağlayan** en güçlü özelliklerinden biridir. Ancak, **dikkatli kullanılmalı** ve **performans düşüşü göz önünde bulundurulmalıdır**. Özellikle **Spring, Hibernate gibi framework'lerde** bu yapı yaygın olarak kullanılır.
+
+✔ **Eğer bir framework veya kütüphane geliştiriyorsan**, **Reflection API kesinlikle bilinmesi gereken** bir konudur. 🚀
+
 
 
 

@@ -1,32 +1,18 @@
 package com.okancelik.dao;
 
-import java.sql.Connection;
 import java.util.List;
+import java.util.Optional;
 
-public interface IDaoGenerics<T> {
-
-    // CRUD
-    // CREATE
-    T create(T t);
-
-    // FIND BY NAME,ID
-    T findByName(String name);
-    T  findById(int id);
-
-    // LIST
+/**
+ * 📌 Generic DAO Arayüzü
+ * CRUD işlemleri için temel arayüzdür.
+ */
+ public interface IDaoGenerics<T> {
+    Optional<T> create(T entity);
     List<T> list();
-
-    // UPDATE
-    T update(int id, T t);
-
-    // DELETE
-    T delete(int id);
-
-    // CHOOISE
-    void chooise();
-
-    // DATABASE CONNECTION
-    default Connection getInterfaceConnection() {
-        return null;
-    }
+    Optional<T> findByName(String name);
+    Optional<T> findById(int id);
+    Optional<T> update(int id, T entity);
+    Optional<T> delete(int id);
+    void choose();
 }
